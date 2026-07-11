@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWL Check — Vocab Quiz</title>
+<style>
+body{font-family:'Nunito',system-ui,sans-serif;background:#fff;color:#3c3c3c;
+  max-width:680px;margin:0 auto;padding:24px 18px}
+h1{color:#58cc02;font-size:1.5rem}
+.summary{background:#f7f7f7;border:2px solid #e5e5e5;border-radius:16px;padding:16px;margin:16px 0}
+.big{font-size:2rem;font-weight:900;color:#58a700}
+.sub{background:#fff;border:2px solid #e5e5e5;border-radius:14px;padding:12px 16px;margin:10px 0}
+.sub h3{margin:0 0 6px;font-size:.95rem}
+.bar-wrap{height:10px;background:#e5e5e5;border-radius:6px;overflow:hidden;margin:6px 0}
+.bar{height:100%;background:#58cc02;border-radius:6px}
+.missing{font-size:.82rem;color:#777;line-height:1.7}
+.missing b{color:#ea2b2b}
+.copy-btn{margin-top:16px;padding:12px 20px;background:#58cc02;color:#fff;border:none;
+  border-radius:14px;font-weight:800;font-size:.9rem;cursor:pointer;box-shadow:0 4px 0 #4aa802}
+textarea{width:100%;height:120px;margin-top:10px;border:2px solid #e5e5e5;border-radius:10px;
+  padding:10px;font-size:.75rem}
+</style>
+</head>
+<body>
+<h1>📊 Cobertura de la AWL en tu lista</h1>
+<p style="font-size:.85rem;color:#777">Compara las 570 palabras de la Academic Word List
+(Coxhead) contra tu <code>vocab.js</code>. Coloca este archivo en la misma carpeta que
+<code>vocab.js</code> y ábrelo en el navegador.</p>
+<div id="out">Cargando...</div>
+
+<script src="vocab.js"></script>
+<script>
+// ══ AWL completa: 10 sublistas, 570 headwords ══
+const AWL = {
+1:"analyze approach area assess assume authority available benefit concept consist constitute context contract create data define derive distribute economy environment establish estimate evident export factor finance formula function identify income indicate individual interpret involve issue labor legal legislate major method occur percent period policy principle proceed process require research respond role section sector significant similar source specific structure theory vary".split(" "),
+2:"achieve acquire administrate affect appropriate aspect assist category chapter commission community complex compute conclude conduct consequent construct consume credit culture design distinct element equate evaluate feature final focus impact injure institute invest item journal maintain normal obtain participate perceive positive potential previous primary purchase range region regulate relevant reside resource restrict secure seek select site strategy survey text tradition transfer".split(" "),
+3:"alternative circumstance comment compensate component consent considerable constant constrain contribute convene coordinate core corporate correspond criteria deduce demonstrate document dominate emphasis ensure exclude framework fund illustrate immigrate imply initial instance interact justify layer link locate maximize minor negate outcome partner philosophy physical proportion publish react register rely remove scheme sequence sex shift specify sufficient task technique technology valid volume".split(" "),
+4:"access adequate annual apparent approximate attitude attribute civil code commit communicate concentrate confer contrast cycle debate despite dimension domestic emerge error ethnic goal grant hence hypothesis implement implicate impose integrate internal investigate job label mechanism obvious occupy option output overall parallel parameter phase predict principal prior professional project promote regime resolve retain series statistic status stress subsequent sum summary undertake".split(" "),
+5:"academy adjust alter amend aware capacity challenge clause compound conflict consult contact decline discrete draft enable energy enforce entity equivalent evolve expand expose external facilitate fundamental generate generation image liberal license logic margin medical mental modify monitor network notion objective orient perspective precise prime psychology pursue ratio reject revenue stable style substitute sustain symbol target transit trend version welfare whereas".split(" "),
+6:"abstract accurate acknowledge aggregate allocate assign attach author bond brief capable cite cooperate discriminate display diverse domain edit enhance estate exceed expert explicit federal fee flexible furthermore gender ignorant incentive incidence incorporate index inhibit initiate input instruct intelligence interval lecture migrate minimum ministry motive neutral nevertheless overseas precede presume rational recover reveal scope subsidy tape trace transform transport underlie utilize".split(" "),
+7:"adapt adult advocate aid channel chemical classic comprehensive comprise confirm contrary convert couple decade definite deny differentiate dispose dynamic eliminate empirical equip extract file finite foundation globe grade guarantee hierarchy identical ideology infer innovate insert intervene isolate media mode paradigm phenomenon priority prohibit publication quote release reverse simulate sole somewhat submit successor survive thesis topic transmit ultimate unique visible voluntary".split(" "),
+8:"abandon accompany accumulate ambiguous append appreciate arbitrary automate bias chart clarify commodity complement conform contemporary contradict crucial currency denote detect deviate displace drama eventual exhibit exploit fluctuate guideline highlight implicit induce inevitable infrastructure inspect intense manipulate minimize nuclear offset paragraph plus practitioner predominant prospect radical random reinforce restore revise schedule tense terminate theme thereby uniform vehicle via virtual visual widespread".split(" "),
+9:"accommodate analogy anticipate assure attain behalf bulk cease coherent coincide commence compatible concurrent confine controversy converse device devote diminish distort duration erode ethic format founded inherent insight integral intermediate manual mature mediate medium military minimal mutual norm overlap passive portion preliminary protocol qualitative refine relax restrain revolution rigid route scenario sphere subordinate supplement suspend team temporary trigger unify violate vision".split(" "),
+10:"adjacent albeit assemble collapse colleague compile conceive convince depress encounter enormous forthcoming incline integrity intrinsic invoke levy likewise nonetheless notwithstanding odd ongoing panel persist pose reluctance so-called straightforward undergo whereby".split(" ")
+};
+
+// ══ Normalización de headwords de tu vocab.js ══
+// Extrae formas base de entradas como:
+//   "(Present / Past / Participle) - ABANDON / ABANDONED / ABANDONED"
+//   "(Infinitivo / Past / Participle) - to be/was/were/been"
+//   "abuse (n)" / "to Create" / "Contract"
+const BRIT_AM = {
+  'analyse':'analyze','labour':'labor','colour':'color','favour':'favor',
+  'licence':'license','defence':'defense','centre':'center','behaviour':'behavior',
+  'programme':'program','maximise':'maximize','minimise':'minimize','utilise':'utilize',
+  'organise':'organize','recognise':'recognize','standardise':'standardize',
+  'authorise':'authorize','emphasise':'emphasize','specialise':'specialize',
+  'realise':'realize','apologise':'apologize','neighbour':'neighbor','honour':'honor'
+};
+function normalize(w){
+  w = w.toLowerCase().trim();
+  if(BRIT_AM[w]) return BRIT_AM[w];
+  // -ise → -ize (final)
+  if(w.endsWith('ise') && w.length > 4) return w.slice(0,-3) + 'ize';
+  if(w.endsWith('yse') && w.length > 4) return w.slice(0,-3) + 'yze';
+  return w;
+}
+
+function extractForms(en){
+  const forms = new Set();
+  let s = en.toLowerCase().trim();
+  // Prefijos de tablas de verbos
+  s = s.replace(/^\((present|infinitivo)\s*\/\s*past\s*\/\s*participle\)\s*-\s*/i, '');
+  // "to " inicial
+  s = s.replace(/^to\s+/, '');
+  // Sufijos "(n)", "(v)", "(adj)", "(adj.)"
+  s = s.replace(/\s*\((n|v|adj|adj\.)\)\s*$/, '');
+  forms.add(normalize(s));
+  // Si tiene barras (verbo con formas), tomar la primera
+  if(s.includes('/')) forms.add(normalize(s.split('/')[0].trim()));
+  // Primera palabra (para frases como "abandon ship")
+  const first = s.split(/[\s\/]+/)[0];
+  if(first) forms.add(normalize(first));
+  return forms;
+}
+
+// ══ Comparación ══
+const vocabForms = new Set();
+VOCAB.forEach(w => extractForms(w.en).forEach(f => vocabForms.add(f)));
+
+let totalCovered = 0, totalWords = 0;
+const allMissing = [];
+let html = '';
+
+Object.keys(AWL).forEach(sub => {
+  const words = AWL[sub];
+  const missing = words.filter(w => !vocabForms.has(normalize(w)));
+  const covered = words.length - missing.length;
+  totalCovered += covered;
+  totalWords   += words.length;
+  allMissing.push(...missing);
+  const pct = Math.round(covered / words.length * 100);
+  html += `<div class="sub">
+    <h3>Sublista ${sub} — ${covered}/${words.length} cubiertas (${pct}%)</h3>
+    <div class="bar-wrap"><div class="bar" style="width:${pct}%"></div></div>
+    ${missing.length
+      ? `<div class="missing"><b>Faltan (${missing.length}):</b> ${missing.join(' • ')}</div>`
+      : `<div class="missing" style="color:#58a700">✓ ¡Completa!</div>`}
+  </div>`;
+});
+
+const totalPct = Math.round(totalCovered / totalWords * 100);
+document.getElementById('out').innerHTML = `
+  <div class="summary">
+    <div class="big">${totalCovered} / ${totalWords} (${totalPct}%)</div>
+    <div style="font-size:.85rem;color:#777">palabras de la AWL ya están en tu lista</div>
+  </div>
+  ${html}
+  <button class="copy-btn" id="copy-btn">📋 Copiar lista de faltantes</button>
+  <textarea id="missing-txt" readonly></textarea>
+`;
+document.getElementById('missing-txt').value = allMissing.join('\n');
+document.getElementById('copy-btn').addEventListener('click', () => {
+  navigator.clipboard.writeText(allMissing.join('\n'));
+  document.getElementById('copy-btn').textContent = '✓ ¡Copiado!';
+});
+</script>
+</body>
+</html>
