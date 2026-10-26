@@ -331,6 +331,13 @@ button.dict-item{cursor:pointer}
 .g-card b{font-size:.92rem;font-weight:900;color:var(--text)}
 .g-card span{font-size:.78rem;font-weight:700;color:var(--muted-dark)}
 .g-card small{font-size:.7rem;font-weight:800;color:#a560e8}
+.lv-badge,.g-card .lv-badge{display:inline-block;font-size:.6rem;font-weight:900;padding:1px 7px;border-radius:20px;
+  margin-right:4px;color:#fff;background:#a560e8;vertical-align:1px}
+.lv-badge.lv-A1,.lv-badge.lv-A2{background:#58cc02}
+.lv-badge.lv-B1,.lv-badge.lv-B2{background:#1cb0f6}
+.lv-badge.lv-C1{background:#ce82ff}
+.g-unit{font-size:.74rem;font-weight:900;color:var(--muted-dark);margin-top:4px}
+.ts-src{font-size:.78rem;font-weight:800;color:#a560e8}
 
 /* Ficha de un tema (modal) */
 #topic{display:none;position:fixed;inset:0;z-index:120;background:rgba(0,0,0,.35);
@@ -401,6 +408,10 @@ button.dict-item{cursor:pointer}
       <button class="chip" id="irr-chip">Solo irregulares</button>
       <button class="chip" id="type-chip">✍️ Escribir las formas</button>
     </div>
+  </div>
+  <div class="opt-panel" id="panel-levels" hidden>
+    <div class="opt-title">Nivel (Tiempos verbales y Gramática)</div>
+    <div class="chip-wrap" id="chips-levels"></div>
   </div>
 
   <div class="sec-label">Dirección de la pregunta</div>
@@ -523,8 +534,9 @@ button.dict-item{cursor:pointer}
   </div>
   <div class="guide-body">
     <div class="toggle-row" id="guide-tabs">
-      <button class="tog-btn active" data-tab="tenses">⏳ Tiempos verbales</button>
+      <button class="tog-btn active" data-tab="tenses">⏳ Tiempos</button>
       <button class="tog-btn" data-tab="grammar">📐 Gramática</button>
+      <button class="tog-btn" data-tab="books">📘 Mis libros</button>
     </div>
     <div id="guide-content" style="display:flex;flex-direction:column;gap:10px"></div>
   </div>
@@ -565,7 +577,11 @@ const TYPE_SHORT = {n:'sustantivo', v:'verbo', adj:'adjetivo', adv:'adverbio',
   pron:'pronombre', art:'artículo', det:'determinante', quant:'cuantificador', prep:'preposición',
   conj:'conjunción', qw:'interrogativo', aux:'auxiliar', modal:'modal', interj:'interjección',
   num:'número', pref:'prefijo', suf:'sufijo'};
-const LEVELS = {A:'Básico (A1–A2)', B:'Intermedio (B1–B2)', C:'Avanzado (C1)'};
+const LEVELS = {A1:'A1 · Principiante', A2:'A2 · Básico', B1:'B1 · Intermedio', B2:'B2 · Intermedio alto', C1:'C1 · Avanzado'};
+const LEVEL_KEYS = Object.keys(LEVELS);
+const BOOKS = ['Interchange 3', 'Passages 1', 'Passages 2'];
+const srcLabel = s => s.replace(/ · U(\d+)$/, ' · Unidad $1');
+const levelBadge = lv => `<span class="lv-badge lv-${lv}">${lv}</span>`;
 const catLabel = c => CATS[c] ? CATS[c].icon + ' ' + CATS[c].name : '';
 
 // Conjugación española de las traducciones de verbos (ver esForms)
@@ -632,9 +648,11 @@ function lsGet(k, def){
 function lsSet(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
 
 const DEFAULT_PREFS = {dir:'en-es', size:25, cats:[4,6,2,8,5,1,9,7,10,3,11],
-  wtype:'all', ftype:'all', vmode:'both', irrOnly:false, typeForms:false, autoSpeak:false};
+  wtype:'all', ftype:'all', vmode:'both', irrOnly:false, typeForms:false, autoSpeak:false, levels:[...LEVEL_KEYS]};
 const prefs = Object.assign({}, DEFAULT_PREFS, lsGet(PREFS_KEY, {}));
 prefs.cats = prefs.cats.filter(c => CATS[c]);
+prefs.levels = (Array.isArray(prefs.levels) ? prefs.levels : []).filter(l => LEVELS[l]);
+if(prefs.levels.length === 0) prefs.levels = [...LEVEL_KEYS];
 function savePrefs(){ lsSet(PREFS_KEY, prefs); }
 
 function getHist(){ return lsGet(HIST_KEY, {}); }
@@ -854,6 +872,7 @@ document.addEventListener('click', e => {
 function passesFilter(it){
   if((it.c === 4 || it.c === 6) && prefs.wtype !== 'all') return it.t === prefs.wtype;
   if(it.c === 10 && prefs.ftype !== 'all') return it.t === prefs.ftype;
+  if((it.c === 5 || it.c === 1) && prefs.levels.length < LEVEL_KEYS.length) return prefs.levels.includes(it.topic.level);
   if(it.c === 2 && prefs.irrOnly) return it.irr;
   // En «3 formas» se omiten los regulares sin cambio de ortografía (work → worked)
   if(it.c === 2 && prefs.vmode === 'forms') return !it.trivial;
@@ -1051,9 +1070,12 @@ function exAfter(it, showName){
     + (e.es ? `<div class="muted">${escapeHtml(e.es)}</div>` : '')
     + topicLink(t);
 }
+// Respuestas que significan «no va ninguna palabra» (p. ej. sin artículo)
+const isNoWord = a => /^(— \(sin artículo\)|\(nada\))$/.test(a);
+function fillBlank(e){ return isNoWord(e.a) ? e.s.replace(/___ ?/, '') : e.s.replace('___', e.a); }
 function sentenceHtml(e, fill){
   const [a, b] = e.s.split('___');
-  const mid = fill ? `<b>${escapeHtml(fill)}</b>` : '<span class="blank">&nbsp;</span>';
+  const mid = fill ? `<b>${escapeHtml(isNoWord(fill) ? '—' : fill)}</b>` : '<span class="blank">&nbsp;</span>';
   const hint = e.h && !fill ? ` <span class="hint">(${escapeHtml(e.h)})</span>` : '';
   return escapeHtml(a) + mid + hint + escapeHtml(b || '');
 }
@@ -1061,7 +1083,7 @@ function formulaOf(t){ return t.cat === 5 ? t.form.aff[0] : t.form; }
 
 function makeExQ(it){
   const t = it.topic, e = it.ex;
-  const full = e.s.replace('___', e.a);
+  const full = fillBlank(e);
   const r = Math.random();
   const isTense = t.cat === 5;
   if(isTense && r < .3){
@@ -1164,6 +1186,11 @@ function renderHomeOptions(){
   document.getElementById('chips-ftype').innerHTML = chipsHtml(FTYPES, prefs.ftype, 'Todas');
   document.getElementById('panel-verbs').hidden = !has(2);
   document.querySelectorAll('#vmode-toggle .tog-btn').forEach(b => b.classList.toggle('active', b.dataset.v === prefs.vmode));
+  document.getElementById('panel-levels').hidden = !(has(5) || has(1));
+  const allLv = prefs.levels.length === LEVEL_KEYS.length;
+  document.getElementById('chips-levels').innerHTML =
+    `<button class="chip${allLv ? ' active' : ''}" data-lv="all">Todos</button>` +
+    LEVEL_KEYS.map(lv => `<button class="chip${!allLv && prefs.levels.includes(lv) ? ' active' : ''}" data-lv="${lv}">${LEVELS[lv]}</button>`).join('');
   document.getElementById('irr-chip').classList.toggle('active', prefs.irrOnly);
   document.getElementById('type-chip').classList.toggle('active', prefs.typeForms);
   document.querySelectorAll('#dir-toggle .tog-btn').forEach(b => b.classList.toggle('active', b.dataset.dir === prefs.dir));
@@ -1425,7 +1452,7 @@ function buildResultsScreen(){
   updateHomeStats();
 }
 function itemTexts(it){
-  if(it.kind === 'ex') return [it.ex.s.replace('___', it.ex.a), it.topic.name];
+  if(it.kind === 'ex') return [fillBlank(it.ex), it.topic.name];
   if(it.kind === 'verb') return [it.v.join(' · '), it.es];
   return [it.en, it.es];
 }
@@ -1473,14 +1500,29 @@ function renderGuide(){
       <button class="tg-cell" data-topic="${goingTo.id}" style="padding:8px">${SHE_FORMS[goingTo.id]} · ${goingTo.es}</button>
       ${[['present','Presente'], ['past','Pasado'], ['future','Futuro']].map(([time, label]) =>
         `<div class="g-section">${label}</div>` + TENSES.filter(t => t.time === time).map(guideCard).join('')).join('')}`;
+  } else if(guideTab === 'grammar'){
+    box.innerHTML = `<div class="g-intro">Estructuras de gramática ordenadas por nivel, de A1 a C1. Cada una explica cuándo se usa, con ejemplos y ejercicios para practicar.</div>` +
+      Object.entries(LEVELS).map(([lv, label]) => {
+        const list = GRAMMAR.filter(g => g.level === lv);
+        return `<div class="g-section">${label} · ${list.length} temas</div>` + list.map(guideCard).join('');
+      }).join('');
   } else {
-    box.innerHTML = `<div class="g-intro">Estructuras de gramática ordenadas por nivel. Cada una explica cuándo se usa, con ejemplos y ejercicios para practicar.</div>` +
-      Object.entries(LEVELS).map(([lv, label]) =>
-        `<div class="g-section">${label}</div>` + GRAMMAR.filter(g => g.level === lv).map(guideCard).join('')).join('');
+    // Temas agrupados por libro y unidad (campo src de grammar.js)
+    box.innerHTML = `<div class="g-intro">Los temas de gramática de tus libros de clase, unidad por unidad. Toca uno para repasarlo y practicarlo.</div>` +
+      BOOKS.map(book => {
+        const units = new Map();
+        [...TENSES, ...GRAMMAR].forEach(t => (t.src || []).forEach(s => {
+          const m = s.match(/^(.+) · U(\d+)$/);
+          if(m && m[1] === book) (units.get(+m[2]) || units.set(+m[2], []).get(+m[2])).push(t);
+        }));
+        return `<div class="g-section">📘 ${book}</div>` + [...units.keys()].sort((a, b) => a - b).map(u =>
+          `<div class="g-unit">Unidad ${u}</div>` + units.get(u).map(guideCard).join('')).join('');
+      }).join('');
   }
 }
 function guideCard(t){
-  return `<button class="g-card" data-topic="${t.id}"><b>${escapeHtml(t.name)}</b><span>${escapeHtml(t.es)}</span><small>${t.ex.length} ejercicios</small></button>`;
+  return `<button class="g-card" data-topic="${t.id}"><b>${escapeHtml(t.name)}</b><span>${escapeHtml(t.es)}</span>` +
+    `<small>${levelBadge(t.level)}${t.ex.length} ejercicios${t.src ? ' · 📘 ' + t.src.map(escapeHtml).join(', ') : ''}</small></button>`;
 }
 function openGuide(){ show('guide'); renderGuide(); }
 
@@ -1495,7 +1537,8 @@ function openTopic(id, fromQuiz){
     : `<div class="ts-frow"><span class="f">${escapeHtml(t.form)}</span></div>`;
   document.getElementById('topic-sheet').innerHTML = `
     <div class="ts-head">
-      <div><div class="ts-name">${escapeHtml(t.name)}</div><div class="ts-es">${escapeHtml(t.es)}${t.level ? ' · ' + LEVELS[t.level] : ''}</div></div>
+      <div><div class="ts-name">${escapeHtml(t.name)}</div><div class="ts-es">${levelBadge(t.level)}${escapeHtml(t.es)}</div>
+        ${t.src ? `<div class="ts-src">📘 En tu libro: ${t.src.map(s => escapeHtml(srcLabel(s))).join(' · ')}</div>` : ''}</div>
       <button class="icon-btn" id="topic-close" aria-label="Cerrar">✕</button>
     </div>
     <div class="ts-h">Estructura</div>${form}
@@ -1651,6 +1694,16 @@ document.getElementById('chips-ftype').addEventListener('click', e => {
 document.getElementById('vmode-toggle').addEventListener('click', e => {
   const b = e.target.closest('.tog-btn'); if(!b) return;
   prefs.vmode = b.dataset.v; savePrefs(); renderHomeOptions();
+});
+document.getElementById('chips-levels').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if(!b) return;
+  const lv = b.dataset.lv;
+  if(lv === 'all') prefs.levels = [...LEVEL_KEYS];
+  // Con «Todos» activo, tocar un nivel deja solo ese; después, cada toque lo suma o lo quita
+  else if(prefs.levels.length === LEVEL_KEYS.length) prefs.levels = [lv];
+  else prefs.levels = prefs.levels.includes(lv) ? prefs.levels.filter(x => x !== lv) : LEVEL_KEYS.filter(x => x === lv || prefs.levels.includes(x));
+  if(prefs.levels.length === 0) prefs.levels = [...LEVEL_KEYS];
+  savePrefs(); renderHomeOptions();
 });
 document.getElementById('irr-chip').addEventListener('click', () => { prefs.irrOnly = !prefs.irrOnly; savePrefs(); renderHomeOptions(); });
 document.getElementById('type-chip').addEventListener('click', () => { prefs.typeForms = !prefs.typeForms; savePrefs(); renderHomeOptions(); });
