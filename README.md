@@ -25,20 +25,20 @@ App web (PWA) para practicar vocabulario, verbos, tiempos verbales y gramática 
 
 ## Distribución actual de los datos
 
-**8.194 palabras/expresiones** en `vocab.js` + **565 ejercicios** en `grammar.js`.
+**8.566 palabras/expresiones** en `vocab.js` + **902 ejercicios** en `grammar.js`.
 
 | # | Categoría | Entradas | Qué contiene |
 |---|---|---:|---|
-| 4 | 📗 Vocabulario | 3.551 | Vocabulario general (lista tipo Cambridge PET, tus apuntes, adjetivos intensos, cognados, vocabulario de las unidades de tus libros). Por tipo: 1.313 sustantivos · 455 verbos · 514 adjetivos · 95 adverbios · resto sin clasificar (frases, palabras con varios usos). |
-| 6 | 🎓 Académico IELTS | 2.882 | Academic Word List (AWL) con sus familias de palabras + vocabulario académico frecuente. Por tipo: 1.026 sustantivos · 378 verbos · 385 adjetivos · 198 adverbios. |
-| 2 | 🔁 Verbos | 644 | Cada verbo con sus 3 formas; 203 son irregulares. |
-| 8 | 🧩 Phrasal verbs | 238 | Los que ya tenías + ~95 frecuentes (incluye los típicos para describir gráficos del IELTS: *level off, account for, phase out*…) + los de *Passages 2 · U1* (*drift apart, hang on to, back down from, cut down on*…). |
-| 5 | ⏳ Tiempos verbales | 13 temas · 78 ejercicios | Present / Past / Future × Simple / Continuous / Perfect / Perfect Continuous + *going to*, cada uno con su nivel (A1–B2). |
-| 1 | 📐 Gramática | 108 temas · 487 ejercicios | A1 (5) · A2 (14) · B1 (41) · B2 (25) · C1 (23). La lista completa está más abajo. |
-| 9 | 🤝 Collocations | 125 | Combinaciones naturales: *make a decision, heavy rain, sharp decline, raise awareness, make eye contact*… |
-| 7 | 🔗 Conectores | 269 | Conectores y frases para Writing/Speaking: *however, in addition, on the other hand, in the event that, whereas*… |
+| 4 | 📗 Vocabulario | 3.737 | Vocabulario general (lista tipo Cambridge PET, tus apuntes, adjetivos intensos, cognados, vocabulario de las unidades de tus libros) + **vocabulario IELTS por temas**: medio ambiente, tecnología, educación, salud, trabajo, delitos, ciudad, medios, viajes, sociedad y familia. Por tipo: 1.487 sustantivos · 458 verbos · 523 adjetivos · 95 adverbios · resto sin clasificar (frases, palabras con varios usos). |
+| 6 | 🎓 Académico IELTS | 2.894 | Academic Word List (AWL) con sus familias de palabras + vocabulario académico frecuente + palabras para describir gráficos (*pie chart, upward trend, plateau*). Por tipo: 1.036 sustantivos · 378 verbos · 387 adjetivos · 198 adverbios. |
+| 2 | 🔁 Verbos | 665 | Cada verbo con sus 3 formas; 203 son irregulares. Incluye los verbos para describir gráficos (*plummet, soar, fluctuate, level off*…), traducidos en tercera persona: *the price soared = se disparó*. |
+| 8 | 🧩 Phrasal verbs | 250 | Los que ya tenías + ~95 frecuentes (incluye los típicos para describir gráficos del IELTS: *level off, account for, phase out*…) + los de *Passages 2 · U1* (*drift apart, hang on to, back down from, cut down on*…). |
+| 5 | ⏳ Tiempos verbales | 13 temas · 130 ejercicios | Present / Past / Future × Simple / Continuous / Perfect / Perfect Continuous + *going to*, cada uno con su nivel (A1–B2). |
+| 1 | 📐 Gramática | 108 temas · 772 ejercicios | A1 (5) · A2 (14) · B1 (41) · B2 (25) · C1 (23); cada tema tiene entre 6 y 10 ejercicios. La lista completa está más abajo. |
+| 9 | 🤝 Collocations | 170 | Combinaciones naturales: *make a decision, heavy rain, sharp decline, raise awareness, make eye contact, bridge the gap, conduct research*… |
+| 7 | 🔗 Conectores | 304 | Conectores y frases para Writing/Speaking: *however, in addition, on the other hand, in the event that, whereas, it could be argued that, to a large extent*… |
 | 10 | 🔤 Palabras funcionales | 270 | Pronombres (41) · artículos (2) · determinantes (19) · cuantificadores (24) · preposiciones (49) · conjunciones (18) · interrogativos (17) · auxiliares (5) · modales (16) · interjecciones (18) · números (61). |
-| 3 | 💬 Expresiones | 157 | Modismos, símiles (*as cool as a cucumber*) y refranes con su **equivalente en español** y la traducción literal aparte. |
+| 3 | 💬 Expresiones | 218 | Modismos (*a piece of cake, under the weather, cost an arm and a leg*), símiles (*as cool as a cucumber*) y refranes con su **equivalente en español** y la traducción literal aparte. |
 | 11 | ✂️ Prefijos y sufijos | 58 | 30 prefijos y 28 sufijos con su significado y ejemplos (*un-, mis-, -ful, -less*…). |
 
 ### Cómo se reparte un turno
@@ -60,113 +60,113 @@ El nivel sigue el Marco Común Europeo (MCER). La columna **Libro** dice en qué
 
 ### ⏳ Tiempos verbales (13)
 
-| Nivel | Tiempo | En español | Libro |
-|---|---|---|---|
-| A1 | Present Simple | Presente simple | — |
-| A1 | Present Continuous | Presente continuo | — |
-| A1 | Past Simple | Pasado simple | I3 U4, P1 U6 |
-| A2 | Present Perfect Simple | Presente perfecto | P1 U6 |
-| A2 | Past Continuous | Pasado continuo | I3 U4 |
-| A2 | Future Simple (Will) | Futuro simple (will) | I3 U10 |
-| A2 | Future Simple (Going to) | Futuro con going to | — |
-| B1 | Present Perfect Continuous | Presente perfecto continuo | P1 U6 |
-| B1 | Past Perfect Simple | Pasado perfecto | I3 U4, I3 U11 |
-| B1 | Future Continuous | Futuro continuo | I3 U10 |
-| B2 | Past Perfect Continuous | Pasado perfecto continuo | — |
-| B2 | Future Perfect Simple | Futuro perfecto | I3 U10, I3 U16, P1 U12 |
-| B2 | Future Perfect Continuous | Futuro perfecto continuo | P1 U12 |
+| Nivel | Tiempo | En español | Ejercicios | Libro |
+|---|---|---|---:|---|
+| A1 | Present Simple | Presente simple | 10 | — |
+| A1 | Present Continuous | Presente continuo | 10 | — |
+| A1 | Past Simple | Pasado simple | 10 | I3 U4, P1 U6 |
+| A2 | Present Perfect Simple | Presente perfecto | 10 | P1 U6 |
+| A2 | Past Continuous | Pasado continuo | 10 | I3 U4 |
+| A2 | Future Simple (Will) | Futuro simple (will) | 10 | I3 U10 |
+| A2 | Future Simple (Going to) | Futuro con going to | 10 | — |
+| B1 | Present Perfect Continuous | Presente perfecto continuo | 10 | P1 U6 |
+| B1 | Past Perfect Simple | Pasado perfecto | 10 | I3 U4, I3 U11 |
+| B1 | Future Continuous | Futuro continuo | 10 | I3 U10 |
+| B2 | Past Perfect Continuous | Pasado perfecto continuo | 10 | — |
+| B2 | Future Perfect Simple | Futuro perfecto | 10 | I3 U10, I3 U16, P1 U12 |
+| B2 | Future Perfect Continuous | Futuro perfecto continuo | 10 | P1 U12 |
 
 ### A1 · Principiante (5 temas)
 
 | Tema | En español | Ejercicios | Libro |
 |---|---|---:|---|
 | Verb forms (base / past / participle) | Las 3 formas del verbo: cuándo usar cada una | 10 | — |
-| Articles (a / an / the) | Artículos | 3 | — |
-| There is / There are | Hay | 2 | — |
-| Saxon Genitive ('s) | Genitivo sajón (posesión) | 2 | — |
-| Can / Could | Poder (habilidad, permiso, peticiones) | 2 | — |
+| Articles (a / an / the) | Artículos | 8 | — |
+| There is / There are | Hay | 8 | — |
+| Saxon Genitive ('s) | Genitivo sajón (posesión) | 8 | — |
+| Can / Could | Poder (habilidad, permiso, peticiones) | 8 | — |
 
 ### A2 · Básico (14 temas)
 
 | Tema | En español | Ejercicios | Libro |
 |---|---|---:|---|
-| Countable / Uncountable | Contables e incontables | 3 | — |
-| Comparative adjectives | Comparativos | 3 | I3 U2 |
-| Superlative adjectives | Superlativos | 2 | — |
-| Equality (as... as) | Comparativo de igualdad | 2 | I3 U2 |
-| Too / Enough | Demasiado / Suficiente | 3 | — |
-| Must / Have to | Obligación | 3 | — |
-| Should | Consejo (debería) | 2 | — |
-| May / Might | Posibilidad (puede que) | 2 | — |
-| Used to | Hábitos del pasado (solía) | 4 | P1 U9 |
-| Verb + to + Infinitive | Verbo + to + infinitivo | 4 | P1 U1 |
-| Verb + -ing | Verbo + gerundio (-ing) | 5 | P1 U1 |
-| Adjective + Infinitive | Adjetivo + infinitivo | 3 | P1 U5 |
-| Present Continuous (Future) | Presente continuo para el futuro | 2 | — |
-| Zero Conditional | Condicional cero | 2 | — |
+| Countable / Uncountable | Contables e incontables | 8 | — |
+| Comparative adjectives | Comparativos | 8 | I3 U2 |
+| Superlative adjectives | Superlativos | 8 | — |
+| Equality (as... as) | Comparativo de igualdad | 8 | I3 U2 |
+| Too / Enough | Demasiado / Suficiente | 8 | — |
+| Must / Have to | Obligación | 8 | — |
+| Should | Consejo (debería) | 8 | — |
+| May / Might | Posibilidad (puede que) | 8 | — |
+| Used to | Hábitos del pasado (solía) | 8 | P1 U9 |
+| Verb + to + Infinitive | Verbo + to + infinitivo | 8 | P1 U1 |
+| Verb + -ing | Verbo + gerundio (-ing) | 7 | P1 U1 |
+| Adjective + Infinitive | Adjetivo + infinitivo | 8 | P1 U5 |
+| Present Continuous (Future) | Presente continuo para el futuro | 8 | — |
+| Zero Conditional | Condicional cero | 8 | — |
 
 ### B1 · Intermedio (41 temas)
 
 | Tema | En español | Ejercicios | Libro |
 |---|---|---:|---|
-| Preposition + -ing | Preposición + gerundio | 4 | P1 U1 |
-| Future Time Clauses | Oraciones temporales de futuro | 2 | — |
-| Relative Pronouns | Pronombres relativos | 4 | I3 U1 |
-| First Conditional | Primer condicional | 3 | — |
-| Second Conditional | Segundo condicional | 3 | P1 U11 |
-| Passive Voice | Voz pasiva | 3 | I3 U14, P2 U10 |
-| Causative (Have / Get something done) | Causativa (que te hagan algo) | 4 | I3 U9 |
-| Indirect Questions | Preguntas indirectas | 3 | P1 U10 |
-| Question Tags | Preguntas coletilla (¿verdad?) | 5 | I3 U15, P1 U7 |
-| Relative Clauses (defining / non-defining) | Oraciones de relativo | 4 | I3 U14, P1 U3 |
-| Purpose (to / in order to) | Finalidad (para + infinitivo) | 4 | I3 U12 |
-| Purpose (so that) | Finalidad (para que) | 2 | — |
-| Concession (Despite / In spite of) | A pesar de | 2 | P1 U3 |
-| Concession (Although / Even though) | Aunque | 2 | P1 U3 |
-| Be used to | Estar acostumbrado a | 2 | — |
-| Get used to | Acostumbrarse a | 2 | — |
-| Wish (Present) | Deseos sobre el presente (ojalá) | 3 | P1 U11 |
-| Would Rather | Preferir (would rather) | 5 | I3 U8 |
+| Preposition + -ing | Preposición + gerundio | 8 | P1 U1 |
+| Future Time Clauses | Oraciones temporales de futuro | 8 | — |
+| Relative Pronouns | Pronombres relativos | 8 | I3 U1 |
+| First Conditional | Primer condicional | 8 | — |
+| Second Conditional | Segundo condicional | 8 | P1 U11 |
+| Passive Voice | Voz pasiva | 8 | I3 U14, P2 U10 |
+| Causative (Have / Get something done) | Causativa (que te hagan algo) | 8 | I3 U9 |
+| Indirect Questions | Preguntas indirectas | 8 | P1 U10 |
+| Question Tags | Preguntas coletilla (¿verdad?) | 7 | I3 U15, P1 U7 |
+| Relative Clauses (defining / non-defining) | Oraciones de relativo | 8 | I3 U14, P1 U3 |
+| Purpose (to / in order to) | Finalidad (para + infinitivo) | 8 | I3 U12 |
+| Purpose (so that) | Finalidad (para que) | 8 | — |
+| Concession (Despite / In spite of) | A pesar de | 8 | P1 U3 |
+| Concession (Although / Even though) | Aunque | 8 | P1 U3 |
+| Be used to | Estar acostumbrado a | 8 | — |
+| Get used to | Acostumbrarse a | 8 | — |
+| Wish (Present) | Deseos sobre el presente (ojalá) | 8 | P1 U11 |
+| Would Rather | Preferir (would rather) | 7 | I3 U8 |
 | Reported Speech | Estilo indirecto | 6 | P1 U5 |
-| It clauses + when | Expresar sentimientos: I love it when... / It bothers me when... | 5 | I3 U1 |
-| Gerund phrases (subject / object) | El gerundio como sujeto u objeto (Working... is...) | 5 | I3 U2 |
+| It clauses + when | Expresar sentimientos: I love it when... / It bothers me when... | 7 | I3 U1 |
+| Gerund phrases (subject / object) | El gerundio como sujeto u objeto (Working... is...) | 7 | I3 U2 |
 | Comparisons (nouns, verbs, past participles) | Comparaciones con sustantivos, verbos y participios | 6 | I3 U2 |
 | Requests (modals, if clauses, gerunds) | Peticiones educadas: de informal a formal | 6 | I3 U3 |
-| Indirect requests | Peticiones indirectas (pedir que le digas algo a alguien) | 5 | I3 U3 |
-| Narrative tenses (past simple, continuous, perfect) | Contar historias en pasado | 5 | I3 U4 |
-| Noun phrases with relative clauses | Lo que me preocupa / me molesta es... | 5 | I3 U5, P1 U10 |
-| Expectations (be supposed to, be expected to...) | Costumbres y lo que se espera que hagas | 5 | I3 U5 |
+| Indirect requests | Peticiones indirectas (pedir que le digas algo a alguien) | 7 | I3 U3 |
+| Narrative tenses (past simple, continuous, perfect) | Contar historias en pasado | 7 | I3 U4 |
+| Noun phrases with relative clauses | Lo que me preocupa / me molesta es... | 7 | I3 U5, P1 U10 |
+| Expectations (be supposed to, be expected to...) | Costumbres y lo que se espera que hagas | 7 | I3 U5 |
 | Describing problems (participles as adjectives) | Describir problemas: is torn / has a tear | 6 | I3 U6 |
-| Need + gerund / passive infinitive · Keep + gerund | Necesita arreglo / Sigue fallando | 5 | I3 U6 |
-| Infinitive clauses (One way to... is to...) | Proponer soluciones: La mejor manera de... es... | 5 | I3 U7 |
-| By + gerund (how to do things) | By + gerundio: cómo se hace algo | 5 | I3 U8 |
+| Need + gerund / passive infinitive · Keep + gerund | Necesita arreglo / Sigue fallando | 7 | I3 U6 |
+| Infinitive clauses (One way to... is to...) | Proponer soluciones: La mejor manera de... es... | 7 | I3 U7 |
+| By + gerund (how to do things) | By + gerundio: cómo se hace algo | 7 | I3 U8 |
 | Making suggestions | Hacer sugerencias | 6 | I3 U9 |
 | Referring to time in the past | Expresiones de tiempo: in, during, ago, for, since, from... to | 6 | I3 U10 |
-| Time clauses (before, after, once, as soon as...) | Oraciones de tiempo en el pasado | 5 | I3 U11 |
+| Time clauses (before, after, once, as soon as...) | Oraciones de tiempo en el pasado | 7 | I3 U11 |
 | Past modals for judgments and suggestions | Debiste haber... / Podrías haber... / Yo habría... | 6 | I3 U11, I3 U13 |
-| Giving reasons (because, since, due to...) | Dar razones: because, since, because of, due to | 5 | I3 U12 |
+| Giving reasons (because, since, due to...) | Dar razones: because, since, because of, due to | 7 | I3 U12 |
 | Passive with modals (should be done, must be passed) | Pasiva con modales: debería hacerse, tiene que aprobarse | 6 | I3 U14, I3 U15 |
-| Managed to / Was able to (accomplishments) | Logros: logré / pude / he podido | 5 | I3 U16 |
-| Future goals (I hope I'll have... / I'd like to have...) | Metas futuras: espero haber... / me gustaría haber... | 4 | I3 U16 |
-| Order of adjectives (modifiers) | Orden de los adjetivos | 5 | P1 U3 |
+| Managed to / Was able to (accomplishments) | Logros: logré / pude / he podido | 7 | I3 U16 |
+| Future goals (I hope I'll have... / I'd like to have...) | Metas futuras: espero haber... / me gustaría haber... | 7 | I3 U16 |
+| Order of adjectives (modifiers) | Orden de los adjetivos | 7 | P1 U3 |
 | Present perfect vs. simple past | Presente perfecto o pasado simple | 6 | P1 U6 |
 
 ### B2 · Intermedio alto (25 temas)
 
 | Tema | En español | Ejercicios | Libro |
 |---|---|---:|---|
-| Third Conditional | Tercer condicional | 3 | I3 U11 |
-| Mixed Conditionals | Condicionales mixtos | 4 | P1 U12 |
-| Wish (Past) | Arrepentimientos sobre el pasado | 3 | P1 U11 |
-| It's time | Ya es hora de que... | 2 | — |
-| Emphatic Do | Do enfático (sí que...) | 2 | — |
-| The... the... (Correlative) | Cuanto más..., más... | 3 | P2 U6 |
-| Modals of deduction (past) | Deducciones sobre el pasado | 5 | I3 U13, P1 U2 |
+| Third Conditional | Tercer condicional | 8 | I3 U11 |
+| Mixed Conditionals | Condicionales mixtos | 8 | P1 U12 |
+| Wish (Past) | Arrepentimientos sobre el pasado | 8 | P1 U11 |
+| It's time | Ya es hora de que... | 8 | — |
+| Emphatic Do | Do enfático (sí que...) | 8 | — |
+| The... the... (Correlative) | Cuanto más..., más... | 8 | P2 U6 |
+| Modals of deduction (past) | Deducciones sobre el pasado | 7 | I3 U13, P1 U2 |
 | Gerund or infinitive (change of meaning) | Gerundio o infinitivo: cuando cambia el significado | 7 | P1 U1, P2 U1 |
 | Noun clauses after be (The good thing about... is that...) | Lo bueno de... es que... | 6 | P1 U1 |
 | Past modals of obligation (had to, was supposed to...) | Obligación en el pasado: tuve que, se suponía que, no hacía falta | 6 | P1 U2 |
 | Connecting contrasting ideas (however, nevertheless...) | Conectar ideas opuestas: however, nevertheless, on the other hand | 6 | P1 U3 |
-| Reduced time clauses (after finishing, while taking...) | Oraciones de tiempo reducidas (after + -ing) | 5 | P1 U4 |
+| Reduced time clauses (after finishing, while taking...) | Oraciones de tiempo reducidas (after + -ing) | 7 | P1 U4 |
 | Conditions: unless, as long as, in case, even if, only if | Condiciones: a menos que, mientras, por si acaso, incluso si, solo si | 6 | P1 U4, P1 U11 |
 | It's rude to... = ...ing is rude | Es de mala educación interrumpir = Interrumpir es de mala educación | 6 | P1 U5 |
 | Present perfect vs. present perfect continuous | Presente perfecto o presente perfecto continuo | 6 | P1 U6 |
@@ -174,7 +174,7 @@ El nivel sigue el Marco Común Europeo (MCER). La columna **Libro** dice en qué
 | Passive: continuous, perfect and future | Pasiva en presente continuo, presente perfecto y futuro | 6 | I3 U7, P1 U7 |
 | Negative and tag questions for opinions | Dar opiniones con preguntas: Isn't it...? Don't you think...? | 6 | P1 U7, I3 U15 |
 | Reduced relative clauses | Oraciones de relativo reducidas | 6 | P1 U8 |
-| Which to comment on a whole sentence | ..., lo cual significa / por eso... | 5 | P1 U8 |
+| Which to comment on a whole sentence | ..., lo cual significa / por eso... | 7 | P1 U8 |
 | Used to and would (past habits) | Used to y would para hábitos del pasado | 6 | P1 U9 |
 | Contrast and exception (while, unlike, except for...) | Contraste y excepción: mientras que, a diferencia de, excepto | 6 | P1 U9 |
 | Complex indirect questions | Preguntas indirectas complejas (My concern is whether...) | 6 | P1 U10 |
@@ -185,27 +185,27 @@ El nivel sigue el Marco Común Europeo (MCER). La columna **Libro** dice en qué
 
 | Tema | En español | Ejercicios | Libro |
 |---|---|---:|---|
-| Passive Reporting | Pasiva impersonal (se dice que...) | 4 | P2 U4 |
-| Inversion (Negative) | Inversión tras adverbio negativo | 2 | — |
-| Cleft Sentences (It) | Oraciones enfáticas con It | 2 | — |
-| Cleft Sentences (What) | Oraciones enfáticas con What | 5 | P2 U2 |
-| Subjunctive Mood | Subjuntivo | 4 | P2 U8 |
-| Participle Clauses (Active) | Oraciones de participio activo (-ing) | 4 | P2 U3 |
-| Participle Clauses (Passive) | Oraciones de participio pasivo | 2 | — |
+| Passive Reporting | Pasiva impersonal (se dice que...) | 8 | P2 U4 |
+| Inversion (Negative) | Inversión tras adverbio negativo | 8 | — |
+| Cleft Sentences (It) | Oraciones enfáticas con It | 8 | — |
+| Cleft Sentences (What) | Oraciones enfáticas con What | 7 | P2 U2 |
+| Subjunctive Mood | Subjuntivo | 8 | P2 U8 |
+| Participle Clauses (Active) | Oraciones de participio activo (-ing) | 8 | P2 U3 |
+| Participle Clauses (Passive) | Oraciones de participio pasivo | 8 | — |
 | Verb patterns (verb + object + infinitive / preposition + gerund) | Patrones verbales avanzados | 7 | P2 U2 |
 | Articles (general vs. specific, place names) | Artículos avanzados: generalizaciones y nombres geográficos | 7 | P2 U3 |
 | Reporting clauses (claim, admit, argue...) | Verbos para reportar: claim, admit, argue, explain to... | 6 | P2 U4 |
 | Sentence adverbs (clearly, apparently, frankly...) | Adverbios de oración: evidentemente, al parecer, francamente | 6 | P2 U5 |
-| Will and would for habits and general truths | Will y would para hábitos y verdades generales | 5 | P2 U6 |
-| Required relative pronouns (whom, which, whose) | Pronombres relativos obligatorios: to whom, against which, whose | 5 | P2 U7 |
+| Will and would for habits and general truths | Will y would para hábitos y verdades generales | 7 | P2 U6 |
+| Required relative pronouns (whom, which, whose) | Pronombres relativos obligatorios: to whom, against which, whose | 7 | P2 U7 |
 | As if, as though, as, the way, like | Como si..., igual que... | 6 | P2 U7 |
 | Direct and indirect objects (give it to him) | Orden del objeto directo e indirecto | 6 | P2 U8 |
 | Whenever / wherever vs. when / where | Siempre que / dondequiera que | 6 | P2 U9 |
 | Whoever, whatever, whichever | Quien sea que, lo que sea, cualquiera que | 6 | P2 U9 |
-| Passive with get and in short answers | Pasiva con get y pasiva en respuestas cortas | 5 | P2 U10 |
+| Passive with get and in short answers | Pasiva con get y pasiva en respuestas cortas | 7 | P2 U10 |
 | Subject–verb agreement with quantifiers | Concordancia del verbo con cuantificadores | 6 | P2 U10 |
 | Compound adjectives | Adjetivos compuestos (well-known, absent-minded) | 6 | P2 U11 |
-| Superlative compound adjectives | Superlativo de adjetivos compuestos (the best-looking, the most easygoing) | 5 | P2 U11 |
+| Superlative compound adjectives | Superlativo de adjetivos compuestos (the best-looking, the most easygoing) | 7 | P2 U11 |
 | Inversion in conditionals (Had I known..., Should you...) | Inversión en condicionales (Had I known... = Si hubiera sabido...) | 6 | P2 U12 |
 | Adverb clauses of condition (provided that, assuming...) | Condiciones avanzadas: siempre que, suponiendo que, en caso de que | 7 | P2 U12 |
 
@@ -301,6 +301,15 @@ Se revisaron las 127 fotos de `Imagenes/`: las secciones *Grammar Focus* de *Int
 - **23 temas existentes ampliados** con lo que trae el libro (por ejemplo *would prefer* en *would rather*, *if only* en *wish*, modales en *reported speech*, *what I did was…* en las *cleft sentences*), sin cambiar los ejercicios que ya tenías, así que tu progreso se conserva.
 - **Niveles A1–C1** para todos los tiempos y temas (antes eran solo 3 grupos), y la unidad de tu libro en cada tema.
 - **142 palabras nuevas** de las unidades: phrasal verbs (*drift apart, back down from*), adjetivos compuestos (*absent-minded, open-minded, thought-provoking*), problemas (*torn, chipped, dented*), conectores (*in the event that, with the exception of*), collocations (*make eye contact, take out a loan*) y expresiones (*make it big, pay your dues*).
+
+### Más contenido (octubre 2026)
+
+- **337 ejercicios nuevos** (de 565 a 902): ningún tema queda con menos de 6. Los temas que tenían 2–4 ejercicios ahora tienen 8, y cada tiempo verbal tiene 10. Los nuevos van al final de cada lista, así que el progreso guardado no cambia.
+- **372 entradas nuevas** (de 8.194 a 8.566):
+  - ~200 palabras IELTS por tema: medio ambiente (*deforestation, carbon footprint*), tecnología (*data breach, user-friendly*), educación (*tuition fees, rote learning*), salud (*life expectancy, sedentary*), trabajo (*job security, overtime*), delitos, ciudad (*urban sprawl, rush hour*), medios, viajes, sociedad y familia.
+  - 61 modismos y refranes con su equivalente en español (*cost an arm and a leg* = costar un ojo de la cara).
+  - 45 collocations, 35 conectores para Writing y Speaking, y 12 phrasal verbs.
+  - 21 verbos para describir gráficos, que se muestran en tercera persona (*the price soared = se disparó*).
 
 ---
 

@@ -45,6 +45,10 @@ const TENSES = [
       { s: 'The film ___ at 8 pm tonight.', h: 'start', a: 'starts', o: ['started', 'has started', 'had started'], es: 'La película empieza a las 8 pm esta noche.' },
       { s: "I ___ the answer now: it's 42.", h: 'know', a: 'know', o: ['am knowing', 'knew', 'had known'], es: 'Ahora sé la respuesta: es 42.' },
       { s: 'How often ___ to the gym these days?', h: 'you / go', a: 'do you go', o: ['are you go', 'did you go', 'have you gone'], es: '¿Con qué frecuencia vas al gimnasio estos días?' },
+      { s: 'My sister ___ in a hospital.', h: 'work', a: 'works', o: ['is work', 'working', 'work'], es: 'Mi hermana trabaja en un hospital.' },
+      { s: '___ you like Colombian coffee?', a: 'Do', o: ['Does', 'Are', 'Is'], es: '¿Te gusta el café colombiano?' },
+      { s: 'He ___ TV in the morning.', h: 'not / watch', a: "doesn't watch", o: ["don't watch", "isn't watch", 'not watches'], es: 'Él no ve televisión en la mañana.' },
+      { s: 'The sun ___ in the east.', h: 'rise', a: 'rises', o: ['rise', 'is rise', 'rised'], es: 'El sol sale por el oriente.' },
     ],
   },
   {
@@ -75,6 +79,10 @@ const TENSES = [
       { s: "We ___ dinner with Ana tomorrow. It's all arranged.", h: 'have', a: 'are having', o: ['have', 'had', 'have had'], es: 'Mañana cenamos con Ana: ya está todo organizado.' },
       { s: 'Prices ___ every month at the moment.', h: 'rise', a: 'are rising', o: ['rose', 'had risen', 'have rise'], es: 'En este momento los precios suben cada mes.' },
       { s: 'Why ___ at me like that? Stop it!', h: 'you / look', a: 'are you looking', o: ['do you looking', 'did you look', 'had you looked'], es: '¿Por qué me miras así? ¡Para ya!' },
+      { s: 'Listen! Someone ___ at the door.', h: 'knock', a: 'is knocking', o: ['knocks', 'knock', 'knocked'], es: '¡Escucha! Alguien está tocando la puerta.' },
+      { s: 'What ___ right now?', h: 'you / do', a: 'are you doing', o: ['do you do', 'did you do', 'you are doing'], es: '¿Qué estás haciendo ahora mismo?' },
+      { s: 'I ___ a lot this month because I have exams.', h: 'study', a: 'am studying', o: ['studying', 'studies', 'am study'], es: 'Este mes estoy estudiando mucho porque tengo exámenes.' },
+      { s: 'My parents ___ a new house at the moment.', h: 'build', a: 'are building', o: ['build', 'built', 'are build'], es: 'En este momento mis papás están construyendo una casa nueva.' },
     ],
   },
   {
@@ -106,6 +114,10 @@ const TENSES = [
       { s: 'She ___ her homework yet.', h: 'not / finish', a: "hasn't finished", o: ["doesn't finish", "isn't finishing", "hadn't finish"], es: 'Ella todavía no ha terminado sus deberes.' },
       { s: 'I ___ that film three times so far.', h: 'see', a: 'have seen', o: ['saw', 'see', 'had seen'], es: 'He visto esa película tres veces hasta ahora.' },
       { s: 'I ___ to Japan twice, and I want to go again.', h: 'be', a: 'have been', o: ['am', 'had been', 'have be'], es: 'He estado en Japón dos veces y quiero volver.' },
+      { s: 'I have never ___ to Europe.', h: 'be', a: 'been', o: ['was', 'be', 'being'], es: 'Nunca he estado en Europa.' },
+      { s: '___ you ever been to Peru?', a: 'Have', o: ['Did', 'Were', 'Has'], es: '¿Alguna vez has estado en Perú?' },
+      { s: 'She ___ here since 2019.', h: 'live', a: 'has lived', o: ['lives', 'is living', 'lived'], es: 'Vive aquí desde 2019.' },
+      { s: 'They ___ the new movie yet.', h: 'not / see', a: "haven't seen", o: ["don't see", "hasn't seen", "aren't seeing"], es: 'Todavía no han visto la película nueva.' },
     ],
   },
   {
@@ -132,6 +144,10 @@ const TENSES = [
       { s: "It ___ since 6 am and it still hasn't stopped.", h: 'rain', a: 'has been raining', o: ['rains', 'rained', 'is raining'], es: 'Lleva lloviendo desde las 6 am y todavía no ha parado.' },
       { s: 'She ___ at this company since she graduated.', h: 'work', a: 'has been working', o: ['works', 'is working', 'worked'], es: 'Ella trabaja en esta empresa desde que se graduó.' },
       { s: "I'm exhausted because I ___ all day.", h: 'clean', a: 'have been cleaning', o: ['clean', 'am cleaning', 'will clean'], es: 'Estoy agotado porque he estado limpiando todo el día.' },
+      { s: 'I ___ for you for an hour!', h: 'wait', a: 'have been waiting', o: ['am waiting', 'waited', 'have waiting'], es: '¡Llevo una hora esperándote!' },
+      { s: 'How long ___ here?', h: 'you / work', a: 'have you been working', o: ['are you working', 'do you work', 'did you work'], es: '¿Cuánto tiempo llevas trabajando aquí?' },
+      { s: 'My neighbors ___ loud music all afternoon.', h: 'play', a: 'have been playing', o: ['are playing since', 'play', 'played since'], es: 'Mis vecinos han estado poniendo música a todo volumen toda la tarde.' },
+      { s: "We ___ about this problem for weeks, and we still don't agree.", h: 'talk', a: 'have been talking', o: ['are talking', 'talk', 'talked since'], es: 'Llevamos semanas hablando de este problema y todavía no nos ponemos de acuerdo.' },
     ],
   },
   {
@@ -162,6 +178,10 @@ const TENSES = [
       { s: 'Where ___ on holiday last summer?', h: 'you / go', a: 'did you go', o: ['have you gone', 'do you go', 'did you went'], es: '¿A dónde fuiste de vacaciones el verano pasado?' },
       { s: 'Shakespeare ___ Hamlet around 1600.', h: 'write', a: 'wrote', o: ['has written', 'writes', 'writed'], es: 'Shakespeare escribió Hamlet hacia 1600.' },
       { s: 'When I was a child, I ___ in the countryside.', h: 'live', a: 'lived', o: ['have lived', 'live', 'am living'], es: 'Cuando era niño, vivía en el campo.' },
+      { s: 'We ___ to Cartagena last summer.', h: 'go', a: 'went', o: ['goed', 'have gone', 'go'], es: 'Fuimos a Cartagena el verano pasado.' },
+      { s: '___ you see the game last night?', a: 'Did', o: ['Do', 'Have', 'Were'], es: '¿Viste el partido anoche?' },
+      { s: 'I ___ my keys yesterday.', h: 'lose', a: 'lost', o: ['losed', 'have lost', 'lose'], es: 'Ayer perdí las llaves.' },
+      { s: 'She ___ the email because she was busy.', h: 'not / read', a: "didn't read", o: ["didn't readed", "doesn't read", 'not read'], es: 'No leyó el correo porque estaba ocupada.' },
     ],
   },
   {
@@ -193,6 +213,10 @@ const TENSES = [
       { s: 'The sun ___ and the birds were singing.', h: 'shine', a: 'was shining', o: ['shines', 'has shone', 'is shining'], es: 'Brillaba el sol y los pájaros cantaban.' },
       { s: "I called you at 8 last night, but you didn't answer. What ___?", h: 'you / do', a: 'were you doing', o: ['do you do', 'have you done', 'will you do'], es: 'Te llamé anoche a las 8 pero no contestaste. ¿Qué estabas haciendo?' },
       { s: 'They ___ when the teacher came in.', h: 'not / listen', a: "weren't listening", o: ["don't listen", "aren't listening", "haven't listened"], es: 'No estaban escuchando cuando entró el profesor.' },
+      { s: 'When you called, I ___ my car.', h: 'wash', a: 'was washing', o: ['washed', 'have washed', 'am washing'], es: 'Cuando llamaste, estaba lavando el carro.' },
+      { s: 'What ___ when the accident happened?', h: 'you / do', a: 'were you doing', o: ['did you do', 'do you do', 'have you done'], es: '¿Qué estabas haciendo cuando pasó el accidente?' },
+      { s: 'They ___ soccer when it started to rain.', h: 'play', a: 'were playing', o: ['played', 'are playing', 'have played'], es: 'Estaban jugando fútbol cuando empezó a llover.' },
+      { s: 'While I ___ home, I saw an accident.', h: 'walk', a: 'was walking', o: ['am walking', 'have walked', 'walks'], es: 'Mientras caminaba a casa, vi un accidente.' },
     ],
   },
   {
@@ -223,6 +247,10 @@ const TENSES = [
       { s: 'By the time the police came, the thief ___.', h: 'escape', a: 'had escaped', o: ['has escaped', 'escapes', 'is escaping'], es: 'Para cuando llegó la policía, el ladrón ya había escapado.' },
       { s: "He couldn't pay because he ___ his wallet at home.", h: 'leave', a: 'had left', o: ['has left', 'leaves', 'is leaving'], es: 'No pudo pagar porque había dejado la billetera en casa.' },
       { s: 'After she ___ dinner, she went to bed.', h: 'finish', a: 'had finished', o: ['has finished', 'finishes', 'is finishing'], es: 'Después de terminar de cenar, se fue a la cama.' },
+      { s: 'By the time I woke up, everyone ___ breakfast.', h: 'already / eat', a: 'had already eaten', o: ['has already eaten', 'already eats', 'was already eating'], es: 'Cuando me desperté, todos ya habían desayunado.' },
+      { s: 'She was sad because she ___ her job.', h: 'lose', a: 'had lost', o: ['has lost', 'loses', 'was losing'], es: 'Estaba triste porque había perdido su trabajo.' },
+      { s: 'I ___ him before the party.', h: 'never / meet', a: 'had never met', o: ['have never met', 'never meet', 'was never meeting'], es: 'Nunca lo había visto antes de la fiesta.' },
+      { s: '___ you finished when the boss arrived?', a: 'Had', o: ['Have', 'Did', 'Were'], es: '¿Ya habías terminado cuando llegó el jefe?' },
     ],
   },
   {
@@ -248,6 +276,10 @@ const TENSES = [
       { s: 'He was out of breath because he ___.', h: 'run', a: 'had been running', o: ['has been running', 'runs', 'will run'], es: 'Le faltaba el aliento porque había estado corriendo.' },
       { s: 'How long ___ English before you took the IELTS?', h: 'you / study', a: 'had you been studying', o: ['have you been studying', 'are you studying', 'do you study'], es: '¿Cuánto tiempo llevabas estudiando inglés antes de presentar el IELTS?' },
       { s: 'She ___ well for weeks, so she finally saw a doctor.', h: 'not / feel', a: "hadn't been feeling", o: ["hasn't been feeling", "isn't feeling", "doesn't feel"], es: 'Llevaba semanas sin sentirse bien, así que por fin fue al médico.' },
+      { s: 'We ___ for three hours when we finally saw the sea.', h: 'drive', a: 'had been driving', o: ['have been driving', 'were drove', 'drove since'], es: 'Llevábamos tres horas manejando cuando por fin vimos el mar.' },
+      { s: 'She was exhausted because she ___ all night.', h: 'study', a: 'had been studying', o: ['has been studying', 'studies', 'was study'], es: 'Estaba agotada porque había estado estudiando toda la noche.' },
+      { s: 'How long ___ there before you moved?', h: 'you / live', a: 'had you been living', o: ['have you been living', 'do you live', 'are you living'], es: '¿Cuánto tiempo llevabas viviendo allí antes de mudarte?' },
+      { s: 'His eyes were red because he ___.', h: 'cry', a: 'had been crying', o: ['has been crying', 'cries', 'is crying'], es: 'Tenía los ojos rojos porque había estado llorando.' },
     ],
   },
   {
@@ -279,6 +311,10 @@ const TENSES = [
       { s: '___ you help me with these bags, please?', a: 'Will', o: ['Are', 'Have', 'Had'], es: '¿Me ayudas con estas bolsas, por favor?' },
       { s: 'In 2050, most cars ___ electric.', h: 'be', a: 'will be', o: ['were', 'have been', 'had been'], es: 'En 2050 la mayoría de los coches serán eléctricos.' },
       { s: "Don't worry, I ___ you tomorrow.", h: 'call', a: 'will call', o: ['called', 'have called', 'had called'], es: 'No te preocupes, te llamo mañana.' },
+      { s: 'I think it ___ tomorrow.', h: 'rain', a: 'will rain', o: ['rains', 'raining', 'is rain'], es: 'Creo que mañana va a llover.' },
+      { s: "I'm sure you ___ the exam.", h: 'pass', a: 'will pass', o: ['pass to', 'passing', 'are pass'], es: 'Estoy seguro de que vas a aprobar el examen.' },
+      { s: 'The phone is ringing. I ___ it.', h: 'answer', a: "'ll answer", o: ['answer', 'answered', 'have answered'], es: 'Está sonando el teléfono. Yo contesto.' },
+      { s: 'I ___ you a postcard from Paris.', h: 'send', a: "'ll send", o: ['send', 'sending', 'am send'], es: 'Te enviaré una postal desde París.' },
     ],
   },
   {
@@ -304,6 +340,10 @@ const TENSES = [
       { s: "We ___ the house this summer. We've already bought the paint.", h: 'paint', a: 'are going to paint', o: ['painted', 'paint', 'have painted'], es: 'Vamos a pintar la casa este verano. Ya compramos la pintura.' },
       { s: "She ___ to the party tonight. She told me she's too busy.", h: 'not / come', a: "isn't going to come", o: ["didn't come", "doesn't come", "hasn't come"], es: 'No va a venir a la fiesta esta noche. Me dijo que está muy ocupada.' },
       { s: "You've just won the lottery! What ___ with all that money?", h: 'you / do', a: 'are you going to do', o: ['did you do', 'do you do', 'had you done'], es: '¡Te acabas de ganar la lotería! ¿Qué vas a hacer con todo ese dinero?' },
+      { s: "He ___ fall! He's too close to the edge.", a: 'is going to', o: ['will to', 'goes to', 'going to'], es: '¡Se va a caer! Está demasiado cerca del borde.' },
+      { s: "We ___ visit our grandparents this weekend. We've already planned it.", a: 'are going to', o: ['will to', 'go to', 'going'], es: 'Este fin de semana vamos a visitar a nuestros abuelos. Ya lo planeamos.' },
+      { s: 'What ___ study at university?', h: 'you', a: 'are you going to', o: ['do you go to', 'you are going to', 'will you to'], es: '¿Qué vas a estudiar en la universidad?' },
+      { s: "She ___ buy a new car. She's saving money.", a: 'is going to', o: ['goes to', 'will to', 'is go to'], es: 'Se va a comprar un carro nuevo. Está ahorrando.' },
     ],
   },
   {
@@ -330,6 +370,10 @@ const TENSES = [
       { s: "___ the car tonight? I'd like to borrow it.", h: 'you / use', a: 'Will you be using', o: ['Did you use', 'Have you used', 'Had you used'], es: '¿Vas a usar el carro esta noche? Me gustaría que me lo prestaras.' },
       { s: 'According to some scientists, in fifty years we ___ on Mars.', h: 'live', a: 'will be living', o: ['lived', 'have lived', 'had lived'], es: 'Según algunos científicos, dentro de cincuenta años estaremos viviendo en Marte.' },
       { s: "I can't meet you at 3 — I ___.", h: 'work', a: 'will be working', o: ['worked', 'have worked', 'had worked'], es: 'No puedo verte a las 3: estaré trabajando.' },
+      { s: 'This time next week, we ___ in the Caribbean.', h: 'swim', a: 'will be swimming', o: ['will swim to', 'swim', 'are swum'], es: 'La próxima semana a esta hora estaremos nadando en el Caribe.' },
+      { s: "At noon tomorrow, she ___ in a meeting, so she can't answer.", h: 'sit', a: 'will be sitting', o: ['sits', 'has sat', 'sat'], es: 'Mañana al mediodía estará en una reunión, así que no podrá contestar.' },
+      { s: 'I ___ for you at the entrance at 7.', h: 'wait', a: 'will be waiting', o: ['wait', 'waited', 'am wait'], es: 'A las 7 te estaré esperando en la entrada.' },
+      { s: "Don't call after 10. I ___.", h: 'sleep', a: 'will be sleeping', o: ['sleep', 'slept', 'am sleep'], es: 'No llames después de las 10. Estaré durmiendo.' },
     ],
   },
   {
@@ -356,6 +400,10 @@ const TENSES = [
       { s: 'Next month we ___ married for 25 years.', h: 'be', a: 'will have been', o: ['were', 'have been', 'had been'], es: 'El mes que viene cumpliremos 25 años de casados.' },
       { s: "Don't worry, the paint ___ by tomorrow.", h: 'dry', a: 'will have dried', o: ['dried', 'has dried', 'had dried'], es: 'No te preocupes, la pintura se habrá secado para mañana.' },
       { s: 'By the end of the course, you ___ more than 2,000 words.', h: 'learn', a: 'will have learned', o: ['learned', 'have learned', 'had learned'], es: 'Al final del curso habrás aprendido más de 2.000 palabras.' },
+      { s: 'By 2030, I ___ from university.', h: 'graduate', a: 'will have graduated', o: ['graduate', 'have graduated', 'graduated'], es: 'Para 2030 ya me habré graduado de la universidad.' },
+      { s: 'By the end of the year, they ___ the new bridge.', h: 'build', a: 'will have built', o: ['build', 'have built', 'built'], es: 'Para finales de año habrán construido el puente nuevo.' },
+      { s: 'By next month, I ___ all the Harry Potter books.', h: 'read', a: 'will have read', o: ['read', 'have read', 'am reading'], es: 'Para el próximo mes habré leído todos los libros de Harry Potter.' },
+      { s: '___ you have finished by 6 p.m.?', a: 'Will', o: ['Do', 'Are', 'Have'], es: '¿Habrás terminado para las 6 p. m.?' },
     ],
   },
   {
@@ -382,6 +430,10 @@ const TENSES = [
       { s: 'When you get home, I ___ for three hours.', h: 'cook', a: 'will have been cooking', o: ['have been cooking', 'had been cooking', 'cook'], es: 'Cuando llegues a casa, llevaré tres horas cocinando.' },
       { s: 'By the end of this month, we ___ this project for a year.', h: 'develop', a: 'will have been developing', o: ['have been developing', 'had been developing', 'develop'], es: 'A finales de este mes llevaremos un año desarrollando este proyecto.' },
       { s: 'How long ___ English by the time you take the exam?', h: 'you / study', a: 'will you have been studying', o: ['have you been studying', 'had you been studying', 'do you study'], es: '¿Cuánto tiempo llevarás estudiando inglés cuando presentes el examen?' },
+      { s: 'By the time the movie ends, we ___ for six hours.', h: 'watch', a: 'will have been watching', o: ['will watch', 'watch', 'have been watching'], es: 'Para cuando termine la película, llevaremos seis horas viendo.' },
+      { s: 'In May, they ___ together for five years.', h: 'live', a: 'will have been living', o: ['will live', 'have lived', 'are living'], es: 'En mayo cumplirán cinco años viviendo juntos.' },
+      { s: 'By the time he retires, he ___ for 40 years.', h: 'teach', a: 'will have been teaching', o: ['will teach', 'has taught', 'teaches'], es: 'Para cuando se jubile, llevará 40 años enseñando.' },
+      { s: 'By 10 p.m., the kids ___ video games for five hours.', h: 'play', a: 'will have been playing', o: ['will play', 'play', 'have been playing'], es: 'A las 10 p. m., los niños llevarán cinco horas jugando videojuegos.' },
     ],
   },
 ];
@@ -435,6 +487,11 @@ const GRAMMAR = [
       { s: "She's ___ engineer.", a: 'an', o: ['a', 'the', '— (sin artículo)'], es: 'Es ingeniera.' },
       { s: '___ is important for your health.', a: 'Exercise', o: ['The exercise', 'An exercise', 'A exercise'], es: 'El ejercicio es importante para la salud.' },
       { s: 'Can you close ___ door, please?', a: 'the', o: ['a', 'an', '— (sin artículo)'], es: '¿Puedes cerrar la puerta, por favor?' },
+      { s: "She's ___ honest person.", a: 'an', o: ['a', 'the', '— (sin artículo)'], es: 'Es una persona honesta.' },
+      { s: '___ sun rises in the east.', a: 'The', o: ['A', 'An', '— (sin artículo)'], es: 'El sol sale por el oriente.' },
+      { s: 'I love ___ music.', h: 'en general', a: '— (sin artículo)', o: ['the', 'a', 'an'], es: 'Me encanta la música.' },
+      { s: 'I bought a shirt and a jacket. ___ shirt was cheap.', a: 'The', o: ['A', 'An', '— (sin artículo)'], es: 'Compré una camisa y una chaqueta. La camisa fue barata.' },
+      { s: 'She goes to work by ___ bus.', a: '— (sin artículo)', o: ['the', 'a', 'an'], es: 'Va al trabajo en bus.' },
     ],
   },
   {
@@ -449,6 +506,12 @@ const GRAMMAR = [
     ex: [
       { s: 'There ___ a lot of people at the concert last night.', a: 'were', o: ['was', 'is', 'had'], es: 'Había mucha gente en el concierto anoche.' },
       { s: 'There ___ some milk in the fridge.', a: 'is', o: ['are', 'have', 'has'], es: 'Hay algo de leche en la nevera.' },
+      { s: '___ any good restaurants near your hotel?', a: 'Are there', o: ['Is there', 'There are', 'Have there'], es: '¿Hay buenos restaurantes cerca de tu hotel?' },
+      { s: 'There ___ a lot of traffic this morning.', a: 'was', o: ['were', 'had', 'have'], es: 'Había mucho tráfico esta mañana.' },
+      { s: 'There ___ any milk left. Can you buy some?', a: "isn't", o: ["aren't", "haven't", "doesn't"], es: 'No queda leche. ¿Puedes comprar?' },
+      { s: 'How many students ___ in your class?', a: 'are there', o: ['there are', 'is there', 'have there'], es: '¿Cuántos estudiantes hay en tu clase?' },
+      { s: 'There ___ a concert in the park tomorrow.', a: 'will be', o: ['will have', 'is going', 'has'], es: 'Mañana habrá un concierto en el parque.' },
+      { s: 'There ___ many people at the party last night.', a: 'were', o: ['was', 'had', 'are'], es: 'Anoche había mucha gente en la fiesta.' },
     ],
   },
   {
@@ -463,6 +526,12 @@ const GRAMMAR = [
     ex: [
       { s: 'This is ___ bike.', a: "my brother's", o: ['the brother of me', 'my brothers', 'of my brother'], es: 'Esta es la bici de mi hermano.' },
       { s: 'The ___ toys are everywhere.', a: "children's", o: ["childrens'", 'children', "childs'"], es: 'Los juguetes de los niños están por todas partes.' },
+      { s: 'This is ___ office.', h: 'the office of my boss', a: "my boss's", o: ['my boss', 'my boss of', 'of my boss'], es: 'Esta es la oficina de mi jefe.' },
+      { s: 'My ___ names are Ana and Luis.', h: 'the names of my parents', a: "parents'", o: ["parent's", 'parents', "parents's"], es: 'Mis papás se llaman Ana y Luis.' },
+      { s: 'We had dinner at ___ house.', h: 'the house of Carlos', a: "Carlos's", o: ['Carlos', 'of Carlos', "Carlos'es"], es: 'Cenamos en la casa de Carlos.' },
+      { s: 'The ___ section is on the second floor.', h: 'clothes for women', a: "women's", o: ["womens'", "woman's", 'womens'], es: 'La sección de mujeres está en el segundo piso.' },
+      { s: 'Where is ___?', h: 'the car of Pedro', a: "Pedro's car", o: ['the car Pedro', 'Pedros car', "car's Pedro"], es: '¿Dónde está el carro de Pedro?' },
+      { s: "I don't remember the end ___ the movie.", a: 'of', o: ["'s", 'from', 'by'], es: 'No me acuerdo del final de la película.' },
     ],
   },
   {
@@ -482,6 +551,12 @@ const GRAMMAR = [
     ex: [
       { s: 'When I was five, I ___ already read.', a: 'could', o: ['can', 'can to', 'could to'], es: 'Cuando tenía cinco años ya sabía leer.' },
       { s: '___ you pass me the salt, please?', a: 'Could', o: ['Must', 'Should', 'Ought'], es: '¿Me podrías pasar la sal, por favor?' },
+      { s: '___ you speak French?', a: 'Can', o: ['Do can', 'Are', 'Does'], es: '¿Sabes hablar francés?' },
+      { s: 'I ___ swim when I was three.', a: 'could', o: ['can', 'could to', 'can to'], es: 'Sabía nadar cuando tenía tres años.' },
+      { s: 'She can ___ the guitar very well.', a: 'play', o: ['plays', 'to play', 'playing'], es: 'Ella toca muy bien la guitarra.' },
+      { s: 'Sorry, I ___ come to your party on Saturday.', a: "can't", o: ["don't can", 'not can', "can't to"], es: 'Lo siento, no puedo ir a tu fiesta el sábado.' },
+      { s: '___ I use your phone, please?', a: 'Can', o: ['Do', 'Am', 'Must'], es: '¿Puedo usar tu teléfono, por favor?' },
+      { s: 'In the future, people will ___ travel to Mars.', a: 'be able to', o: ['can', 'could', 'able'], es: 'En el futuro, la gente podrá viajar a Marte.' },
     ],
   },
   // ── A2 · Básico ──
@@ -498,6 +573,11 @@ const GRAMMAR = [
       { s: 'How ___ sugar do you take in your coffee?', a: 'much', o: ['many', 'few', 'a few'], es: '¿Cuánta azúcar le pones al café?' },
       { s: 'Can you give me some ___?', a: 'advice', o: ['advices', 'an advice', 'a advice'], es: '¿Me puedes dar algún consejo?' },
       { s: 'There were only ___ people at the meeting.', a: 'a few', o: ['a little', 'much', 'little'], es: 'Solo había unas pocas personas en la reunión.' },
+      { s: 'How ___ people came to the party?', a: 'many', o: ['much', 'a lot', 'few of'], es: '¿Cuántas personas vinieron a la fiesta?' },
+      { s: 'I need some ___ about the course.', a: 'information', o: ['informations', 'an information', 'a information'], es: 'Necesito información sobre el curso.' },
+      { s: "There's ___ milk in the fridge, but we need to buy more.", a: 'a little', o: ['a few', 'many', 'few'], es: 'Hay un poco de leche en la nevera, pero hay que comprar más.' },
+      { s: 'Can I have ___ water, please?', a: 'some', o: ['a', 'an', 'many'], es: '¿Me das un poco de agua, por favor?' },
+      { s: "We don't have ___ time.", a: 'much', o: ['many', 'a few', 'few'], es: 'No tenemos mucho tiempo.' },
     ],
   },
   {
@@ -514,6 +594,11 @@ const GRAMMAR = [
       { s: 'This exam was ___ than the last one.', a: 'easier', o: ['more easy', 'easyer', 'easiest'], es: 'Este examen fue más fácil que el anterior.' },
       { s: 'Her new job is ___ than her old one.', a: 'better', o: ['gooder', 'more good', 'best'], es: 'Su nuevo trabajo es mejor que el anterior.' },
       { s: 'Madrid is ___ than my town.', a: 'more expensive', o: ['expensiver', 'most expensive', 'expensive'], es: 'Madrid es más cara que mi pueblo.' },
+      { s: 'My brother is ___ than me.', a: 'older', o: ['more old', 'oldest', 'elder than'], es: 'Mi hermano es mayor que yo.' },
+      { s: 'This chair is ___ comfortable than that one.', a: 'more', o: ['most', 'very', 'the more'], es: 'Esta silla es más cómoda que esa.' },
+      { s: 'Today is ___ than yesterday.', a: 'hotter', o: ['hoter', 'more hot', 'hottest'], es: 'Hoy hace más calor que ayer.' },
+      { s: 'The second exam was ___ than the first one.', a: 'worse', o: ['badder', 'more bad', 'worst'], es: 'El segundo examen fue peor que el primero.' },
+      { s: 'Cartagena is ___ from Bogotá than Medellín.', a: 'farther', o: ['more far', 'farer', 'farthest'], es: 'Cartagena está más lejos de Bogotá que Medellín.' },
     ],
   },
   {
@@ -528,6 +613,12 @@ const GRAMMAR = [
     ex: [
       { s: "It's the ___ film I've ever seen.", a: 'worst', o: ['baddest', 'most bad', 'worse'], es: 'Es la peor película que he visto.' },
       { s: 'She is the ___ student in the class.', a: 'most intelligent', o: ['intelligentest', 'more intelligent', 'much intelligent'], es: 'Es la estudiante más inteligente de la clase.' },
+      { s: 'Everest is the ___ mountain in the world.', a: 'highest', o: ['higher', 'most high', 'highiest'], es: 'El Everest es la montaña más alta del mundo.' },
+      { s: 'This is the ___ day of my life!', a: 'happiest', o: ['happyest', 'happier', 'more happy'], es: '¡Este es el día más feliz de mi vida!' },
+      { s: "It's the ___ restaurant in town.", a: 'most expensive', o: ['expensivest', 'more expensive', 'most expensivest'], es: 'Es el restaurante más caro del pueblo.' },
+      { s: 'She is the best student ___ the class.', a: 'in', o: ['than', 'at', 'from'], es: 'Es la mejor estudiante de la clase.' },
+      { s: 'Who is the ___ person in your family?', a: 'funniest', o: ['funnier', 'funnyest', 'more funny'], es: '¿Quién es la persona más chistosa de tu familia?' },
+      { s: 'Russia is the ___ country in the world.', a: 'largest', o: ['most large', 'larger', 'largiest'], es: 'Rusia es el país más grande del mundo.' },
     ],
   },
   {
@@ -542,6 +633,12 @@ const GRAMMAR = [
     ex: [
       { s: 'This phone is as cheap ___ that one.', a: 'as', o: ['than', 'like', 'that'], es: 'Este teléfono es tan barato como ese.' },
       { s: "Today isn't ___ hot as yesterday.", a: 'as', o: ['more', 'than', 'such'], es: 'Hoy no hace tanto calor como ayer.' },
+      { s: 'My brother is ___ tall as my father.', a: 'as', o: ['so', 'than', 'more'], es: 'Mi hermano es tan alto como mi papá.' },
+      { s: "This test wasn't as difficult ___ I expected.", a: 'as', o: ['than', 'that', 'like'], es: 'Este examen no fue tan difícil como esperaba.' },
+      { s: "Bogotá isn't ___ hot as Cartagena.", a: 'as', o: ['more', 'than', 'less'], es: 'En Bogotá no hace tanto calor como en Cartagena.' },
+      { s: 'He runs as ___ as a professional athlete.', a: 'fast', o: ['faster', 'fastest', 'more fast'], es: 'Corre tan rápido como un atleta profesional.' },
+      { s: "I don't have as ___ money as you.", a: 'much', o: ['many', 'more', 'lot'], es: 'No tengo tanto dinero como tú.' },
+      { s: "There aren't as ___ people here as yesterday.", a: 'many', o: ['much', 'more', 'lot of'], es: 'Hoy no hay tanta gente como ayer.' },
     ],
   },
   {
@@ -557,6 +654,11 @@ const GRAMMAR = [
       { s: "I can't buy it. It's ___.", a: 'too expensive', o: ['expensive enough', 'enough expensive', 'too much expensive'], es: 'No lo puedo comprar. Es demasiado caro.' },
       { s: "She isn't ___ to reach the shelf.", a: 'tall enough', o: ['enough tall', 'too tall', 'tall too'], es: 'No es lo bastante alta para alcanzar el estante.' },
       { s: "We don't have ___ for everyone.", a: 'enough chairs', o: ['chairs enough', 'too chairs', 'enough of chairs'], es: 'No tenemos suficientes sillas para todos.' },
+      { s: "It's ___ cold to go swimming.", a: 'too', o: ['enough', 'very much', 'so'], es: 'Hace demasiado frío para ir a nadar.' },
+      { s: "He's not ___ to vote.", a: 'old enough', o: ['enough old', 'too old', 'old too'], es: 'No tiene edad suficiente para votar.' },
+      { s: "I didn't have ___ to finish the test.", a: 'enough time', o: ['time enough', 'too time', 'enough of time'], es: 'No tuve tiempo suficiente para terminar el examen.' },
+      { s: "This coffee is ___ sweet. I can't drink it.", a: 'too', o: ['enough', 'too much', 'very enough'], es: 'Este café está demasiado dulce. No me lo puedo tomar.' },
+      { s: "You're speaking ___ fast. Can you slow down?", a: 'too', o: ['enough', 'so much', 'too much'], es: 'Estás hablando demasiado rápido. ¿Puedes ir más despacio?' },
     ],
   },
   {
@@ -576,6 +678,11 @@ const GRAMMAR = [
       { s: "You ___ smoke in the hospital. It's forbidden.", a: "mustn't", o: ["don't have to", 'have to', "needn't to"], es: 'No debes fumar en el hospital. Está prohibido.' },
       { s: 'Tomorrow is Sunday, so I ___ get up early.', a: "don't have to", o: ["mustn't", 'must', "haven't"], es: 'Mañana es domingo, así que no tengo que madrugar.' },
       { s: 'Yesterday I ___ work late.', a: 'had to', o: ['must', 'musted', 'have to'], es: 'Ayer tuve que trabajar hasta tarde.' },
+      { s: 'In Colombia, you ___ be 18 to vote.', a: 'have to', o: ['must to', 'has to', "don't have to"], es: 'En Colombia hay que tener 18 años para votar.' },
+      { s: 'She ___ wear a uniform at work.', a: 'has to', o: ['have to', 'must to', 'musts'], es: 'Ella tiene que usar uniforme en el trabajo.' },
+      { s: "You ___ touch that. It's very hot!", a: "mustn't", o: ["don't have to", "haven't to", 'not must'], es: '¡No toques eso! Está muy caliente.' },
+      { s: 'Do you ___ work on Saturdays?', a: 'have to', o: ['must', 'has to', 'must to'], es: '¿Tienes que trabajar los sábados?' },
+      { s: 'We ___ hurry. We have plenty of time.', a: "don't have to", o: ["mustn't", 'have to', 'must'], es: 'No hace falta apurarnos. Tenemos tiempo de sobra.' },
     ],
   },
   {
@@ -590,6 +697,12 @@ const GRAMMAR = [
     ex: [
       { s: 'You look tired. You ___ go to bed early.', a: 'should', o: ['must to', 'should to', 'ought'], es: 'Pareces cansado. Deberías acostarte temprano.' },
       { s: "You ___ drive so fast. It's dangerous.", a: "shouldn't", o: ["don't should", "mustn't to", 'not should'], es: 'No deberías conducir tan rápido. Es peligroso.' },
+      { s: 'You have a fever. You ___ see a doctor.', a: 'should', o: ['should to', 'shoulds', 'ought'], es: 'Tienes fiebre. Deberías ir al médico.' },
+      { s: '___ I call her or send her a message?', a: 'Should', o: ['Do should', 'Shall to', 'Must to'], es: '¿Debería llamarla o mandarle un mensaje?' },
+      { s: "You shouldn't ___ so much coffee at night.", a: 'drink', o: ['drinks', 'to drink', 'drinking'], es: 'No deberías tomar tanto café por la noche.' },
+      { s: 'He ___ study more if he wants to pass the exam.', a: 'should', o: ['should to', 'shoulds', 'musts'], es: 'Debería estudiar más si quiere aprobar el examen.' },
+      { s: 'I think you ___ apologize to her. You were rude.', a: 'should', o: ["shouldn't", "don't should", 'would to'], es: 'Creo que deberías pedirle disculpas. Fuiste grosero.' },
+      { s: 'What do you think I ___ wear to the interview?', a: 'should', o: ['should to', 'must to', 'do'], es: '¿Qué crees que debería ponerme para la entrevista?' },
     ],
   },
   {
@@ -604,6 +717,12 @@ const GRAMMAR = [
     ex: [
       { s: 'Take an umbrella. It ___ rain.', a: 'might', o: ['must', 'should to', 'can to'], es: 'Lleva paraguas. Puede que llueva.' },
       { s: '___ I come in? (formal)', a: 'May', o: ['Must', 'Do', 'Would'], es: '¿Puedo pasar? (formal)' },
+      { s: "I'm not sure, but I ___ go to the beach this weekend.", a: 'might', o: ['must', 'should to', 'will to'], es: 'No estoy seguro, pero puede que vaya a la playa este fin de semana.' },
+      { s: 'Take a jacket. It ___ get cold later.', a: 'may', o: ['mays', 'may to', 'must to'], es: 'Lleva una chaqueta. Puede que haga frío más tarde.' },
+      { s: "He might ___ late. There's a lot of traffic.", a: 'be', o: ['is', 'to be', 'being'], es: 'Puede que llegue tarde. Hay mucho tráfico.' },
+      { s: 'I ___ not have time to finish it today.', a: 'may', o: ["can't to", "mustn't", "don't"], es: 'Puede que hoy no tenga tiempo de terminarlo.' },
+      { s: "We ___ move to Medellín next year, but we haven't decided.", a: 'might', o: ['must', 'have to', 'should to'], es: 'Puede que nos mudemos a Medellín el próximo año, pero no lo hemos decidido.' },
+      { s: 'It might ___ tomorrow, so bring an umbrella.', a: 'rain', o: ['rains', 'to rain', 'raining'], es: 'Puede que llueva mañana, así que trae un paraguas.' },
     ],
   },
   {
@@ -624,6 +743,10 @@ const GRAMMAR = [
       { s: 'He ___ smoke, but he quit last year.', a: 'used to', o: ['is used to', 'uses to', 'was use to'], es: 'Antes fumaba, pero lo dejó el año pasado.' },
       { s: 'When I was young, I ___ a bicycle.', a: 'used to have', o: ['would have', 'was having', 'use to have'], es: 'Cuando era niño, tenía una bicicleta.' },
       { s: '___ you use to play soccer at school?', a: 'Did', o: ['Would', 'Were', 'Used'], es: '¿Jugabas fútbol en el colegio?' },
+      { s: 'I ___ like vegetables, but now I love them.', a: "didn't use to", o: ["wasn't used to", "don't use to", 'not used to'], es: 'Antes no me gustaban las verduras, pero ahora me encantan.' },
+      { s: 'Where ___ live when you were a child?', a: 'did you use to', o: ['did you used to', 'used you to', 'were you used to'], es: '¿Dónde vivías cuando eras niño?' },
+      { s: 'My grandfather ___ smoke, but he quit 20 years ago.', a: 'used to', o: ['is used to', 'use to', 'was used to'], es: 'Mi abuelo fumaba, pero lo dejó hace 20 años.' },
+      { s: "There ___ a cinema here, but now it's a supermarket.", a: 'used to be', o: ['use to be', 'was used to be', 'used to being'], es: 'Antes aquí había un cine, pero ahora es un supermercado.' },
     ],
   },
   {
@@ -641,6 +764,10 @@ const GRAMMAR = [
       { s: "I can't afford ___ on holiday this year.", a: 'to go', o: ['going', 'go', 'gone'], es: 'No me puedo permitir irme de vacaciones este año.' },
       { s: 'He volunteered ___ at the hospital fund-raiser.', a: 'to help', o: ['helping', 'help', 'helped'], es: 'Se ofreció a ayudar en la recaudación de fondos del hospital.' },
       { s: 'She pretended ___ asleep.', a: 'to be', o: ['being', 'be', 'been'], es: 'Fingió estar dormida.' },
+      { s: 'She promised ___ me back.', a: 'to call', o: ['calling', 'call', 'called'], es: 'Prometió devolverme la llamada.' },
+      { s: "We're planning ___ a house next year.", a: 'to buy', o: ['buying', 'buy', 'bought'], es: 'Estamos planeando comprar una casa el próximo año.' },
+      { s: 'He refused ___ the question.', a: 'to answer', o: ['answering', 'answer', 'answered'], es: 'Se negó a responder la pregunta.' },
+      { s: 'I hope ___ you soon.', a: 'to see', o: ['seeing', 'see', 'seen'], es: 'Espero verte pronto.' },
     ],
   },
   {
@@ -659,6 +786,8 @@ const GRAMMAR = [
       { s: 'She suggested ___ to the beach.', a: 'going', o: ['to go', 'go', 'went'], es: 'Sugirió ir a la playa.' },
       { s: "I don't mind ___ up my time to help other people.", a: 'giving', o: ['to give', 'give', 'given'], es: 'No me molesta dedicar mi tiempo a ayudar a otras personas.' },
       { s: 'Laura always denies ___ wild and crazy.', a: 'being', o: ['to be', 'be', 'been'], es: 'Laura siempre niega ser alocada.' },
+      { s: 'I enjoy ___ to music while I cook.', a: 'listening', o: ['to listen', 'listen', 'listened'], es: 'Disfruto escuchar música mientras cocino.' },
+      { s: 'She keeps ___ the same mistake.', a: 'making', o: ['to make', 'make', 'made'], es: 'Sigue cometiendo el mismo error.' },
     ],
   },
   {
@@ -677,6 +806,11 @@ const GRAMMAR = [
       { s: "It's important ___ enough water.", a: 'to drink', o: ['drinking', 'drink', 'drank'], es: 'Es importante beber suficiente agua.' },
       { s: 'I was surprised ___ him there.', a: 'to see', o: ['seeing', 'see', 'saw'], es: 'Me sorprendió verlo allí.' },
       { s: "It's difficult ___ her to talk about her feelings.", a: 'for', o: ['to', 'of', 'that'], es: 'Le cuesta hablar de sus sentimientos.' },
+      { s: "It's easy ___ lost in this city.", a: 'to get', o: ['getting', 'get', 'got'], es: 'Es fácil perderse en esta ciudad.' },
+      { s: "I'm glad ___ that you're feeling better.", a: 'to hear', o: ['hearing', 'hear', 'heard'], es: 'Me alegra saber que te sientes mejor.' },
+      { s: 'This box is too heavy ___.', a: 'to carry', o: ['carrying', 'for carry', 'carry'], es: 'Esta caja es demasiado pesada para cargarla.' },
+      { s: 'It was kind of you ___ me.', a: 'to help', o: ['helping', 'help', 'for helping'], es: 'Fue muy amable de tu parte ayudarme.' },
+      { s: 'Is it safe ___ the water here?', a: 'to drink', o: ['drinking', 'drink', 'for drink'], es: '¿Es seguro tomar el agua aquí?' },
     ],
   },
   {
@@ -691,6 +825,12 @@ const GRAMMAR = [
     ex: [
       { s: 'I ___ the dentist at 4 tomorrow. I have an appointment.', a: 'am seeing', o: ['see', 'saw', 'have seen'], es: 'Mañana a las 4 voy al dentista. Tengo cita.' },
       { s: 'What ___ next weekend?', h: 'you / do', a: 'are you doing', o: ['do you do', 'did you do', 'have you done'], es: '¿Qué vas a hacer el próximo fin de semana?' },
+      { s: "We ___ dinner with my parents this Sunday. It's all arranged.", a: 'are having', o: ['have had', 'had', 'have'], es: 'Este domingo cenamos con mis papás. Ya está todo organizado.' },
+      { s: '___ to the party tonight?', h: 'Carlos / come', a: 'Is Carlos coming', o: ['Does Carlos come', 'Did Carlos come', 'Has Carlos come'], es: '¿Carlos viene a la fiesta esta noche?' },
+      { s: "I can't meet you tomorrow. I ___ to Cali.", a: 'am flying', o: ['fly', 'flew', 'have flown'], es: 'No puedo verte mañana. Viajo a Cali.' },
+      { s: 'She ___ her new job next Monday.', a: 'is starting', o: ['started', 'has started', 'starts to'], es: 'Empieza su nuevo trabajo el próximo lunes.' },
+      { s: "They ___ married in June. They've already sent the invitations.", a: 'are getting', o: ['got', 'have got', 'were getting'], es: 'Se casan en junio. Ya enviaron las invitaciones.' },
+      { s: 'I ___ my grandparents this weekend. I bought the bus tickets yesterday.', a: 'am visiting', o: ['visit', 'visited', 'have visited'], es: 'Este fin de semana visito a mis abuelos. Ayer compré los pasajes del bus.' },
     ],
   },
   {
@@ -704,6 +844,12 @@ const GRAMMAR = [
     ex: [
       { s: 'If you mix red and white, you ___ pink.', a: 'get', o: ['would get', 'got', 'had got'], es: 'Si mezclas rojo y blanco, obtienes rosa.' },
       { s: 'If water ___ 0 °C, it freezes.', a: 'reaches', o: ['will reach', 'would reach', 'reached'], es: 'Si el agua llega a 0 °C, se congela.' },
+      { s: 'If you heat water to 100 °C, it ___.', a: 'boils', o: ['would boil', 'boiled', 'had boiled'], es: 'Si calientas agua a 100 °C, hierve.' },
+      { s: "If I don't sleep well, I ___ tired all day.", a: 'feel', o: ['felt', 'would feel', 'had felt'], es: 'Si no duermo bien, me siento cansado todo el día.' },
+      { s: 'Plants die if they ___ water.', a: "don't get", o: ["didn't get", "wouldn't get", "hadn't got"], es: 'Las plantas se mueren si no reciben agua.' },
+      { s: 'If you press this button, the machine ___ off.', a: 'turns', o: ['turned', 'would turn', 'had turned'], es: 'Si presionas este botón, la máquina se apaga.' },
+      { s: 'When it ___, the streets get flooded.', a: 'rains', o: ['rained', 'would rain', 'had rained'], es: 'Cuando llueve, las calles se inundan.' },
+      { s: 'If people ___ too much sugar, they gain weight.', a: 'eat', o: ['ate', 'would eat', 'had eaten'], es: 'Si la gente come demasiada azúcar, sube de peso.' },
     ],
   },
   // ── B1 · Intermedio ──
@@ -722,6 +868,10 @@ const GRAMMAR = [
       { s: "I'm looking forward to ___ you.", a: 'seeing', o: ['see', 'to see', 'saw'], es: 'Tengo muchas ganas de verte.' },
       { s: 'I insist on ___ my own decisions.', a: 'making', o: ['to make', 'make', 'made'], es: 'Insisto en tomar mis propias decisiones.' },
       { s: "I'm into ___ out to new restaurants.", a: 'going', o: ['go', 'to go', 'went'], es: 'Me encanta salir a restaurantes nuevos.' },
+      { s: 'Thank you for ___ me.', a: 'helping', o: ['help', 'to help', 'helped'], es: 'Gracias por ayudarme.' },
+      { s: "She's interested in ___ abroad.", a: 'studying', o: ['study', 'to study', 'studied'], es: 'Le interesa estudiar en el extranjero.' },
+      { s: 'He left without ___ goodbye.', a: 'saying', o: ['say', 'to say', 'said'], es: 'Se fue sin despedirse.' },
+      { s: "I'm tired of ___ the same food every day.", a: 'eating', o: ['eat', 'to eat', 'ate'], es: 'Estoy cansado de comer lo mismo todos los días.' },
     ],
   },
   {
@@ -736,6 +886,12 @@ const GRAMMAR = [
     ex: [
       { s: "I'll text you as soon as I ___ home.", a: 'get', o: ['will get', 'got', 'am going to get'], es: 'Te escribo en cuanto llegue a casa.' },
       { s: "We won't start until everyone ___.", a: 'arrives', o: ['will arrive', 'arrived', 'arriving'], es: 'No empezaremos hasta que llegue todo el mundo.' },
+      { s: "I'll call you when I ___ at the airport.", a: 'arrive', o: ['will arrive', 'arrived', 'am going to arrive'], es: 'Te llamo cuando llegue al aeropuerto.' },
+      { s: 'Before you ___, please turn off the lights.', a: 'leave', o: ['will leave', 'left', 'are leaving'], es: 'Antes de irte, por favor apaga las luces.' },
+      { s: "We'll start the meeting as soon as the boss ___.", a: 'gets here', o: ['will get here', 'got here', 'is getting here'], es: 'Empezaremos la reunión en cuanto llegue el jefe.' },
+      { s: "After I ___ university, I'll travel around Europe.", a: 'finish', o: ['will finish', 'finished', 'am finishing'], es: 'Cuando termine la universidad, viajaré por Europa.' },
+      { s: "She won't leave until you ___ her the truth.", a: 'tell', o: ['will tell', 'told', 'are telling'], es: 'No se irá hasta que le digas la verdad.' },
+      { s: "When I ___ older, I'll buy a house by the sea.", a: 'am', o: ['will be', 'was', 'am being'], es: 'Cuando sea mayor, me compraré una casa junto al mar.' },
     ],
   },
   {
@@ -752,6 +908,10 @@ const GRAMMAR = [
       { s: 'This is the restaurant ___ we had our first date.', a: 'where', o: ['which', 'who', 'whose'], es: 'Este es el restaurante donde tuvimos nuestra primera cita.' },
       { s: 'I have a friend ___ speaks five languages.', a: 'who', o: ['which', 'whose', 'where'], es: 'Tengo un amigo que habla cinco idiomas.' },
       { s: 'I like people ___ have a good sense of humor.', a: 'who', o: ['which', 'whose', 'where'], es: 'Me cae bien la gente que tiene buen sentido del humor.' },
+      { s: 'This is the book ___ I told you about.', a: 'that', o: ['who', 'where', 'whose'], es: 'Este es el libro del que te hablé.' },
+      { s: 'The town ___ I grew up is very small.', a: 'where', o: ['which', 'who', 'whose'], es: 'El pueblo donde crecí es muy pequeño.' },
+      { s: 'Do you remember the day ___ we met?', a: 'when', o: ['where', 'who', 'whose'], es: '¿Te acuerdas del día en que nos conocimos?' },
+      { s: 'She has a dog ___ is very friendly.', a: 'which', o: ['who', 'whose', 'where'], es: 'Tiene un perro que es muy amigable.' },
     ],
   },
   {
@@ -767,6 +927,11 @@ const GRAMMAR = [
       { s: 'If it ___ tomorrow, we will cancel the trip.', a: 'rains', o: ['will rain', 'rained', 'would rain'], es: 'Si llueve mañana, cancelaremos el viaje.' },
       { s: "If you don't hurry, you ___ the bus.", a: 'will miss', o: ['missed', 'would miss', 'had missed'], es: 'Si no te das prisa, perderás el autobús.' },
       { s: "___ you study, you won't pass.", a: 'Unless', o: ['If', 'When', 'As soon as'], es: 'A menos que estudies, no aprobarás.' },
+      { s: "If you ___ me, I'll help you.", a: 'call', o: ['will call', 'called', 'would call'], es: 'Si me llamas, te ayudo.' },
+      { s: 'If she studies hard, she ___ the exam.', a: 'will pass', o: ['would pass', 'passed', 'had passed'], es: 'Si estudia mucho, aprobará el examen.' },
+      { s: 'What will you do if they ___ you the job?', a: 'offer', o: ['will offer', 'offered', 'would offer'], es: '¿Qué harás si te ofrecen el trabajo?' },
+      { s: "If it's sunny tomorrow, we ___ to the beach.", a: "'ll go", o: ['went', 'would go', 'had gone'], es: 'Si mañana hace sol, iremos a la playa.' },
+      { s: "I won't go ___ you come with me.", a: 'unless', o: ['if', 'when', 'as soon as'], es: 'No iré a menos que vengas conmigo.' },
     ],
   },
   {
@@ -783,6 +948,11 @@ const GRAMMAR = [
       { s: 'If I ___ the lottery, I would buy a house.', a: 'won', o: ['win', 'will win', 'had won'], es: 'Si ganara la lotería, me compraría una casa.' },
       { s: 'If I were you, I ___ to the doctor.', a: 'would go', o: ['will go', 'go', 'went'], es: 'Yo que tú, iría al médico.' },
       { s: 'What would you do if you ___ invisible?', a: 'were', o: ['are', 'will be', 'been'], es: '¿Qué harías si fueras invisible?' },
+      { s: 'If I ___ more time, I would learn to play the piano.', a: 'had', o: ['have', 'will have', 'would have'], es: 'Si tuviera más tiempo, aprendería a tocar el piano.' },
+      { s: 'What ___ you do if you lost your phone?', a: 'would', o: ['will', 'do', 'did'], es: '¿Qué harías si perdieras el celular?' },
+      { s: 'If she ___ harder, she would get better grades.', a: 'studied', o: ['studies', 'will study', 'would study'], es: 'Si estudiara más, sacaría mejores notas.' },
+      { s: "I ___ buy that car if I were you. It's too expensive.", a: "wouldn't", o: ["won't", "don't", "didn't"], es: 'Yo que tú no compraría ese carro. Es demasiado caro.' },
+      { s: 'If we lived closer, we ___ each other more often.', a: 'would see', o: ['will see', 'see', 'had seen'], es: 'Si viviéramos más cerca, nos veríamos más seguido.' },
     ],
   },
   {
@@ -799,6 +969,11 @@ const GRAMMAR = [
       { s: 'This car ___ in Germany.', a: 'was made', o: ['made', 'was make', 'is making'], es: 'Este carro se fabricó en Alemania.' },
       { s: 'The results ___ next week.', a: 'will be published', o: ['will publish', 'are publishing', 'published'], es: 'Los resultados se publicarán la semana que viene.' },
       { s: 'The room ___ yet.', a: "hasn't been cleaned", o: ["hasn't cleaned", "isn't cleaning", "didn't clean"], es: 'Todavía no han limpiado la habitación.' },
+      { s: 'Spanish ___ in more than 20 countries.', a: 'is spoken', o: ['speaks', 'is speaking', 'spoke'], es: 'El español se habla en más de 20 países.' },
+      { s: 'The Mona Lisa ___ by Leonardo da Vinci.', a: 'was painted', o: ['painted', 'is painting', 'was paint'], es: 'La Mona Lisa fue pintada por Leonardo da Vinci.' },
+      { s: 'The new hospital ___ next year.', a: 'will be built', o: ['will build', 'is building', 'built'], es: 'El nuevo hospital se construirá el próximo año.' },
+      { s: 'My bike ___ last night.', a: 'was stolen', o: ['stole', 'was stealing', 'is stole'], es: 'Anoche se robaron mi bici.' },
+      { s: 'Thousands of emails ___ every second.', a: 'are sent', o: ['send', 'are sending', 'sent'], es: 'Cada segundo se envían miles de correos.' },
     ],
   },
   {
@@ -816,6 +991,10 @@ const GRAMMAR = [
       { s: 'She ___ her house painted last month.', a: 'had', o: ['did', 'made', 'was'], es: 'El mes pasado le pintaron la casa.' },
       { s: 'Where can I ___ my car washed?', a: 'have', o: ['do', 'make', 'wash'], es: '¿Dónde puedo hacer lavar mi carro?' },
       { s: "My parents didn't paint their house. They ___ it painted.", a: 'had', o: ['made', 'did', 'were'], es: 'Mis papás no pintaron su casa ellos mismos. La mandaron a pintar.' },
+      { s: "I'm going to ___ my hair cut tomorrow.", a: 'get', o: ['make', 'do', 'take'], es: 'Mañana me voy a cortar el pelo (en la peluquería).' },
+      { s: 'She had her car ___ last week.', a: 'repaired', o: ['repair', 'repairing', 'to repair'], es: 'La semana pasada le arreglaron el carro.' },
+      { s: "We're having our kitchen ___ this month.", a: 'painted', o: ['paint', 'painting', 'to paint'], es: 'Este mes nos están pintando la cocina.' },
+      { s: 'How often do you ___ your teeth checked?', a: 'have', o: ['make', 'do', 'take'], es: '¿Cada cuánto te haces revisar los dientes?' },
     ],
   },
   {
@@ -831,6 +1010,11 @@ const GRAMMAR = [
       { s: 'Can you tell me where ___?', a: 'the bank is', o: ['is the bank', 'does the bank', 'the bank does be'], es: '¿Me puede decir dónde está el banco?' },
       { s: 'Do you know what time ___?', a: 'the train leaves', o: ['does the train leave', 'leaves the train', 'the train does leave'], es: '¿Sabe a qué hora sale el tren?' },
       { s: 'Do you have any idea if I ___ a visa to visit China?', a: 'need', o: ['do I need', 'needs', 'needing'], es: '¿Tienes idea de si necesito visa para ir a China?' },
+      { s: 'Could you tell me how much ___?', a: 'this costs', o: ['does this cost', 'costs this', 'this does cost'], es: '¿Me podría decir cuánto cuesta esto?' },
+      { s: 'Do you know where ___?', a: 'she lives', o: ['does she live', 'lives she', 'she does live'], es: '¿Sabes dónde vive ella?' },
+      { s: 'I wonder why ___ late.', a: 'he is always', o: ['is he always', 'always is he', 'does he always be'], es: 'Me pregunto por qué siempre llega tarde.' },
+      { s: 'Can you tell me if ___ open on Sundays?', a: 'the museum is', o: ['is the museum', 'does the museum', 'the museum does'], es: '¿Me puede decir si el museo abre los domingos?' },
+      { s: 'Do you have any idea what time ___?', a: 'the meeting starts', o: ['does the meeting start', 'starts the meeting', 'the meeting does start'], es: '¿Tienes idea de a qué hora empieza la reunión?' },
     ],
   },
   {
@@ -849,6 +1033,8 @@ const GRAMMAR = [
       { s: 'She can swim, ___?', a: "can't she", o: ['can she', "doesn't she", "isn't she"], es: 'Sabe nadar, ¿verdad?' },
       { s: "There aren't any noise pollution laws, ___?", a: 'are there', o: ["aren't there", 'are they', 'is it'], es: 'No hay leyes contra la contaminación auditiva, ¿verdad?' },
       { s: 'The city should provide child care, ___?', a: "shouldn't it", o: ['should it', "doesn't it", "isn't it"], es: 'La ciudad debería ofrecer guarderías, ¿no?' },
+      { s: "You've been to Cartagena, ___?", a: "haven't you", o: ["didn't you", "aren't you", 'have you'], es: 'Has estado en Cartagena, ¿verdad?' },
+      { s: "Let's go to the movies, ___?", a: 'shall we', o: ['will we', "don't we", 'let we'], es: 'Vamos a cine, ¿sí?' },
     ],
   },
   {
@@ -870,6 +1056,10 @@ const GRAMMAR = [
       { s: 'The students ___ passed the exam got a certificate.', a: 'who', o: ['which', 'whose', 'where'], es: 'Los estudiantes que aprobaron el examen recibieron un certificado.' },
       { s: 'Summer is the season ___ the city is full of tourists.', a: 'when', o: ['which', 'who', 'what'], es: 'El verano es la temporada en que la ciudad se llena de turistas.' },
       { s: 'Our tour guide, ___ knew a lot about Otavalo, helped us buy presents.', a: 'who', o: ['that', 'which', 'whose'], es: 'Nuestro guía, que sabía mucho de Otavalo, nos ayudó a comprar regalos.' },
+      { s: 'My sister, ___ lives in Canada, is a nurse.', a: 'who', o: ['that', 'which', 'whose'], es: 'Mi hermana, que vive en Canadá, es enfermera.' },
+      { s: 'The phone ___ I bought last week is already broken.', a: 'that', o: ['who', 'whose', 'where'], es: 'El teléfono que compré la semana pasada ya está dañado.' },
+      { s: 'Medellín, ___ is known as the City of Eternal Spring, has a great climate.', a: 'which', o: ['that', 'who', 'where'], es: 'Medellín, que es conocida como la ciudad de la eterna primavera, tiene un clima muy bueno.' },
+      { s: 'My neighbor, ___ dog barks all night, never apologizes.', a: 'whose', o: ['who', 'which', 'that'], es: 'Mi vecino, cuyo perro ladra toda la noche, nunca pide disculpas.' },
     ],
   },
   {
@@ -887,6 +1077,10 @@ const GRAMMAR = [
       { s: 'He left early in order ___ the traffic.', a: 'to avoid', o: ['avoiding', 'for avoid', 'avoid'], es: 'Salió temprano para evitar el tráfico.' },
       { s: '___ a small company to succeed, it needs a good marketing plan.', a: 'For', o: ['To', 'So', 'In order'], es: 'Para que una empresa pequeña tenga éxito, necesita un buen plan de mercadeo.' },
       { s: 'In order ___ attract talented professionals, a company should offer good salaries.', a: 'to', o: ['for', 'so that', 'for to'], es: 'Para atraer a profesionales talentosos, una empresa debería ofrecer buenos sueldos.' },
+      { s: 'I went to the bank ___ some money.', a: 'to get', o: ['for get', 'for getting', 'for to get'], es: 'Fui al banco a sacar dinero.' },
+      { s: 'We got up early so as ___ miss the train.', a: 'not to', o: ['to not to', 'for not', 'not for'], es: 'Nos levantamos temprano para no perder el tren.' },
+      { s: 'He called ___ me happy birthday.', a: 'to wish', o: ['for wish', 'wishing for', 'for to wish'], es: 'Me llamó para desearme feliz cumpleaños.' },
+      { s: 'I use this app ___ new words.', a: 'to learn', o: ['for learn', 'for learning to', 'learn'], es: 'Uso esta aplicación para aprender palabras nuevas.' },
     ],
   },
   {
@@ -900,6 +1094,12 @@ const GRAMMAR = [
     ex: [
       { s: 'She whispered so that the baby ___ wake up.', a: "wouldn't", o: ['not', "doesn't", 'to not'], es: 'Susurró para que el bebé no se despertara.' },
       { s: "I'll send you the file now ___ you can read it tonight.", a: 'so that', o: ['in order to', 'for', 'to'], es: 'Te envío el archivo ahora para que lo puedas leer esta noche.' },
+      { s: "I'm saving money so that I ___ travel next year.", a: 'can', o: ['can to', 'could to', 'will can'], es: 'Estoy ahorrando para poder viajar el próximo año.' },
+      { s: 'Turn the music down so that the neighbors ___ complain.', a: "don't", o: ["won't to", 'not', "didn't"], es: 'Baja la música para que los vecinos no se quejen.' },
+      { s: 'I left early so ___ I could catch the train.', a: 'that', o: ['for', 'to', 'as'], es: 'Salí temprano para poder alcanzar el tren.' },
+      { s: "He's studying English ___ he can get a better job.", a: 'so that', o: ['for', 'in order to', 'to'], es: 'Está estudiando inglés para conseguir un mejor trabajo.' },
+      { s: 'Speak louder so that everyone ___ hear you.', a: 'can', o: ['can to', 'could to', 'is able'], es: 'Habla más duro para que todos te puedan oír.' },
+      { s: 'We took a taxi so that we ___ be late.', a: "wouldn't", o: ["don't", "won't to", 'not'], es: 'Tomamos un taxi para no llegar tarde.' },
     ],
   },
   {
@@ -915,6 +1115,12 @@ const GRAMMAR = [
     ex: [
       { s: '___ the traffic, we arrived on time.', a: 'Despite', o: ['Although', 'Despite of', 'Even though'], es: 'A pesar del tráfico, llegamos a tiempo.' },
       { s: 'In spite of ___ hard, he failed the exam.', a: 'studying', o: ['he studied', 'study', 'to study'], es: 'A pesar de estudiar mucho, reprobó el examen.' },
+      { s: '___ being very tired, she finished the report.', a: 'Despite', o: ['Although', 'Even though', 'Despite of'], es: 'A pesar de estar muy cansada, terminó el informe.' },
+      { s: 'We enjoyed the trip in spite ___ the bad weather.', a: 'of', o: ['for', 'that', 'by'], es: 'Disfrutamos el viaje a pesar del mal tiempo.' },
+      { s: 'Despite ___ he studied hard, he failed.', a: 'the fact that', o: ['of', 'that', 'he'], es: 'A pesar de que estudió mucho, reprobó.' },
+      { s: "Despite ___ a lot of money, he isn't happy.", a: 'having', o: ['have', 'he has', 'to have'], es: 'A pesar de tener mucho dinero, no es feliz.' },
+      { s: '___ his age, he runs marathons.', a: 'In spite of', o: ['Although', 'Even though', 'In spite'], es: 'A pesar de su edad, corre maratones.' },
+      { s: 'She went to work despite ___ sick.', a: 'feeling', o: ['she felt', 'feel', 'to feel'], es: 'Fue a trabajar a pesar de sentirse enferma.' },
     ],
   },
   {
@@ -930,6 +1136,12 @@ const GRAMMAR = [
     ex: [
       { s: '___ she was ill, she went to work.', a: 'Although', o: ['Despite', 'In spite of', 'However'], es: 'Aunque estaba enferma, fue a trabajar.' },
       { s: 'I like him, ___ he can be annoying.', a: 'even though', o: ['despite', 'in spite of', 'however'], es: 'Me cae bien, aunque a veces es pesado.' },
+      { s: '___ it was raining, we went for a walk.', a: 'Although', o: ['Despite', 'In spite of', 'However'], es: 'Aunque estaba lloviendo, salimos a caminar.' },
+      { s: "Even ___ he's rich, he lives in a small apartment.", a: 'though', o: ['although', 'despite', 'however'], es: 'Aunque es rico, vive en un apartamento pequeño.' },
+      { s: "I passed the exam ___ I didn't study much.", a: 'although', o: ['despite', 'in spite of', 'however'], es: 'Pasé el examen aunque no estudié mucho.' },
+      { s: '___ she was nervous, she gave a great presentation.', a: 'Even though', o: ['Despite', 'In spite of', 'However'], es: 'Aunque estaba nerviosa, hizo una presentación excelente.' },
+      { s: 'Although ___ cold, we went swimming.', a: 'it was', o: ['being', 'was', 'it'], es: 'Aunque hacía frío, fuimos a nadar.' },
+      { s: "I like him, ___ I don't always agree with him.", a: 'although', o: ['despite', 'in spite of', 'however'], es: 'Me cae bien, aunque no siempre estoy de acuerdo con él.' },
     ],
   },
   {
@@ -944,6 +1156,12 @@ const GRAMMAR = [
     ex: [
       { s: "I'm used to ___ in a big city.", a: 'living', o: ['live', 'lived', 'to live'], es: 'Estoy acostumbrado a vivir en una ciudad grande.' },
       { s: "He ___ used to the noise. It doesn't bother him.", a: 'is', o: ['uses', 'gets to', 'does'], es: 'Está acostumbrado al ruido. No le molesta.' },
+      { s: "I'm used to ___ early. I do it every day.", a: 'getting up', o: ['get up', 'got up', 'to get up'], es: 'Estoy acostumbrado a madrugar. Lo hago todos los días.' },
+      { s: "She ___ used to spicy food, so she didn't eat much.", a: "wasn't", o: ["didn't", "doesn't", "wasn't being"], es: 'No estaba acostumbrada a la comida picante, así que comió poco.' },
+      { s: 'Are you used ___ the cold weather yet?', a: 'to', o: ['for', 'with', 'at'], es: '¿Ya te acostumbraste al frío?' },
+      { s: "He's used to ___ alone.", a: 'living', o: ['live', 'lived', 'to live'], es: 'Está acostumbrado a vivir solo.' },
+      { s: "I'm not used to ___ in so much traffic.", a: 'driving', o: ['drive', 'drove', 'have driven'], es: 'No estoy acostumbrado a manejar con tanto tráfico.' },
+      { s: 'We ___ used to working late; we do it all the time.', a: 'are', o: ['use', 'do', 'have'], es: 'Estamos acostumbrados a trabajar hasta tarde; lo hacemos todo el tiempo.' },
     ],
   },
   {
@@ -957,6 +1175,12 @@ const GRAMMAR = [
     ex: [
       { s: "Don't worry, you'll soon ___ used to the new job.", a: 'get', o: ['use', 'got', 'getting'], es: 'No te preocupes, pronto te acostumbrarás al nuevo trabajo.' },
       { s: "I'm slowly getting used to ___ English food.", a: 'eating', o: ['eat', 'eaten', 'ate'], es: 'Poco a poco me estoy acostumbrando a la comida inglesa.' },
+      { s: 'It took me a year to ___ used to the food here.', a: 'get', o: ['be', 'getting', 'got'], es: 'Me tomó un año acostumbrarme a la comida de aquí.' },
+      { s: "You'll soon get used to ___ in English.", a: 'thinking', o: ['think', 'thought', 'to think'], es: 'Pronto te acostumbrarás a pensar en inglés.' },
+      { s: "I'm getting used ___ the new schedule.", a: 'to', o: ['with', 'for', 'at'], es: 'Me estoy acostumbrando al nuevo horario.' },
+      { s: 'She never got used to ___ in a big city.', a: 'living', o: ['live', 'to live', 'lived'], es: 'Nunca se acostumbró a vivir en una ciudad grande.' },
+      { s: "Don't worry. You ___ used to it.", a: "'ll get", o: ["'ll be get", 'get to', "'re getting to"], es: 'No te preocupes. Te vas a acostumbrar.' },
+      { s: "He's slowly ___ used to wearing glasses.", a: 'getting', o: ['get', 'got to', 'being get'], es: 'Poco a poco se está acostumbrando a usar gafas.' },
     ],
   },
   {
@@ -973,6 +1197,11 @@ const GRAMMAR = [
       { s: 'I wish I ___ how to drive.', a: 'knew', o: ['know', 'will know', 'have known'], es: 'Ojalá supiera conducir.' },
       { s: 'I wish it ___ summer now.', a: 'were', o: ['is', 'will be', 'be'], es: 'Ojalá fuera verano ahora.' },
       { s: 'If only my boss ___ consider promoting me!', a: 'would', o: ['will', 'is', 'has'], es: '¡Ojalá mi jefe considerara ascenderme!' },
+      { s: 'I wish I ___ more free time.', a: 'had', o: ['have', 'will have', 'would have'], es: 'Ojalá tuviera más tiempo libre.' },
+      { s: 'I wish you ___ stop interrupting me!', a: 'would', o: ['will', 'are', 'do'], es: '¡Ojalá dejaras de interrumpirme!' },
+      { s: 'I wish I ___ speak English fluently.', a: 'could', o: ['can', 'will', 'may'], es: 'Ojalá pudiera hablar inglés con fluidez.' },
+      { s: 'She wishes she ___ in a bigger apartment.', a: 'lived', o: ['lives', 'will live', 'has lived'], es: 'Ella quisiera vivir en un apartamento más grande.' },
+      { s: 'I wish it ___ raining. I want to go out.', a: 'would stop', o: ['stops', 'will stop', 'has stopped'], es: 'Ojalá dejara de llover. Quiero salir.' },
     ],
   },
   {
@@ -996,6 +1225,8 @@ const GRAMMAR = [
       { s: 'Would you prefer ___ an online course or a traditional one?', a: 'to take', o: ['take', 'taking', 'took'], es: '¿Prefieres tomar un curso en línea o uno presencial?' },
       { s: "I'd rather not ___ either.", a: 'take', o: ['to take', 'taking', 'taken'], es: 'Preferiría no tomar ninguno.' },
       { s: "I'd prefer not ___ out tonight.", a: 'to go', o: ['go', 'going', 'went'], es: 'Prefiero no salir esta noche.' },
+      { s: "I'd rather ___ at home than go out tonight.", a: 'stay', o: ['to stay', 'staying', 'stayed'], es: 'Prefiero quedarme en casa que salir esta noche.' },
+      { s: 'Would you rather ___ tea or coffee?', a: 'have', o: ['to have', 'having', 'had'], es: '¿Prefieres tomar té o café?' },
     ],
   },
   {
@@ -1045,6 +1276,8 @@ const GRAMMAR = [
       { s: 'It makes me ___ when friends remember my birthday.', a: 'happy', o: ['happily', 'to happy', 'happiness'], es: 'Me hace feliz que mis amigos se acuerden de mi cumpleaños.' },
       { s: "I don't mind it ___ a friend answers the phone at dinner.", a: 'when', o: ['what', 'which', 'who'], es: 'No me molesta que un amigo conteste el teléfono en la cena.' },
       { s: 'It really ___ me when a close friend forgets my birthday.', a: 'upsets', o: ['upsetting', 'upset to', 'is upsets'], es: 'Me molesta mucho que un amigo cercano olvide mi cumpleaños.' },
+      { s: 'I love ___ when it rains on weekends.', a: 'it', o: ['that', 'so', 'this'], es: 'Me encanta cuando llueve los fines de semana.' },
+      { s: "It annoys me ___ people don't say thank you.", a: 'when', o: ['what', 'which', 'who'], es: 'Me molesta cuando la gente no da las gracias.' },
     ],
   },
   {
@@ -1069,6 +1302,8 @@ const GRAMMAR = [
       { s: "He'd love ___ a flight attendant.", a: 'being', o: ['be', 'been', 'to being'], es: 'Le encantaría ser auxiliar de vuelo.' },
       { s: 'Taking care of sick people ___ really challenging.', a: 'is', o: ['are', 'be', 'being'], es: 'Cuidar a personas enfermas es muy exigente.' },
       { s: "She'd be good at ___ games.", a: 'testing', o: ['test', 'to test', 'tested'], es: 'Sería buena probando juegos.' },
+      { s: '___ a foreign language takes time.', a: 'Learning', o: ['Learn', 'Learns', 'Learned'], es: 'Aprender un idioma extranjero toma tiempo.' },
+      { s: "I'm thinking about ___ a new job.", a: 'looking for', o: ['look for', 'to look for', 'looked for'], es: 'Estoy pensando en buscar un nuevo trabajo.' },
     ],
   },
   {
@@ -1145,6 +1380,8 @@ const GRAMMAR = [
       { s: 'Would you ask her what time ___ talk to her?', a: 'I can', o: ['can I', 'do I can', 'I do can'], es: '¿Le preguntarías a qué hora puedo hablar con ella?' },
       { s: 'Can you ask Mary where ___ lunch?', a: "she's having", o: ['is she having', 'does she have', 'she having'], es: '¿Le puedes preguntar a Mary dónde va a almorzar?' },
       { s: 'Could you tell Tom ___ his car is ready?', a: 'that', o: ['if', 'what', 'to'], es: '¿Le podrías decir a Tom que su carro está listo?' },
+      { s: 'Can you tell the kids ___ quiet?', a: 'to be', o: ['be', 'being', 'that be'], es: '¿Les puedes decir a los niños que hagan silencio?' },
+      { s: 'Could you ask him when ___ back?', a: "he'll be", o: ['will he be', 'he be', 'is he'], es: '¿Le podrías preguntar cuándo vuelve?' },
     ],
   },
   {
@@ -1170,6 +1407,8 @@ const GRAMMAR = [
       { s: 'As scientists were doing research, they ___ something surprising.', a: 'discovered', o: ['were discovering', 'had discovered', 'discover'], es: 'Mientras los científicos investigaban, descubrieron algo sorprendente.' },
       { s: 'I ___ abroad before, so I was a bit nervous.', a: "hadn't traveled", o: ["haven't traveled", "wasn't traveling", "don't travel"], es: 'Nunca había viajado al extranjero, así que estaba un poco nervioso.' },
       { s: 'We ran out of gas because we ___ to fill up the tank.', a: 'had forgotten', o: ['have forgotten', 'were forgetting', 'forget'], es: 'Nos quedamos sin gasolina porque se nos había olvidado llenar el tanque.' },
+      { s: 'I ___ TV when the lights went out.', a: 'was watching', o: ['watched', 'have watched', 'am watching'], es: 'Estaba viendo televisión cuando se fue la luz.' },
+      { s: 'By the time we got to the theater, the movie ___.', a: 'had started', o: ['has started', 'starts', 'is starting'], es: 'Cuando llegamos al teatro, la película ya había empezado.' },
     ],
   },
   {
@@ -1195,6 +1434,8 @@ const GRAMMAR = [
       { s: 'Something ___ bugs me is people who talk loudly on the phone.', a: 'that', o: ['what', 'who', 'it'], es: 'Algo que me molesta es la gente que habla duro por teléfono.' },
       { s: 'The thing I hate is ___ kids ride their scooters on the sidewalk.', a: 'when', o: ['what', 'which', 'who'], es: 'Lo que odio es cuando los niños andan en patineta por la acera.' },
       { s: "Getting lost in a new city is something I'd be worried ___.", a: 'about', o: ['for', 'of', 'with'], es: 'Perderme en una ciudad nueva es algo que me preocuparía.' },
+      { s: 'Something I really enjoy ___ cooking for my friends.', a: 'is', o: ['are', 'it is', 'be'], es: 'Algo que disfruto mucho es cocinar para mis amigos.' },
+      { s: 'The person ___ I admire the most is my grandmother.', a: 'who', o: ['which', 'whose', 'what'], es: 'La persona que más admiro es mi abuela.' },
     ],
   },
   {
@@ -1220,6 +1461,8 @@ const GRAMMAR = [
       { s: "In Japan, you're expected ___ your shoes off at home.", a: 'to take', o: ['taking', 'take', 'that you take'], es: 'En Japón se espera que te quites los zapatos en casa.' },
       { s: "It's not ___ to arrive more than an hour late.", a: 'acceptable', o: ['accept', 'accepted to', 'acceptably'], es: 'No está bien visto llegar más de una hora tarde.' },
       { s: "If someone sends you a gift, you're ___ to call and thank them.", a: 'supposed', o: ['suppose', 'supposing', 'supposes'], es: 'Si alguien te envía un regalo, se supone que debes llamar para darle las gracias.' },
+      { s: "In many countries, you're expected ___ a tip in restaurants.", a: 'to leave', o: ['leaving', 'leave', 'that leave'], es: 'En muchos países se espera que dejes propina en los restaurantes.' },
+      { s: "In Japan, it's the ___ to take your shoes off before entering a house.", a: 'custom', o: ['costume', 'habit of', 'use'], es: 'En Japón es costumbre quitarse los zapatos antes de entrar a una casa.' },
     ],
   },
   {
@@ -1269,6 +1512,8 @@ const GRAMMAR = [
       { s: 'My computer keeps ___ down. I need a new one.', a: 'shutting', o: ['shut', 'to shut', 'shuts'], es: 'Mi computadora se sigue apagando. Necesito una nueva.' },
       { s: 'The walls need ___.', a: 'painting', o: ['to paint', 'paint', 'painted'], es: 'Hay que pintar las paredes.' },
       { s: 'The light bulb ___ to be changed.', a: 'needs', o: ['need', 'is needing', 'needing'], es: 'Hay que cambiar el bombillo.' },
+      { s: 'The grass needs ___.', a: 'cutting', o: ['to cut', 'cut', 'cuts'], es: 'Hay que cortar el pasto.' },
+      { s: 'The printer keeps ___ the paper.', a: 'jamming', o: ['jam', 'to jam', 'jammed'], es: 'La impresora se sigue atascando con el papel.' },
     ],
   },
   {
@@ -1292,6 +1537,8 @@ const GRAMMAR = [
       { s: 'The best ways to fight unemployment ___ to create jobs and invest in education.', a: 'are', o: ['is', 'be', 'being'], es: 'Las mejores maneras de combatir el desempleo son crear empleos e invertir en educación.' },
       { s: 'Another way to stop corruption is ___ politicians accountable.', a: 'to make', o: ['make', 'making to', 'for make'], es: 'Otra manera de frenar la corrupción es hacer que los políticos rindan cuentas.' },
       { s: 'One ___ to help the homeless is to provide more shelters.', a: 'way', o: ['form', 'manner of', 'road'], es: 'Una manera de ayudar a las personas sin hogar es ofrecer más albergues.' },
+      { s: 'A good way to save energy is ___ off the lights.', a: 'to turn', o: ['turn', 'turned', 'for turn'], es: 'Una buena manera de ahorrar energía es apagar las luces.' },
+      { s: 'The best way ___ a language is to use it every day.', a: 'to learn', o: ['learning', 'of learn', 'learn'], es: 'La mejor manera de aprender un idioma es usarlo todos los días.' },
     ],
   },
   {
@@ -1311,6 +1558,8 @@ const GRAMMAR = [
       { s: 'Students can become better writers by ___ more.', a: 'reading', o: ['read', 'to read', 'reads'], es: 'Los estudiantes pueden escribir mejor leyendo más.' },
       { s: 'A good way to learn idioms is ___ watching sitcoms.', a: 'by', o: ['for', 'of', 'with'], es: 'Una buena manera de aprender expresiones es viendo comedias.' },
       { s: 'You learn grammar not by memorizing rules but by ___ it.', a: 'using', o: ['use', 'to use', 'used'], es: 'La gramática no se aprende memorizando reglas, sino usándola.' },
+      { s: 'She paid for college by ___ two jobs.', a: 'working', o: ['work', 'to work', 'worked'], es: 'Pagó la universidad trabajando en dos empleos.' },
+      { s: "You can't learn to swim ___ reading a book.", a: 'by', o: ['for', 'with', 'to'], es: 'No puedes aprender a nadar leyendo un libro.' },
     ],
   },
   {
@@ -1385,6 +1634,8 @@ const GRAMMAR = [
       { s: 'The ___ I moved away from home, I felt like a different person.', a: 'moment', o: ['soon', 'once', 'until'], es: 'En el momento en que me fui de casa, me sentí otra persona.' },
       { s: 'As soon as I ___ my first paycheck, I opened a savings account.', a: 'got', o: ['get', 'will get', 'have got'], es: 'En cuanto recibí mi primer sueldo, abrí una cuenta de ahorros.' },
       { s: '___ I became a parent, I learned the importance of patience.', a: 'Once', o: ['Until', 'By the time', 'Since that'], es: 'Una vez que fui papá, aprendí la importancia de la paciencia.' },
+      { s: '___ I finished my homework, I went to bed.', a: 'After', o: ['Until', 'By the time', 'During'], es: 'Después de terminar la tarea, me fui a dormir.' },
+      { s: "I didn't know anyone ___ I joined the club.", a: 'until', o: ['by the time', 'once', 'as soon as'], es: 'No conocía a nadie hasta que me uní al club.' },
     ],
   },
   {
@@ -1437,6 +1688,8 @@ const GRAMMAR = [
       { s: 'The restaurant is famous ___ its seafood.', a: 'for', o: ['of', 'by', 'because'], es: 'El restaurante es famoso por sus mariscos.' },
       { s: '___ to the traffic, we arrived late.', a: 'Due', o: ['Because', 'Since', 'Reason'], es: 'Debido al tráfico, llegamos tarde.' },
       { s: 'The reason ___ people go there is just to be seen.', a: 'why', o: ['because', 'for', 'of'], es: 'La razón por la que la gente va es solo para dejarse ver.' },
+      { s: 'We stayed home ___ the storm.', a: 'because of', o: ['because', 'since', 'as'], es: 'Nos quedamos en casa por la tormenta.' },
+      { s: "I'm tired ___ I didn't sleep well.", a: 'because', o: ['because of', 'due to', 'for of'], es: 'Estoy cansado porque no dormí bien.' },
     ],
   },
   {
@@ -1488,6 +1741,8 @@ const GRAMMAR = [
       { s: 'She ___ managed to make a living with her music so far.', a: 'has', o: ['have', 'is', 'had'], es: 'Hasta ahora ha logrado vivir de su música.' },
       { s: "We didn't ___ to get tickets for the concert.", a: 'manage', o: ['managed', 'able', 'could'], es: 'No logramos conseguir entradas para el concierto.' },
       { s: 'Have you ___ able to save any money this year?', a: 'been', o: ['be', 'being', 'was'], es: '¿Has podido ahorrar algo de dinero este año?' },
+      { s: 'Despite the rain, we ___ to finish the hike.', a: 'managed', o: ['could', 'succeeded', 'achieved'], es: 'A pesar de la lluvia, logramos terminar la caminata.' },
+      { s: 'Were you ___ to find a parking space?', a: 'able', o: ['managed', 'capable', 'could'], es: '¿Pudiste encontrar dónde parquear?' },
     ],
   },
   {
@@ -1511,6 +1766,9 @@ const GRAMMAR = [
       { s: "I'd like to ___ many successful apps.", a: 'have developed', o: ['had developed', 'developed', 'having developed'], es: 'Me gustaría haber desarrollado muchas aplicaciones exitosas.' },
       { s: 'What would you like to have ___ in five years?', a: 'achieved', o: ['achieve', 'achieving', 'to achieve'], es: '¿Qué te gustaría haber logrado dentro de cinco años?' },
       { s: 'Three years from now, I hope I ___ seen more of the world.', a: "'ll have", o: ['have', 'had', 'would'], es: 'Dentro de tres años, espero haber conocido más del mundo.' },
+      { s: "By 2030, I hope I'll ___ my own business.", a: 'have started', o: ['started', 'had started', 'starting'], es: 'Para 2030, espero haber montado mi propio negocio.' },
+      { s: "I'd like to ___ more of the world by the time I'm 40.", a: 'have seen', o: ['had seen', 'seen', 'having seen'], es: 'Me gustaría haber conocido más del mundo antes de cumplir 40.' },
+      { s: "By next year, I hope I'll ___ to speak English fluently.", a: 'have learned', o: ['learned', 'had learned', 'learning'], es: 'Para el próximo año, espero haber aprendido a hablar inglés con fluidez.' },
     ],
   },
   {
@@ -1534,6 +1792,8 @@ const GRAMMAR = [
       { s: 'She has ___ eyes.', a: 'beautiful big blue', o: ['big beautiful blue', 'blue big beautiful', 'beautiful blue big'], es: 'Tiene unos ojos azules grandes y hermosos.' },
       { s: 'I found an ___ table at the market.', a: 'old Italian wooden', o: ['Italian old wooden', 'wooden old Italian', 'old wooden Italian'], es: 'Encontré una vieja mesa italiana de madera en el mercado.' },
       { s: 'They live in a ___ apartment.', a: 'lovely small modern', o: ['small lovely modern', 'modern small lovely', 'lovely modern small'], es: 'Viven en un apartamento pequeño, moderno y muy lindo.' },
+      { s: 'She bought a ___ dress.', a: 'beautiful long red', o: ['red long beautiful', 'long beautiful red', 'beautiful red long'], es: 'Compró un vestido rojo, largo y hermoso.' },
+      { s: 'We have a ___ table in the kitchen.', a: 'small round wooden', o: ['wooden small round', 'round wooden small', 'small wooden round'], es: 'Tenemos una mesa pequeña, redonda y de madera en la cocina.' },
     ],
   },
   {
@@ -1581,6 +1841,11 @@ const GRAMMAR = [
       { s: 'If I ___ about the party, I would have gone.', a: 'had known', o: ['knew', 'have known', 'would know'], es: 'Si hubiera sabido lo de la fiesta, habría ido.' },
       { s: 'If she had taken a taxi, she ___ late.', a: "wouldn't have been", o: ["won't be", "wasn't", "hadn't been"], es: 'Si hubiera tomado un taxi, no habría llegado tarde.' },
       { s: "If I'd listened to my professors, I ___ additional courses.", a: 'would have taken', o: ['took', 'will have taken', 'had taken'], es: 'Si hubiera escuchado a mis profesores, habría tomado más cursos.' },
+      { s: "If we ___ earlier, we wouldn't have missed the flight.", a: 'had left', o: ['left', 'have left', 'would leave'], es: 'Si hubiéramos salido antes, no habríamos perdido el vuelo.' },
+      { s: 'If she had asked me, I ___ her.', a: 'would have helped', o: ['will help', 'had helped', 'would helped'], es: 'Si me lo hubiera pedido, la habría ayudado.' },
+      { s: 'He ___ the accident if he had been more careful.', a: "wouldn't have had", o: ["won't have", "didn't have", "hadn't had"], es: 'No habría tenido el accidente si hubiera sido más cuidadoso.' },
+      { s: 'If you ___ me, I would have picked you up at the airport.', a: 'had called', o: ['called', 'have called', 'would call'], es: 'Si me hubieras llamado, te habría recogido en el aeropuerto.' },
+      { s: 'What would you have done if you ___ the lottery?', a: 'had won', o: ['won', 'have won', 'would win'], es: '¿Qué habrías hecho si te hubieras ganado la lotería?' },
     ],
   },
   {
@@ -1597,6 +1862,10 @@ const GRAMMAR = [
       { s: 'If she ___ afraid of flying, she would have come with us.', a: "weren't", o: ["isn't", "won't be", "hasn't been"], es: 'Si no le diera miedo volar, habría venido con nosotros.' },
       { s: 'If I had studied harder in school, I ___ a better job today.', a: 'would have', o: ['will have', 'have', 'had had'], es: 'Si hubiera estudiado más en el colegio, hoy tendría un mejor trabajo.' },
       { s: 'If she had booked her flight before now, she ___ in Paris next week.', a: 'would be', o: ['will be', 'is', 'had been'], es: 'Si hubiera reservado el vuelo antes, la próxima semana estaría en París.' },
+      { s: 'If I had saved more money, I ___ a car now.', a: 'would have', o: ['will have', 'had', 'would had'], es: 'Si hubiera ahorrado más, ahora tendría un carro.' },
+      { s: "If she weren't so busy, she ___ to the party last night.", a: 'would have come', o: ['would come', 'will come', 'had come'], es: 'Si no estuviera tan ocupada, habría venido a la fiesta anoche.' },
+      { s: "If you ___ the map, we wouldn't be lost now.", a: 'had brought', o: ['have brought', 'would bring', 'bring'], es: 'Si hubieras traído el mapa, ahora no estaríamos perdidos.' },
+      { s: 'If I ___ afraid of heights, I would have climbed the tower with you.', a: "weren't", o: ["hadn't", 'am not', "won't be"], es: 'Si no les tuviera miedo a las alturas, habría subido a la torre contigo.' },
     ],
   },
   {
@@ -1612,6 +1881,11 @@ const GRAMMAR = [
       { s: 'I wish I ___ that email yesterday.', a: "hadn't sent", o: ["don't send", "haven't sent", "won't send"], es: 'Ojalá no hubiera enviado ese correo ayer.' },
       { s: 'He wishes he ___ the job when he had the chance.', a: 'had accepted', o: ['accepts', 'has accepted', 'will accept'], es: 'Él desearía haber aceptado el trabajo cuando tuvo la oportunidad.' },
       { s: 'If only I ___ about that job opening!', a: 'had known', o: ['knew', 'have known', 'know'], es: '¡Si tan solo hubiera sabido de esa vacante!' },
+      { s: 'I wish I ___ to the party last night. Everyone says it was great.', a: 'had gone', o: ['went', 'have gone', 'would go'], es: 'Ojalá hubiera ido a la fiesta anoche. Todos dicen que estuvo genial.' },
+      { s: 'She wishes she ___ so much money on clothes.', a: "hadn't spent", o: ["didn't spend", "hasn't spent", "won't spend"], es: 'Ella quisiera no haber gastado tanto dinero en ropa.' },
+      { s: 'I wish I ___ harder when I was at school.', a: 'had studied', o: ['studied', 'have studied', 'would study'], es: 'Ojalá hubiera estudiado más cuando estaba en el colegio.' },
+      { s: 'Do you wish you ___ a different career?', a: 'had chosen', o: ['chose', 'have chosen', 'would choose'], es: '¿Te gustaría haber elegido otra carrera?' },
+      { s: 'If only I ___ the truth earlier!', a: 'had told you', o: ['told you', 'have told you', 'would tell you'], es: '¡Si tan solo te hubiera dicho la verdad antes!' },
     ],
   },
   {
@@ -1625,6 +1899,12 @@ const GRAMMAR = [
     ex: [
       { s: "It's late. It's time the children ___ to bed.", a: 'went', o: ['go', 'will go', 'have gone'], es: 'Es tarde. Ya es hora de que los niños se acuesten.' },
       { s: "It's high time you ___ smoking.", a: 'stopped', o: ['stop', 'will stop', 'have stopped'], es: 'Ya va siendo hora de que dejes de fumar.' },
+      { s: "It's time ___ home.", a: 'to go', o: ['going', 'go', 'went'], es: 'Es hora de irnos a casa.' },
+      { s: "It's time you ___ a decision.", a: 'made', o: ['make', 'will make', 'have made'], es: 'Ya es hora de que tomes una decisión.' },
+      { s: "It's about time they ___ the road.", a: 'fixed', o: ['fix', 'will fix', 'have fixed'], es: 'Ya era hora de que arreglaran la carretera.' },
+      { s: "It's high time we ___ saving money.", a: 'started', o: ['start', 'will start', 'have started'], es: 'Ya va siendo hora de que empecemos a ahorrar.' },
+      { s: "It's late. It's time for us ___.", a: 'to leave', o: ['leaving', 'leave', 'left'], es: 'Es tarde. Es hora de que nos vayamos.' },
+      { s: "It's time the government ___ something about pollution.", a: 'did', o: ['does', 'will do', 'has done'], es: 'Ya es hora de que el gobierno haga algo contra la contaminación.' },
     ],
   },
   {
@@ -1638,6 +1918,12 @@ const GRAMMAR = [
     ex: [
       { s: "You think I didn't study, but I ___ study!", a: 'did', o: ['do', 'was', 'have'], es: 'Crees que no estudié, ¡pero sí que estudié!' },
       { s: 'He ___ look tired today.', a: 'does', o: ['is', 'do', 'has'], es: 'La verdad es que hoy se le ve cansado.' },
+      { s: "I ___ want to help you, but I don't have time.", a: 'do', o: ['am', 'does', 'have'], es: 'De verdad quiero ayudarte, pero no tengo tiempo.' },
+      { s: 'You may not believe it, but I ___ finish my homework last night.', a: 'did', o: ['do', 'was', 'have'], es: 'Aunque no lo creas, sí terminé la tarea anoche.' },
+      { s: "I don't eat much meat, but I ___ like chicken.", a: 'do', o: ['am', 'does', 'have'], es: 'No como mucha carne, pero el pollo sí me gusta.' },
+      { s: "He ___ work hard; he just doesn't get good results.", a: 'does', o: ['do', 'is', 'has'], es: 'Sí que trabaja duro; lo que pasa es que no obtiene buenos resultados.' },
+      { s: '___ come in and sit down!', h: 'invitación amable', a: 'Do', o: ['Does', 'Did', 'Be'], es: '¡Pasa y siéntate, por favor!' },
+      { s: "They ___ call, but you weren't at home.", a: 'did', o: ['do', 'were', 'have'], es: 'Sí llamaron, pero no estabas en casa.' },
     ],
   },
   {
@@ -1653,6 +1939,11 @@ const GRAMMAR = [
       { s: 'The more you read, ___ your vocabulary becomes.', a: 'the richer', o: ['richer', 'the richest', 'more rich'], es: 'Cuanto más lees, más rico se vuelve tu vocabulario.' },
       { s: '___ I get, the less I sleep.', a: 'The older', o: ['Older', 'The oldest', 'More old'], es: 'Cuanto mayor me hago, menos duermo.' },
       { s: 'The louder the music gets, ___ I feel like leaving.', a: 'the sooner', o: ['sooner', 'the soonest', 'more soon'], es: 'Cuanto más alta está la música, antes me dan ganas de irme.' },
+      { s: 'The more you practice, ___ you get.', a: 'the better', o: ['better', 'the best', 'more good'], es: 'Cuanto más practicas, mejor te vuelves.' },
+      { s: "___ you leave, the sooner you'll arrive.", a: 'The earlier', o: ['Earlier', 'The earliest', 'More early'], es: 'Cuanto más temprano salgas, antes llegarás.' },
+      { s: 'The more expensive the hotel, ___ the service.', a: 'the better', o: ['better', 'the best', 'the good'], es: 'Cuanto más caro el hotel, mejor el servicio.' },
+      { s: 'The less you sleep, the ___ tired you feel.', a: 'more', o: ['most', 'much', 'many'], es: 'Cuanto menos duermes, más cansado te sientes.' },
+      { s: '___, the better!', h: 'cuanto antes, mejor', a: 'The sooner', o: ['Sooner', 'The soonest', 'More soon'], es: '¡Cuanto antes, mejor!' },
     ],
   },
   {
@@ -1675,6 +1966,8 @@ const GRAMMAR = [
       { s: 'You ___ me! I would have helped you.', a: 'should have told', o: ['must have told', 'should tell', 'might tell'], es: '¡Me lo deberías haber dicho! Te habría ayudado.' },
       { s: 'Jun Ho is usually here by now. He ___ missed the bus.', a: 'might have', o: ['must', 'should have', 'can have'], es: 'Jun Ho normalmente ya está aquí a esta hora. Puede que haya perdido el bus.' },
       { s: 'Sofia was at the movies with me last night. You ___ seen her at the mall!', a: "couldn't have", o: ['must have', "shouldn't have", 'might have'], es: 'Sofía estaba en el cine conmigo anoche. ¡No puede ser que la hayas visto en el centro comercial!' },
+      { s: 'The ground is wet. It ___ rained last night.', a: 'must have', o: ['must', 'can have', 'should have'], es: 'El suelo está mojado. Debe de haber llovido anoche.' },
+      { s: 'You ___ left your umbrella on the bus. I saw you with it at the office.', a: "can't have", o: ['must have', 'should have', 'must'], es: 'No puede ser que hayas dejado el paraguas en el bus. Te vi con él en la oficina.' },
     ],
   },
   {
@@ -1809,6 +2102,8 @@ const GRAMMAR = [
       { s: 'While ___ my lunch break, I often take a short nap.', a: 'taking', o: ['take', 'to take', 'took'], es: 'Mientras tomo mi hora de almuerzo, a menudo me echo una siesta corta.' },
       { s: 'As soon as ___ up, I race off to the gym.', a: 'I get', o: ['getting', 'to get', 'get'], es: 'En cuanto me levanto, salgo corriendo al gimnasio.' },
       { s: "I'm not very friendly right after ___ up.", a: 'waking', o: ['wake', 'to wake', 'woke'], es: 'No soy muy amable justo después de despertarme.' },
+      { s: 'After ___ the news, she called her mother.', a: 'hearing', o: ['hear', 'to hear', 'heard'], es: 'Después de oír la noticia, llamó a su mamá.' },
+      { s: 'While ___ dinner, I burned my finger.', a: 'cooking', o: ['cook', 'cooked', 'to cook'], es: 'Mientras cocinaba, me quemé el dedo.' },
     ],
   },
   {
@@ -2021,6 +2316,8 @@ const GRAMMAR = [
       { s: 'Paul is really good at solving problems, ___ people always go to him for help.', a: 'which is why', o: ['that is why', 'what is why', 'which why'], es: 'Paul es muy bueno resolviendo problemas; por eso la gente siempre le pide ayuda.' },
       { s: "I've started making my own clothes, which has ___ to financial savings.", a: 'contributed', o: ['contributing', 'contribute', 'contributes'], es: 'Empecé a hacer mi propia ropa, lo que me ha ayudado a ahorrar.' },
       { s: 'Amy jogs every morning, ___ has given her more energy.', a: 'which', o: ['that', 'what', 'it'], es: 'Amy trota todas las mañanas, lo que le ha dado más energía.' },
+      { s: 'The flight was delayed, ___ meant we missed our connection.', a: 'which', o: ['that', 'what', 'it'], es: 'El vuelo se retrasó, lo que hizo que perdiéramos la conexión.' },
+      { s: "She didn't call me back, which ___ me a little worried.", a: 'made', o: ['make', 'making', 'is make'], es: 'No me devolvió la llamada, lo que me dejó un poco preocupado.' },
     ],
   },
   {
@@ -2177,6 +2474,10 @@ const GRAMMAR = [
       { s: 'The company is said ___ millions last year.', a: 'to have lost', o: ['to lose', 'losing', 'that lost'], es: 'Se dice que la empresa perdió millones el año pasado.' },
       { s: 'It ___ that the construction of Stonehenge took over 20 million hours.', a: 'has been estimated', o: ['has estimated', 'is estimating', 'estimated'], es: 'Se ha calculado que la construcción de Stonehenge tomó más de 20 millones de horas.' },
       { s: 'It ___ that a monster was living in the lake.', a: 'had been rumored', o: ['had rumored', 'rumored', 'was rumoring'], es: 'Se rumoraba que un monstruo vivía en el lago.' },
+      { s: 'It ___ that the new law will reduce crime.', a: 'is expected', o: ['expects', 'is expecting', 'expected'], es: 'Se espera que la nueva ley reduzca la delincuencia.' },
+      { s: 'The president is believed ___ the country next week.', a: 'to visit', o: ['visiting', 'that he visits', 'visit'], es: 'Se cree que el presidente visitará el país la próxima semana.' },
+      { s: 'Coffee is thought ___ originally from Ethiopia.', a: 'to come', o: ['coming', 'that it comes', 'come'], es: 'Se cree que el café es originario de Etiopía.' },
+      { s: 'It ___ that over 1,000 people attended the protest.', a: 'was reported', o: ['reported', 'was reporting', 'reports'], es: 'Se informó que más de 1.000 personas asistieron a la protesta.' },
     ],
   },
   {
@@ -2191,6 +2492,12 @@ const GRAMMAR = [
     ex: [
       { s: 'Never ___ such a delicious meal.', a: 'have I eaten', o: ['I have eaten', 'I ate', 'did I ate'], es: 'Nunca he comido algo tan delicioso.' },
       { s: 'Not only ___ late, but he also forgot the tickets.', a: 'did he arrive', o: ['he arrived', 'arrived he', 'he did arrive'], es: 'No solo llegó tarde, sino que además olvidó las entradas.' },
+      { s: 'Rarely ___ such a beautiful sunset.', a: 'have I seen', o: ['I have seen', 'I saw', 'did I saw'], es: 'Pocas veces he visto un atardecer tan hermoso.' },
+      { s: 'Under no circumstances ___ open this door.', a: 'should you', o: ['you should', "you shouldn't", 'should not you'], es: 'Bajo ninguna circunstancia debe abrir esta puerta.' },
+      { s: 'Hardly ___ arrived when it started to rain.', a: 'had we', o: ['we had', 'have we', 'did we'], es: 'Apenas habíamos llegado cuando empezó a llover.' },
+      { s: 'Not until I got home ___ that I had lost my keys.', a: 'did I realize', o: ['I realized', 'I did realize', 'realized I'], es: 'No me di cuenta de que había perdido las llaves hasta que llegué a casa.' },
+      { s: 'Little ___ know what was about to happen.', a: 'did they', o: ['they did', 'they', 'they had'], es: 'Poco sabían lo que estaba a punto de pasar.' },
+      { s: 'No sooner ___ the phone down than it rang again.', a: 'had I put', o: ['I had put', 'I put', 'have I put'], es: 'Apenas colgué el teléfono, volvió a sonar.' },
     ],
   },
   {
@@ -2204,6 +2511,12 @@ const GRAMMAR = [
     ex: [
       { s: '___ my sister who told me the news.', a: 'It was', o: ['There was', 'She was', 'That was'], es: 'Fue mi hermana quien me dio la noticia.' },
       { s: 'It was in 2015 ___ we first met.', a: 'that', o: ['who', 'which', 'what'], es: 'Fue en 2015 cuando nos conocimos.' },
+      { s: 'It was my mother ___ taught me to cook.', a: 'who', o: ['which', 'what', 'where'], es: 'Fue mi mamá quien me enseñó a cocinar.' },
+      { s: '___ in Cartagena that we got married.', a: 'It was', o: ['There was', 'That was', 'It is where'], es: 'Fue en Cartagena donde nos casamos.' },
+      { s: "It's not the money ___ matters; it's the experience.", a: 'that', o: ['what', 'who', 'where'], es: 'No es el dinero lo que importa; es la experiencia.' },
+      { s: 'It was yesterday ___ I found out the truth.', a: 'that', o: ['what', 'which', 'who'], es: 'Fue ayer cuando me enteré de la verdad.' },
+      { s: 'Was it you ___ called me last night?', a: 'who', o: ['which', 'what', 'whom'], es: '¿Fuiste tú quien me llamó anoche?' },
+      { s: 'It ___ the noise that kept me awake, not the heat.', a: 'was', o: ['were', 'has', 'is being'], es: 'Fue el ruido lo que no me dejó dormir, no el calor.' },
     ],
   },
   {
@@ -2225,6 +2538,8 @@ const GRAMMAR = [
       { s: 'What she did ___ complain to the waiter.', a: 'was', o: ['did', 'that', 'were'], es: 'Lo que hizo fue quejarse con el mesero.' },
       { s: "The reason ___ I'm wearing sunglasses is to protect my eyes.", a: 'why', o: ['what', 'which', 'because'], es: 'La razón por la que uso gafas de sol es para protegerme los ojos.' },
       { s: 'What the candidate did was ___ the voters he was trustworthy.', a: 'show', o: ['showed', 'showing', 'shows'], es: 'Lo que hizo el candidato fue demostrarles a los votantes que era confiable.' },
+      { s: 'What surprised me most ___ how friendly everyone was.', a: 'was', o: ['were', 'it was', 'that'], es: 'Lo que más me sorprendió fue lo amables que eran todos.' },
+      { s: '___ I did was call the police.', a: 'What', o: ['That', 'Which', 'It'], es: 'Lo que hice fue llamar a la policía.' },
     ],
   },
   {
@@ -2246,6 +2561,10 @@ const GRAMMAR = [
       { s: 'I suggest that she ___ a lawyer.', a: 'consult', o: ['consults', 'to consult', 'consulting'], es: 'Sugiero que consulte a un abogado.' },
       { s: "The executive's contract required that he ___ a bonus that year.", a: 'not receive', o: ["didn't receive", 'not receives', "doesn't receive"], es: 'El contrato del ejecutivo exigía que no recibiera bonificación ese año.' },
       { s: 'The sponsors asked that their product ___ prominently in the movie.', a: 'be featured', o: ['is featured', 'being featured', 'features'], es: 'Los patrocinadores pidieron que su producto apareciera de forma destacada en la película.' },
+      { s: 'The doctor recommended that he ___ more exercise.', a: 'do', o: ['does', 'doing', 'to do'], es: 'El médico recomendó que hiciera más ejercicio.' },
+      { s: 'It is essential that every student ___ the form by Friday.', a: 'submit', o: ['submits', 'submitting', 'to submit'], es: 'Es imprescindible que cada estudiante entregue el formulario antes del viernes.' },
+      { s: 'They demanded that the manager ___ immediately.', a: 'resign', o: ['resigns', 'resigning', 'to resign'], es: 'Exigieron que el gerente renunciara de inmediato.' },
+      { s: 'I suggest that she ___ late again.', a: 'not arrive', o: ["doesn't arrive", 'not arrives', "don't arrive"], es: 'Sugiero que no vuelva a llegar tarde.' },
     ],
   },
   {
@@ -2267,6 +2586,10 @@ const GRAMMAR = [
       { s: "___ no money, he couldn't buy a ticket.", a: 'Having', o: ['Had', 'To have', 'Has'], es: 'Como no tenía dinero, no pudo comprar el boleto.' },
       { s: '___ several calls from me, my parents became really worried.', a: 'Having gotten', o: ['Have gotten', 'Had gotten', 'Having get'], es: 'Después de recibir varias llamadas mías, mis papás se preocuparon mucho.' },
       { s: 'Trying hard to fix my computer, ___.', a: 'I noticed the dog staring at me', o: ['the dog kept staring at me', 'the dog was staring at me', 'my dog stared at me'], es: 'Mientras intentaba arreglar mi computadora, noté que el perro me miraba fijamente.' },
+      { s: '___ the street, she saw an old friend.', a: 'Crossing', o: ['Crossed', 'She crossed', 'Cross'], es: 'Al cruzar la calle, vio a una vieja amiga.' },
+      { s: '___ finished his homework, he went out to play.', a: 'Having', o: ['Had', 'Have', 'Being'], es: 'Después de terminar la tarea, salió a jugar.' },
+      { s: "___ very shy, he didn't speak at the meeting.", a: 'Being', o: ['Been', 'Be', 'He being'], es: 'Como es muy tímido, no habló en la reunión.' },
+      { s: '___ up the phone, she called the police.', a: 'Picking', o: ['Picked', 'She picked', 'Pick'], es: 'Tomó el teléfono y llamó a la policía.' },
     ],
   },
   {
@@ -2280,6 +2603,12 @@ const GRAMMAR = [
     ex: [
       { s: '___ in simple English, the book is easy to read.', a: 'Written', o: ['Writing', 'Wrote', 'To write'], es: 'Escrito en inglés sencillo, el libro es fácil de leer.' },
       { s: '___ by the noise, the baby started crying.', a: 'Woken', o: ['Waking', 'Woke', 'To wake'], es: 'Despertado por el ruido, el bebé empezó a llorar.' },
+      { s: '___ in 1850, the building is now a museum.', a: 'Built', o: ['Building', 'Was built', 'To build'], es: 'Construido en 1850, el edificio es hoy un museo.' },
+      { s: '___ by his teacher, he decided to study medicine.', a: 'Inspired', o: ['Inspiring', 'Inspire', 'He inspired'], es: 'Inspirado por su profesor, decidió estudiar medicina.' },
+      { s: 'The products ___ in this factory are exported to Europe.', a: 'made', o: ['making', 'make', 'are made'], es: 'Los productos fabricados en esta fábrica se exportan a Europa.' },
+      { s: '___ with the results, the company hired more staff.', a: 'Pleased', o: ['Pleasing', 'Please', 'It pleased'], es: 'Contenta con los resultados, la empresa contrató más personal.' },
+      { s: "Most of the people ___ to the party didn't come.", a: 'invited', o: ['inviting', 'invite', 'were invited'], es: 'La mayoría de las personas invitadas a la fiesta no vinieron.' },
+      { s: '___ at the airport, the passengers waited for hours.', a: 'Stranded', o: ['Stranding', 'Strand', 'They stranded'], es: 'Atrapados en el aeropuerto, los pasajeros esperaron durante horas.' },
     ],
   },
   {
@@ -2413,6 +2742,8 @@ const GRAMMAR = [
       { s: 'Before Elvis made it big, he ___ sing with his family on the porch.', a: 'would', o: ['will', 'was used to', 'is'], es: 'Antes de hacerse famoso, Elvis cantaba con su familia en el porche.' },
       { s: 'True talent ___ always be noticed.', a: 'will', o: ['would', 'used to', 'is'], es: 'El verdadero talento siempre se nota.' },
       { s: 'When I was young, I ___ own a guitar.', a: 'used to', o: ['would', 'will', 'was used to'], es: 'Cuando era joven, tenía una guitarra.' },
+      { s: 'My grandfather will often ___ for hours about his childhood.', a: 'talk', o: ['talks', 'talking', 'to talk'], es: 'Mi abuelo suele hablar durante horas de su infancia.' },
+      { s: 'Every Sunday, my father ___ cook a big breakfast for us.', h: 'hábito del pasado', a: 'would', o: ['will', 'used', 'is used to'], es: 'Todos los domingos, mi papá nos preparaba un gran desayuno.' },
     ],
   },
   {
@@ -2438,6 +2769,8 @@ const GRAMMAR = [
       { s: 'My parents stood for principles against ___ my generation has rebelled.', a: 'which', o: ['that', 'what', 'whom'], es: 'Mis papás defendían principios contra los que mi generación se ha rebelado.' },
       { s: 'Professionals ___ managers allow it are working from home.', a: 'whose', o: ['who', 'which', 'that their'], es: 'Los profesionales cuyos jefes lo permiten trabajan desde casa.' },
       { s: 'The woman ___ I spoke on the phone was very helpful.', a: 'to whom', o: ['to who', 'whom to', 'to that'], es: 'La mujer con la que hablé por teléfono me ayudó mucho.' },
+      { s: 'The people with ___ I work are very friendly.', a: 'whom', o: ['who', 'that', 'which'], es: 'Las personas con las que trabajo son muy amables.' },
+      { s: 'This is the house in ___ I was born.', a: 'which', o: ['that', 'where', 'whom'], es: 'Esta es la casa en la que nací.' },
     ],
   },
   {
@@ -2570,6 +2903,8 @@ const GRAMMAR = [
       { s: "Will that class be offered next semester? — I'm sure it will ___.", a: 'be', o: ['been', 'being', 'do'], es: '¿Van a ofrecer esa clase el próximo semestre? — Estoy seguro de que sí.' },
       { s: 'Two fans ___ arrested after the game.', a: 'got', o: ['made', 'took', 'had'], es: 'Arrestaron a dos aficionados después del partido.' },
       { s: "Hurry up and get ___! We're late.", a: 'dressed', o: ['dress', 'dressing', 'to dress'], es: '¡Apúrate y vístete! Vamos tarde.' },
+      { s: "Be careful or you'll ___ hurt.", a: 'get', o: ['become', 'make', 'do'], es: 'Ten cuidado o te vas a lastimar.' },
+      { s: 'We got ___ in the old part of the city.', a: 'lost', o: ['lose', 'losing', 'to lose'], es: 'Nos perdimos en la parte antigua de la ciudad.' },
     ],
   },
   {
@@ -2648,6 +2983,8 @@ const GRAMMAR = [
       { s: 'Tonya is the ___ person in our family.', a: 'most easygoing', o: ['easygoingest', 'most-easygoing', 'more easygoing'], es: 'Tonya es la persona más relajada de nuestra familia.' },
       { s: "That was the ___ vacation I've ever taken.", a: 'worst-planned', o: ['most badly-planned', 'baddest-planned', 'worse-planned'], es: 'Fueron las vacaciones peor planeadas que he tenido.' },
       { s: "Venezuela's ___ poet will be reading at the library.", a: 'best-known', o: ['the best-known', 'more well-known', 'well-knownest'], es: 'El poeta más conocido de Venezuela hará una lectura en la biblioteca.' },
+      { s: "It's one of the ___ songs in the world.", a: 'best-known', o: ['most good-known', 'well-knownest', 'goodest-known'], es: 'Es una de las canciones más conocidas del mundo.' },
+      { s: "He's the ___ man I know.", h: 'open-minded', a: 'most open-minded', o: ['openest-minded', 'open-mindedest', 'more open-minded'], es: 'Es el hombre de mente más abierta que conozco.' },
     ],
   },
   {

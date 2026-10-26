@@ -599,6 +599,16 @@ const ES_THIRD = {
   suceder:{pret:'sucedió', have:'ha sucedido', subj:'it'}, ocurrir:{pret:'ocurrió', have:'ha ocurrido', subj:'it'},
   acontecer:{pret:'aconteció', have:'ha acontecido', subj:'it'}, costar:{pret:'costó', have:'ha costado', subj:'it'},
   doler:{pret:'dolió', have:'ha dolido', subj:'it'}, gustar:{pret:'me gustó', have:'me ha gustado', subj:'I', obj:' it'},
+  // Verbos para describir gráficos (IELTS Writing Task 1): el sujeto es una cifra o un precio
+  dispararse:{pret:'se disparó', have:'se ha disparado', subj:'the price'}, desplomarse:{pret:'se desplomó', have:'se ha desplomado', subj:'the price'},
+  estabilizarse:{pret:'se estabilizó', have:'se ha estabilizado', subj:'the price'}, fluctuar:{pret:'fluctuó', have:'ha fluctuado', subj:'the price'},
+  duplicarse:{pret:'se duplicó', have:'se ha duplicado', subj:'the price'}, triplicarse:{pret:'se triplicó', have:'se ha triplicado', subj:'the price'},
+  repuntar:{pret:'repuntó', have:'ha repuntado', subj:'the price'},
+  // Frases completas (se usan tal cual, sin añadir el resto de la traducción)
+  'bajar un poco':{pret:'bajó un poco', have:'ha bajado un poco', subj:'the price'},
+  'alcanzar el punto máximo':{pret:'alcanzó el punto máximo', have:'ha alcanzado el punto máximo', subj:'the price'},
+  'ir disminuyendo':{pret:'fue disminuyendo', have:'ha ido disminuyendo', subj:'the number'},
+  'estar compuesto de':{pret:'estuvo compuesto de', have:'ha estado compuesto de', subj:'the group'},
 };
 const ES_EXACT = {
   ser:['fui','sido'], ir:['fui','ido'], ver:['vi','visto'], dar:['di',null], estar:['estuve',null],
@@ -816,8 +826,11 @@ function esForms(es){
   }
   pret = pret || reg[0]; part = part || reg[1];
   const me = refl ? 'me ' : '';
-  const third = !refl && ES_THIRD[inf];
-  if(third) return {inf: inf + tail, pret: third.pret + tail, part: part + tail, have: third.have + tail, third};
+  // ES_THIRD se busca por la frase completa o por el primer verbo tal como está escrito (con «se» si es reflexivo)
+  const byPhrase = ES_THIRD[first];
+  const third = byPhrase || ES_THIRD[words[0]];
+  const t3 = byPhrase ? '' : tail;
+  if(third) return {inf: inf + (refl ? 'se' : '') + tail, pret: third.pret + t3, part: part + tail, have: third.have + t3, third};
   return {inf: inf + (refl ? 'se' : '') + tail, pret: me + pret + tail, part: part + tail, have: me + 'he ' + part + tail};
 }
 
@@ -960,11 +973,11 @@ function formsHtml(it){
     </div>`;
   return `<div class="vforms">
       ${row('Base', b, f && f.inf,
-        `Presente, infinitivo y tras can / will / did: ${subj} ${escapeHtml(b)}${obj} · to ${escapeHtml(b)} · ${subj} didn't ${escapeHtml(b)}${obj}`)}
+        `Presente, infinitivo y tras can / will / did: ${subj}${subj === 'I' ? '' : ' will'} ${escapeHtml(b)}${obj} · to ${escapeHtml(b)} · ${subj} didn't ${escapeHtml(b)}${obj}`)}
       ${row('Pasado', p, f && (f.third ? f.pret : f.pret + ' (yo)'),
         `Acción terminada (yesterday, last year…): ${subj} ${escapeHtml(p1)}${obj}. Igual para todas las personas.`)}
       ${row('Participio', pp, f && f.part,
-        `Con have: ${subj} ${subj === 'it' ? 'has' : 'have'} ${escapeHtml(pp1)}${obj}${f ? ' = ' + escapeHtml(f.have) : ''} · y en voz pasiva con be.`)}
+        `Con have: ${subj} ${subj === 'I' ? 'have' : 'has'} ${escapeHtml(pp1)}${obj}${f ? ' = ' + escapeHtml(f.have) : ''} · y en voz pasiva con be.`)}
     </div>
     <div class="muted">${it.irr ? 'Verbo irregular' : 'Verbo regular'} ${speakBtn(b + ', ' + p1 + ', ' + pp1)}</div>
     <button class="link-btn topic-link" data-topic="verb-forms">📖 ¿Cuándo uso cada forma?</button>`;
