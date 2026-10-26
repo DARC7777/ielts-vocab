@@ -77,8 +77,8 @@ function extractForms(en){
   // Sufijos "(n)", "(v)", "(adj)", "(adj.)"
   s = s.replace(/\s*\((n|v|adj|adj\.)\)\s*$/, '');
   forms.add(normalize(s));
-  // Si tiene barras (verbo con formas), tomar la primera
-  if(s.includes('/')) forms.add(normalize(s.split('/')[0].trim()));
+  // Si tiene barras (variantes "co-operate / cooperate" o formas verbales), tomar cada una
+  if(s.includes('/')) s.split('/').forEach(p => forms.add(normalize(p.trim())));
   // Primera palabra (para frases como "abandon ship")
   const first = s.split(/[\s\/]+/)[0];
   if(first) forms.add(normalize(first));
