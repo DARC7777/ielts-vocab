@@ -1079,7 +1079,8 @@ function wordAfter(it){
 function makeWordQ(it){
   const dir = resolveDir();
   const enAsk = dir === 'en-es';
-  const pool = wordPool(it);
+  // Español → inglés: sin sinónimos que compartan la misma traducción (Supplier / Vendor = Proveedor)
+  const pool = enAsk ? wordPool(it) : wordPool(it).filter(w => normAnswer(w.es || '') !== normAnswer(it.es || ''));
   const answer = enAsk ? it.es : it.en;
   const options = shuffle([answer, ...distinctPicks(pool, 3, enAsk ? 'es' : 'en', [answer])]);
   return {
