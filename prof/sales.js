@@ -862,6 +862,43 @@ Let's role-play the most common objections. | Hagamos un juego de roles con las 
 Listening is more important than talking in sales. | En ventas, escuchar es más importante que hablar.
 Never promise what you can't deliver. | Nunca prometas lo que no puedes cumplir.
 Under-promise and over-deliver. | Promete menos y entrega más.
+What's your best price for one hundred units? | ¿Cuál es su mejor precio por cien unidades?
+Prices are subject to change without notice. | Los precios están sujetos a cambios sin previo aviso.
+The offer includes installation and training. | La oferta incluye instalación y capacitación.
+Delivery is included in the price. | El envío está incluido en el precio.
+We can match our competitor's price. | Podemos igualar el precio de la competencia.
+Let's set up a meeting with your team to present the solution. | Organicemos una reunión con su equipo para presentar la solución.
+I'll put together a customized proposal. | Le preparo una propuesta personalizada.
+This plan fits your needs best. | Este plan es el que mejor se ajusta a sus necesidades.
+Most of our clients choose the annual plan. | La mayoría de nuestros clientes escoge el plan anual.
+You save two months by paying annually. | Si paga el año completo, se ahorra dos meses.
+You can cancel at any time. | Puede cancelar en cualquier momento.
+There are no hidden fees. | No hay cargos ocultos.
+We'll apply the discount to your next invoice. | Aplicamos el descuento en su próxima factura.
+We need your tax ID to issue the invoice. | Necesitamos su NIT para emitir la factura.
+The invoice will be sent to your email. | La factura le llegará al correo.
+Sales usually slow down in January. | Las ventas suelen bajar en enero.
+December is our busiest month. | Diciembre es nuestro mes de más ventas.
+We beat last year's record. | Superamos el récord del año pasado.
+The team closed the year with a strong quarter. | El equipo cerró el año con un trimestre fuerte.
+Our goal is to double sales in three years. | Nuestra meta es duplicar las ventas en tres años.
+We need to open new distribution channels. | Tenemos que abrir nuevos canales de distribución.
+The distributor wants better margins. | El distribuidor quiere mejores márgenes.
+Let's reward our most loyal customers. | Premiemos a nuestros clientes más fieles.
+A happy customer is our best advertisement. | Un cliente feliz es nuestra mejor publicidad.
+It costs more to win a new customer than to keep an existing one. | Cuesta más conseguir un cliente nuevo que conservar uno actual.
+Let's make it easy for customers to buy from us. | Hagámosles fácil a los clientes comprarnos.
+We need to answer customer inquiries faster. | Tenemos que responder más rápido las consultas de los clientes.
+Customers expect a reply within an hour. | Los clientes esperan respuesta en menos de una hora.
+The chatbot answers the most common questions. | El chatbot responde las preguntas más comunes.
+Let's track every lead until it converts. | Hagamos seguimiento a cada lead hasta que se convierta.
+We converted twenty percent of the trial users. | Convertimos al veinte por ciento de los usuarios de prueba.
+The client signed a three-year contract. | El cliente firmó un contrato a tres años.
+We're expanding our sales team. | Estamos ampliando nuestro equipo comercial.
+New hires spend two weeks in sales training. | Los nuevos empleados pasan dos semanas en capacitación comercial.
+Let's share best practices across regions. | Compartamos buenas prácticas entre regiones.
+Our sales process has five stages. | Nuestro proceso de ventas tiene cinco etapas.
+Every deal must be updated in the CRM. | Cada negocio debe actualizarse en el CRM.
 `},
     { en: 'Sales Executive', es: 'Ejecutivo de ventas', w: `
 Sales cycle | Ciclo de ventas
