@@ -122,6 +122,46 @@ button{font-family:'Nunito',sans-serif}
 .c7{background:#d4f7f1;color:#009e88}.c8{background:#f3e6dc;color:#8a5a3a}
 .c9{background:#ffe3f4;color:#d6409f}.c10{background:#e4e8fb;color:#4c5fc0}
 .c11{background:#eef7cc;color:#6f8c00}
+.cprof{background:#fff0e0;color:#c2570c}
+
+/* ══ CONFIRMACIÓN (reemplaza a confirm() del navegador, que a veces está bloqueado en la app instalada) ══ */
+#confirm{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.45);display:flex;
+  align-items:center;justify-content:center;padding:20px}
+#confirm[hidden]{display:none}
+.cf-box{background:#fff;border-radius:18px;padding:20px 18px 16px;width:100%;max-width:360px;
+  display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.cf-msg{font-size:.95rem;font-weight:800;color:var(--text);line-height:1.45;white-space:pre-line}
+.cf-btns{display:flex;gap:10px}
+.cf-btns button{flex:1;margin:0}
+
+/* ══ PROFESIONES ══ */
+.prof-entry{width:100%;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;
+  background:linear-gradient(135deg,#fff6ec,#ffe9d2);border:2px solid #ffd2a6;border-radius:16px;
+  padding:12px 14px;box-shadow:0 3px 0 #ffd2a6}
+.prof-entry:active{transform:translateY(2px);box-shadow:0 1px 0 #ffd2a6}
+.pe-icon{font-size:1.8rem}
+.pe-txt{flex:1;display:flex;flex-direction:column;gap:2px}
+.pe-txt b{font-size:.95rem;font-weight:900;color:#9a3f05}
+.pe-txt small{font-size:.74rem;font-weight:700;color:#b5621f}
+.pe-arrow{font-size:1.4rem;font-weight:900;color:#c2570c}
+.pf-grid{display:flex;flex-direction:column;gap:8px}
+.pf-card{display:flex;align-items:center;gap:12px;text-align:left;width:100%;cursor:pointer;
+  background:#fff;border:2px solid var(--border);border-radius:14px;padding:11px 13px;box-shadow:0 3px 0 var(--border)}
+.pf-card:active{transform:translateY(2px);box-shadow:0 1px 0 var(--border)}
+.pf-card.current{border-color:#ffb36b}
+.pf-ic{font-size:1.6rem;width:34px;text-align:center}
+.pf-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.pf-main b{font-size:.9rem;font-weight:900;color:var(--text)}
+.pf-main span{font-size:.7rem;font-weight:700;color:var(--muted-dark)}
+.pf-main small{font-size:.66rem;font-weight:800;color:#c2570c}
+.pf-bar{height:5px;border-radius:5px;background:var(--surface);overflow:hidden;margin-top:3px}
+.pf-bar i{display:block;height:100%;background:#ff9600}
+.pf-head{background:linear-gradient(135deg,#fff6ec,#ffe9d2);border:2px solid #ffd2a6;border-radius:16px;
+  padding:14px;display:flex;flex-direction:column;gap:4px}
+.pf-head .pf-big{font-size:1.1rem;font-weight:900;color:#9a3f05}
+.pf-head .pf-en{font-size:.76rem;font-weight:800;color:#b5621f}
+.pf-head .pf-num{font-size:.78rem;font-weight:800;color:var(--muted-dark)}
+.pf-msg{text-align:center;padding:30px 10px;font-weight:800;color:var(--muted-dark)}
 
 /* Stats mini */
 .stats-mini{display:flex;gap:9px;width:100%}
@@ -133,7 +173,9 @@ button{font-family:'Nunito',sans-serif}
 
 /* ══ QUIZ ══ */
 #quiz{padding:0 0 260px}
-.quiz-top{display:flex;align-items:center;gap:10px;width:100%;padding:14px 18px 0}
+.quiz-top{display:flex;align-items:center;gap:10px;width:100%;padding:14px 18px 6px;
+  position:sticky;top:0;z-index:20;background:var(--bg)}
+#quit-btn{width:42px;height:42px;font-size:1.35rem}
 .icon-btn{background:none;border:none;font-size:1.25rem;color:var(--muted);cursor:pointer;
   width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:10px;flex-shrink:0}
 .icon-btn:active{background:var(--surface)}
@@ -383,6 +425,12 @@ button.dict-item{cursor:pointer}
     </div>
   </div>
 
+  <button class="prof-entry" id="prof-entry">
+    <span class="pe-icon" id="pe-icon">💼</span>
+    <span class="pe-txt"><b id="pe-title">Inglés para tu profesión</b><small id="pe-sub">15 áreas: negocios, finanzas, salud, ingeniería, TI…</small></span>
+    <span class="pe-arrow">›</span>
+  </button>
+
   <div class="sec-row">
     <div class="sec-label">¿Qué quieres practicar?</div>
     <div><button class="link-btn" id="cats-all">Todo</button> · <button class="link-btn" id="cats-none">Nada</button></div>
@@ -512,6 +560,26 @@ button.dict-item{cursor:pointer}
   <button class="btn-secondary" id="home-btn">← Inicio</button>
 </div>
 
+<!-- ══ PROFESIONES ══ -->
+<div id="prof" class="screen">
+  <div class="dict-header">
+    <button class="dict-back" id="prof-back" aria-label="Volver">←</button>
+    <div class="guide-title" id="prof-title">💼 Tu profesión</div>
+  </div>
+  <div class="guide-body" id="prof-body"></div>
+</div>
+
+<!-- ══ CONFIRMACIÓN ══ -->
+<div id="confirm" hidden>
+  <div class="cf-box" role="dialog" aria-modal="true" aria-labelledby="cf-msg">
+    <div class="cf-msg" id="cf-msg"></div>
+    <div class="cf-btns">
+      <button class="btn-secondary" id="cf-no">Cancelar</button>
+      <button class="btn-primary" id="cf-yes">Sí</button>
+    </div>
+  </div>
+</div>
+
 <!-- ══ DICCIONARIO ══ -->
 <div id="dict" class="screen">
   <div class="dict-header">
@@ -548,6 +616,7 @@ button.dict-item{cursor:pointer}
 <!-- Datos (archivos separados) -->
 <script src="vocab.js"></script>
 <script src="grammar.js"></script>
+<script src="prof/index.js"></script>
 
 <script>
 // ══════════════════════════════════════════════════════════════════════════════
@@ -582,7 +651,12 @@ const LEVEL_KEYS = Object.keys(LEVELS);
 const BOOKS = ['Interchange 3', 'Passages 1', 'Passages 2'];
 const srcLabel = s => s.replace(/ · U(\d+)$/, ' · Unidad $1');
 const levelBadge = lv => `<span class="lv-badge lv-${lv}">${lv}</span>`;
+// Familias de «Inglés para tu profesión» (prof/index.js): categorías 101–115, aparte de la lista del inicio
+const PROF_BASE = 100;
+PROF_FAMILIES.forEach((f, i) => { f.c = PROF_BASE + i + 1; CATS[f.c] = {name: f.es, icon: f.icon, w: 1}; });
+const isProfCat = c => +c > PROF_BASE;
 const catLabel = c => CATS[c] ? CATS[c].icon + ' ' + CATS[c].name : '';
+const pillClass = c => isProfCat(c) ? 'cprof' : 'c' + c;
 
 // Conjugación española de las traducciones de verbos (ver esForms)
 // [terminación, pretérito «yo», participio]; null = se conjuga como regular
@@ -658,9 +732,12 @@ function lsGet(k, def){
 function lsSet(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
 
 const DEFAULT_PREFS = {dir:'en-es', size:25, cats:[4,6,2,8,5,1,9,7,10,3,11],
-  wtype:'all', ftype:'all', vmode:'both', irrOnly:false, typeForms:false, autoSpeak:false, levels:[...LEVEL_KEYS]};
+  wtype:'all', ftype:'all', vmode:'both', irrOnly:false, typeForms:false, autoSpeak:false, levels:[...LEVEL_KEYS],
+  prof:{fam:null, area:-1, kind:'all'}};
 const prefs = Object.assign({}, DEFAULT_PREFS, lsGet(PREFS_KEY, {}));
-prefs.cats = prefs.cats.filter(c => CATS[c]);
+prefs.cats = prefs.cats.filter(c => CATS[c] && !isProfCat(c));
+prefs.prof = Object.assign({}, DEFAULT_PREFS.prof, prefs.prof);
+if(!PROF_FAMILIES.some(f => f.id === prefs.prof.fam)) prefs.prof.fam = null;
 prefs.levels = (Array.isArray(prefs.levels) ? prefs.levels : []).filter(l => LEVELS[l]);
 if(prefs.levels.length === 0) prefs.levels = [...LEVEL_KEYS];
 function savePrefs(){ lsSet(PREFS_KEY, prefs); }
@@ -677,9 +754,12 @@ function markSeen(items){
   saveHist(h);
 }
 
+// Las falladas de una profesión que todavía no se ha cargado se conservan (ids «p<familia>:...»)
+const isProfId = id => /^p[a-z-]+:/.test(id);
+function getFailedRaw(){ return lsGet(FAILED_KEY, []).filter(id => BY_ID.has(id) || isProfId(id)); }
 function getFailed(){ return lsGet(FAILED_KEY, []).filter(id => BY_ID.has(id)); }
-function addFailed(it){ const a = getFailed(); if(!a.includes(it.id)){ a.push(it.id); lsSet(FAILED_KEY, a); } }
-function removeFailed(it){ lsSet(FAILED_KEY, getFailed().filter(id => id !== it.id)); }
+function addFailed(it){ const a = getFailedRaw(); if(!a.includes(it.id)){ a.push(it.id); lsSet(FAILED_KEY, a); } }
+function removeFailed(it){ lsSet(FAILED_KEY, getFailedRaw().filter(id => id !== it.id)); }
 
 function getBestStreak(){ return lsGet(STREAK_KEY, 0); }
 function saveBestStreak(n){ if(n > getBestStreak()) lsSet(STREAK_KEY, n); }
@@ -952,6 +1032,12 @@ function distinctPicks(pool, n, key, exclude){
   return out;
 }
 function wordPool(it){
+  if(it.k){
+    // Profesión: opciones del mismo tipo (términos con términos, frases con frases), mejor si son de la misma área
+    const same = POOL[it.c].filter(w => w.k === it.k);
+    const area = same.filter(w => w.a === it.a);
+    return area.length >= 12 ? area : same.length >= 4 ? same : POOL[it.c];
+  }
   let pool = POOL[it.c];
   if(it.t){ const same = pool.filter(w => w.t === it.t); if(same.length >= 8) pool = same; }
   return pool.length >= 4 ? pool : ITEMS.filter(w => w.kind === 'word');
@@ -998,7 +1084,7 @@ function makeWordQ(it){
   const options = shuffle([answer, ...distinctPicks(pool, 3, enAsk ? 'es' : 'en', [answer])]);
   return {
     label: enAsk ? '¿Qué significa…?' : '¿Cómo se dice en inglés…?',
-    prompt: enAsk ? it.en : it.es,
+    prompt: enAsk ? it.en : it.es, sentence: it.k === 'p',
     sub: enAsk && it.c === 11 && it.ex ? it.ex : '',
     mode: enAsk ? '🇬🇧 → 🇪🇸  elige la traducción en español' : '🇪🇸 → 🇬🇧  elige la traducción en inglés',
     answer, options,
@@ -1212,10 +1298,11 @@ function renderHomeOptions(){
 }
 
 function updateHomeStats(){
-  const failed   = getFailed();
+  const failed   = getFailed().filter(id => !isProfCat(BY_ID.get(id).c));
   const sessions = getSessions();
   const words = VOCAB.length;
-  const exs = ITEMS.length - words;
+  const exs = ITEMS.filter(it => it.kind === 'ex').length;
+  renderProfEntry();
 
   document.getElementById('home-streak').textContent       = '🔥 ' + getBestStreak();
   document.getElementById('home-sessions').textContent     = sessions;
@@ -1242,18 +1329,29 @@ function updateHomeStats(){
 // ══════════════════════════════════════════════════════════════════════════════
 // QUIZ FLOW
 // ══════════════════════════════════════════════════════════════════════════════
+// Último modo jugado: «Nuevo turno», «Repasar» y «Volver» repiten o regresan al mismo lugar
+let lastMode = 'normal', lastTopic = null;
+const isProfMode = () => lastMode === 'prof' || lastMode === 'prof-retry';
 function startQuiz(mode, topic){
   if(mode === 'retry'){
-    const failed = getFailed();
-    if(failed.length < 4){ alert('Necesitas al menos 4 palabras falladas para repasar.'); return; }
+    const failed = getFailed().filter(id => !isProfCat(BY_ID.get(id).c));
+    if(failed.length < 4){ notify('Necesitas al menos 4 palabras falladas para repasar.'); return; }
     queue = shuffle(failed).slice(0, Math.min(failed.length, prefs.size)).map(id => BY_ID.get(id));
   } else if(mode === 'topic'){
     const items = POOL[topic.cat].filter(it => it.topic === topic);
     queue = shuffle([...items, ...shuffle(items)]).slice(0, Math.max(items.length, Math.min(12, items.length * 2)));
+  } else if(mode === 'prof'){
+    queue = buildProfQueue(topic, prefs.size);
+    if(queue.length < 4){ notify('Con ese filtro no hay suficientes palabras. Elige otra área o «Todo».'); return; }
+  } else if(mode === 'prof-retry'){
+    const failed = profFailed(topic);
+    if(failed.length < 4){ notify('Necesitas al menos 4 palabras falladas de esta profesión para repasar.'); return; }
+    queue = shuffle(failed).slice(0, Math.min(failed.length, prefs.size));
   } else {
     queue = buildQueue(prefs.size);
-    if(queue.length === 0){ alert('Elige al menos una categoría con palabras para practicar.'); return; }
+    if(queue.length === 0){ notify('Elige al menos una categoría con palabras para practicar.'); return; }
   }
+  lastMode = mode; lastTopic = topic || null;
 
   current = 0; correct = 0; wrong = 0;
   lives = 3; streak = 0; sessionBest = 0;
@@ -1297,7 +1395,7 @@ function renderQuestion(){
 
   const pill = document.getElementById('corr-pill');
   pill.textContent = catLabel(it.c); // sin el nombre del tema: delataría la respuesta
-  pill.className   = 'corr-pill c' + it.c;
+  pill.className   = 'corr-pill ' + pillClass(it.c);
   document.getElementById('q-mode').textContent = q.mode || '';
 
   const total = queue.length;
@@ -1440,7 +1538,10 @@ function buildResultsScreen(){
     dsBanner.style.display = 'none';
   }
 
-  const failed    = getFailed().map(id => BY_ID.get(id));
+  // En una profesión se muestran solo sus falladas; en el resto, las de las categorías generales
+  const failed    = getFailed().map(id => BY_ID.get(id))
+    .filter(it => isProfMode() ? lastTopic && it.c === lastTopic.c : !isProfCat(it.c));
+  document.getElementById('home-btn').textContent = isProfMode() ? '← Volver a tu profesión' : '← Inicio';
   const failedSec = document.getElementById('failed-section');
   if(failed.length > 0){
     failedSec.style.display = 'block';
@@ -1450,7 +1551,7 @@ function buildResultsScreen(){
       failed.slice(-20).reverse().map(it => {
         const [en, es] = itemTexts(it);
         return `<div class="failed-item">
-          <span class="corr-pill c${it.c}" style="font-size:.58rem;padding:2px 7px;margin-bottom:0">${catLabel(it.c)}</span>
+          <span class="corr-pill ${pillClass(it.c)}" style="font-size:.58rem;padding:2px 7px;margin-bottom:0">${catLabel(it.c)}</span>
           <span class="failed-en">${escapeHtml(en)}</span>
           <span class="failed-es">${escapeHtml(es)}</span>
         </div>`;
@@ -1591,6 +1692,11 @@ const DICT_ENTRIES = [
   ...ITEMS.filter(it => it.kind !== 'ex'),
 ];
 function subTypesFor(c){
+  if(isProfCat(c)){
+    // Áreas (profesiones) de la familia: t = 'p<c>-<n>'
+    const f = PROF_FAMILIES.find(x => String(x.c) === c);
+    return f && f.areas ? Object.fromEntries(f.areas.map((a, i) => ['p' + f.c + '-' + i, a.en])) : null;
+  }
   if(c === '4' || c === '6') return WTYPES;
   if(c === '10') return FTYPES;
   if(c === '11') return AFFIX_TYPES;
@@ -1634,14 +1740,14 @@ function dictRender(reset){
 
   const html = slice.map(w => {
     if(w.topic) return `<button class="dict-item" data-topic="${w.topic.id}">
-        <div class="di-top"><span class="di-en">${escapeHtml(w.en)}</span><span class="di-pill c${w.c}">${catLabel(w.c)}</span></div>
+        <div class="di-top"><span class="di-en">${escapeHtml(w.en)}</span><span class="di-pill ${pillClass(w.c)}">${catLabel(w.c)}</span></div>
         <div class="di-es">${escapeHtml(w.es)}</div><div class="di-extra">Toca para ver la explicación →</div></button>`;
     const failed = failedSet.has(w.id);
     return `<div class="dict-item${failed ? ' is-failed' : ''}">
       <div class="di-top">
         <span class="di-en">${escapeHtml(w.en)} ${speakBtn(w.v ? w.v.join(', ') : w.en)}</span>
         ${w.t ? `<span class="di-type">${TYPE_SHORT[w.t] || w.t}</span>` : ''}
-        <span class="di-pill c${w.c}">${catLabel(w.c)}</span>
+        <span class="di-pill ${pillClass(w.c)}">${catLabel(w.c)}</span>
         ${failed ? '<span class="di-fail">❌ fallada</span>' : ''}
       </div>
       ${w.v ? `<div class="di-forms">${escapeHtml(w.v.map(f => f.replace(/\//g, ' / ')).join('  →  '))}${w.irr ? '' : ' · regular'}</div>` : ''}
@@ -1669,16 +1775,19 @@ function dictRender(reset){
 function renderDictChips(){
   document.getElementById('dict-chips').innerHTML =
     `<button class="chip${dictCorr === 'all' ? ' active' : ''}" data-c="all">Todas</button>` +
-    CAT_ORDER.map(c => `<button class="chip${dictCorr === String(c) ? ' active' : ''}" data-c="${c}">${catLabel(c)}</button>`).join('') +
+    [...CAT_ORDER, ...PROF_FAMILIES.filter(f => PROF_LOADED[f.id]).map(f => f.c)]
+      .map(c => `<button class="chip${dictCorr === String(c) ? ' active' : ''}" data-c="${c}">${catLabel(c)}</button>`).join('') +
     `<button class="chip${dictCorr === 'failed' ? ' active' : ''}" data-c="failed">❌ Falladas</button>`;
   const sub = subTypesFor(dictCorr);
   const row = document.getElementById('dict-subchips');
   row.hidden = !sub;
-  row.innerHTML = sub ? chipsHtml(sub, dictSub, 'Todos los tipos') : '';
+  row.innerHTML = sub ? chipsHtml(sub, dictSub, isProfCat(dictCorr) ? 'Todas las áreas' : 'Todos los tipos') : '';
 }
 
-function openDict(){
-  dictQuery = ''; dictCorr = 'all'; dictSub = 'all';
+let dictFrom = null; // familia de profesión desde la que se abrió (para volver)
+function openDict(c, from){
+  dictQuery = ''; dictCorr = c ? String(c) : 'all'; dictSub = 'all';
+  dictFrom = from || null;
   document.getElementById('dict-search').value = '';
   renderDictChips();
   show('dict');
@@ -1731,17 +1840,47 @@ document.getElementById('size-grid').addEventListener('click', e => {
 
 document.getElementById('start-btn').addEventListener('click', () => startQuiz('normal'));
 document.getElementById('retry-btn').addEventListener('click', () => startQuiz('retry'));
-document.getElementById('dict-btn').addEventListener('click', openDict);
+document.getElementById('dict-btn').addEventListener('click', () => openDict());
 document.getElementById('guide-btn').addEventListener('click', openGuide);
 
-document.getElementById('restart-btn').addEventListener('click', () => startQuiz('normal'));
-document.getElementById('retry-failed-btn').addEventListener('click', () => startQuiz('retry'));
-document.getElementById('home-btn').addEventListener('click', () => { updateHomeStats(); show('home'); });
+document.getElementById('restart-btn').addEventListener('click', restartQuiz);
+document.getElementById('retry-failed-btn').addEventListener('click', () =>
+  isProfMode() ? startQuiz('prof-retry', lastTopic) : startQuiz('retry'));
+document.getElementById('home-btn').addEventListener('click', leaveQuiz);
+function restartQuiz(){
+  if(lastMode === 'retry' && getFailed().length < 4) return startQuiz('normal');
+  if(lastMode === 'prof-retry' && profFailed(lastTopic).length < 4) return startQuiz('prof', lastTopic);
+  startQuiz(lastMode, lastTopic);
+}
+// Salir del quiz o de los resultados: a la profesión si venías de ahí, si no al inicio
+function leaveQuiz(){
+  hideSheet();
+  if(isProfMode() && lastTopic) openProf(lastTopic.id);
+  else { updateHomeStats(); show('home'); }
+}
+
+// Confirmación propia de la app (confirm() del navegador puede estar bloqueado en la app instalada)
+function askConfirm(msg, yes = 'Sí', no = 'Cancelar'){
+  return new Promise(resolve => {
+    const wrap = document.getElementById('confirm');
+    const yesB = document.getElementById('cf-yes'), noB = document.getElementById('cf-no');
+    document.getElementById('cf-msg').textContent = msg;
+    yesB.textContent = yes; noB.textContent = no; noB.hidden = no === null;
+    const done = v => { wrap.hidden = true; yesB.onclick = noB.onclick = wrap.onclick = null; resolve(v); };
+    yesB.onclick = () => done(true);
+    noB.onclick = () => done(false);
+    wrap.onclick = e => { if(e.target === wrap) done(false); };
+    wrap.hidden = false;
+    yesB.focus();
+  });
+}
+const notify = msg => askConfirm(msg, 'Entendido', null);
 
 document.getElementById('fb-next').addEventListener('click', goNext);
 document.addEventListener('keydown', e => {
   if(e.key === 'Enter' && locked && document.getElementById('quiz').classList.contains('active')
-     && !document.getElementById('fb-next').hidden && !document.getElementById('topic').classList.contains('show')){
+     && !document.getElementById('fb-next').hidden && !document.getElementById('topic').classList.contains('show')
+     && document.getElementById('confirm').hidden){
     e.preventDefault(); goNext();
   }
 });
@@ -1756,11 +1895,17 @@ autoBtn.addEventListener('click', () => {
   prefs.autoSpeak = !prefs.autoSpeak; savePrefs(); renderAutoSpeak();
   if(prefs.autoSpeak && q && q.speakNow && !locked) speak(q.speakNow);
 });
-document.getElementById('quit-btn').addEventListener('click', () => {
-  if(current === 0 && !locked){ hideSheet(); updateHomeStats(); show('home'); return; }
-  if(!confirm('¿Terminar el turno ahora? Se guardará lo que llevas.')) return;
+document.getElementById('quit-btn').addEventListener('click', async () => {
+  if(finished) return;
+  if(current === 0 && !locked){ leaveQuiz(); return; }
+  // Mientras se decide, se pausa el paso automático a la siguiente pregunta
+  const wasAuto = locked && document.getElementById('fb-next').hidden;
   clearTimeout(nextTimer);
+  const ok = await askConfirm('¿Terminar el turno ahora?\nSe guardará lo que llevas.', 'Terminar', 'Seguir');
+  if(!ok){ if(wasAuto) goNext(); return; }
+  if(finished) return;
   queue = queue.slice(0, current + (locked ? 1 : 0));
+  if(queue.length === 0){ leaveQuiz(); return; }
   finishQuiz();
 });
 
@@ -1771,19 +1916,19 @@ document.getElementById('go-results-btn').addEventListener('click', () => {
 });
 document.getElementById('go-restart-btn').addEventListener('click', () => {
   document.getElementById('gameover').classList.remove('show');
-  startQuiz('normal');
+  restartQuiz();
 });
 
-document.getElementById('reset-history-btn').addEventListener('click', () => {
-  if(confirm('¿Resetear todo el progreso?\nSe borrarán las palabras vistas y el conteo de turnos.\nEl récord de racha, la racha de días y las palabras falladas se conservan.')){
+document.getElementById('reset-history-btn').addEventListener('click', async () => {
+  if(await askConfirm('¿Resetear todo el progreso?\nSe borrarán las palabras vistas y el conteo de turnos.\nEl récord de racha, la racha de días y las palabras falladas se conservan.', 'Resetear')){
     lsSet(HIST_KEY, {});
     lsSet(SESSION_KEY, 0);
     updateHomeStats();
   }
 });
 
-document.getElementById('clear-failed-btn').addEventListener('click', () => {
-  if(confirm('¿Limpiar la lista de palabras falladas?')){
+document.getElementById('clear-failed-btn').addEventListener('click', async () => {
+  if(await askConfirm('¿Limpiar la lista de palabras falladas?', 'Limpiar')){
     lsSet(FAILED_KEY, []);
     document.getElementById('failed-section').style.display = 'none';
     document.getElementById('retry-failed-btn').style.display = 'none';
@@ -1792,7 +1937,7 @@ document.getElementById('clear-failed-btn').addEventListener('click', () => {
 });
 
 // Diccionario
-document.getElementById('dict-back').addEventListener('click', () => { updateHomeStats(); show('home'); });
+document.getElementById('dict-back').addEventListener('click', () => { if(dictFrom) openProf(dictFrom); else { updateHomeStats(); show('home'); } });
 document.getElementById('dict-search').addEventListener('input', (e) => { dictQuery = e.target.value; dictRender(true); });
 document.getElementById('dict-chips').addEventListener('click', e => {
   const ch = e.target.closest('.chip'); if(!ch) return;
@@ -1813,11 +1958,184 @@ document.getElementById('guide-tabs').addEventListener('click', e => {
 });
 
 // ══════════════════════════════════════════════════════════════════════════════
+// INGLÉS PARA TU PROFESIÓN
+// Cada familia vive en prof/<id>.js y se carga solo cuando se abre, para que la app siga liviana.
+// ══════════════════════════════════════════════════════════════════════════════
+const PROF_LOADED = {}, profLoading = {};
+const PROF_KINDS = {all: 'Todo', w: 'Palabras', p: 'Frases'};
+const profById = id => PROF_FAMILIES.find(f => f.id === id);
+let profView = null; // familia abierta en la pantalla (null = lista de familias)
+
+// La llaman los archivos prof/<id>.js. Cada línea de w (palabras) o p (frases): «inglés | español»
+function registerProf(d){
+  const f = profById(d.id);
+  if(!f || PROF_LOADED[d.id]) return;
+  f.areas = d.areas.map(a => ({en: a.en, es: a.es}));
+  d.areas.forEach((a, ai) => {
+    const t = 'p' + f.c + '-' + ai;
+    TYPE_SHORT[t] = a.en;
+    ['w', 'p'].forEach(k => (a[k] || '').split('\n').forEach(line => {
+      const [en, es, ex] = line.split(' | ').map(s => s && s.trim());
+      if(!en || !es) return;
+      const it = {id: 'p' + f.id + ':' + en.toLowerCase(), en, es, c: f.c, kind: 'word', t, k, a: ai};
+      if(ex) it.ex = ex;
+      if(BY_ID.has(it.id)) return;
+      addItem(it); DICT_ENTRIES.push(it);
+    }));
+  });
+  f.n = POOL[f.c].length;
+  PROF_LOADED[d.id] = true;
+}
+function loadProf(id){
+  if(PROF_LOADED[id]) return Promise.resolve(true);
+  return profLoading[id] = profLoading[id] || new Promise(resolve => {
+    const s = document.createElement('script');
+    const end = ok => { delete profLoading[id]; if(!ok) s.remove(); resolve(ok); };
+    s.onload = () => end(!!PROF_LOADED[id]);
+    s.onerror = () => end(false);
+    s.src = 'prof/' + id + '.js';
+    document.head.appendChild(s);
+  });
+}
+
+function profMatches(it){
+  const pp = prefs.prof;
+  return (pp.area < 0 || it.a === pp.area) && (pp.kind === 'all' || it.k === pp.kind);
+}
+const profPool = f => (POOL[f.c] || []).filter(profMatches);
+const profFailed = f => f ? getFailed().map(id => BY_ID.get(id)).filter(it => it.c === f.c) : [];
+function buildProfQueue(f, n){
+  const pool = profPool(f);
+  let selected = pickFromPool(f.c, pool, n);
+  // Igual que en el turno normal: hasta un 15 % de falladas de esta profesión
+  const inQueue = new Set(selected.map(it => it.id));
+  const failed = shuffle(profFailed(f).filter(it => profMatches(it) && !inQueue.has(it.id)));
+  const k = Math.min(failed.length, Math.floor(selected.length * 0.15));
+  if(k > 0){
+    selected = shuffle(selected);
+    selected.splice(selected.length - k, k, ...failed.slice(0, k));
+  }
+  return shuffle(selected);
+}
+
+function renderProfEntry(){
+  const f = profById(prefs.prof.fam);
+  document.getElementById('pe-icon').textContent = f ? f.icon : '💼';
+  document.getElementById('pe-title').textContent = f ? 'Tu profesión: ' + f.es : 'Inglés para tu profesión';
+  document.getElementById('pe-sub').textContent = f
+    ? 'Toca para practicar o cambiar de área'
+    : PROF_FAMILIES.length + ' áreas: negocios, finanzas, salud, ingeniería, TI…';
+}
+function openProfList(){
+  profView = null;
+  const h = getHist();
+  document.getElementById('prof-title').textContent = '💼 Tu profesión';
+  document.getElementById('prof-body').innerHTML =
+    `<div class="g-intro">Vocabulario técnico y frases reales del trabajo para cada área profesional. Elige tu familia; adentro puedes practicar todo o solo tu profesión.</div>
+     <div class="pf-grid">${PROF_FAMILIES.map(f => {
+       const total = PROF_LOADED[f.id] ? POOL[f.c].length : f.n;
+       const seen = Math.min(total, (h[f.c] || []).length);
+       return `<button class="pf-card${prefs.prof.fam === f.id ? ' current' : ''}" data-fam="${f.id}">
+         <span class="pf-ic">${f.icon}</span>
+         <span class="pf-main"><b>${escapeHtml(f.es)}</b><span>${escapeHtml(f.jobs)}</span>
+           <small>${total.toLocaleString('es-CO')} palabras y frases${seen ? ' · vistas ' + seen.toLocaleString('es-CO') : ''}</small>
+           <span class="pf-bar"><i style="width:${total ? Math.round(seen / total * 100) : 0}%"></i></span></span>
+       </button>`;
+     }).join('')}</div>`;
+  show('prof');
+}
+async function openProf(id){
+  const f = profById(id);
+  if(!f) return openProfList();
+  if(prefs.prof.fam !== id){ prefs.prof.fam = id; prefs.prof.area = -1; savePrefs(); }
+  profView = id;
+  document.getElementById('prof-title').textContent = f.icon + ' ' + f.es;
+  show('prof');
+  if(!PROF_LOADED[id]){
+    const body = document.getElementById('prof-body');
+    body.innerHTML = '<div class="pf-msg">Cargando vocabulario…</div>';
+    const ok = await loadProf(id);
+    if(profView !== id) return;
+    if(!ok){
+      body.innerHTML = `<div class="pf-msg">No se pudo cargar esta área. Revisa tu conexión e inténtalo de nuevo.</div>
+        <button class="btn-secondary" data-act="list">← Ver todas las áreas</button>`;
+      return;
+    }
+  }
+  renderProfDetail(f);
+}
+function renderProfDetail(f){
+  const pp = prefs.prof;
+  if(pp.area >= f.areas.length) pp.area = -1;
+  const all = POOL[f.c], seen = Math.min(all.length, (getHist()[f.c] || []).length);
+  const nW = all.filter(it => it.k === 'w').length, nP = all.length - nW;
+  const pool = profPool(f), failed = profFailed(f);
+  const num = n => n.toLocaleString('es-CO');
+  const areaCount = i => all.filter(it => it.a === i).length;
+  const tog = (id, entries, cur, attr) => `<div class="toggle-row" id="${id}">${entries.map(([v, l]) =>
+    `<button class="tog-btn${String(cur) === String(v) ? ' active' : ''}" data-${attr}="${v}">${l}</button>`).join('')}</div>`;
+  document.getElementById('prof-body').innerHTML = `
+    <div class="pf-head">
+      <div class="pf-big">${f.icon} ${escapeHtml(f.es)}</div>
+      <div class="pf-en">${escapeHtml(f.en)}</div>
+      <div class="pf-num">${num(nW)} palabras · ${num(nP)} frases · vistas ${num(seen)} de ${num(all.length)}</div>
+      <div class="pf-bar"><i style="width:${all.length ? Math.round(seen / all.length * 100) : 0}%"></i></div>
+    </div>
+    <div class="opt-panel">
+      <div class="opt-title">Profesión o área</div>
+      <div class="chip-wrap">
+        <button class="chip${pp.area < 0 ? ' active' : ''}" data-area="-1">Todas · ${num(all.length)}</button>
+        ${f.areas.map((a, i) => `<button class="chip${pp.area === i ? ' active' : ''}" data-area="${i}" title="${escapeHtml(a.es)}">${escapeHtml(a.en)} · ${num(areaCount(i))}</button>`).join('')}
+      </div>
+      <div class="opt-title">¿Qué practicar?</div>
+      ${tog('pf-kind', Object.entries(PROF_KINDS), pp.kind, 'kind')}
+    </div>
+    <div class="sec-label">Dirección de la pregunta</div>
+    ${tog('pf-dir', [['en-es', '🇬🇧 → 🇪🇸'], ['es-en', '🇪🇸 → 🇬🇧'], ['mixed', '🔀 Mixto']], prefs.dir, 'dir')}
+    <div class="sec-label">Preguntas por turno</div>
+    ${tog('pf-size', [10, 25, 50, 100].map(n => [n, n]), prefs.size, 'size')}
+    <button class="btn-primary" data-act="start"${pool.length < 4 ? ' disabled' : ''}>Empezar · ${num(pool.length)} disponibles</button>
+    <button class="btn-secondary" data-act="dict">📖 Ver la lista de palabras y frases</button>
+    ${failed.length >= 4 ? `<button class="btn-secondary" data-act="retry" style="color:var(--wrong)">❌ Repasar las que fallé (${failed.length})</button>` : ''}
+    <button class="btn-secondary" data-act="list">↔ Cambiar de área profesional</button>`;
+}
+document.getElementById('prof-body').addEventListener('click', e => {
+  const card = e.target.closest('[data-fam]');
+  if(card){ openProf(card.dataset.fam); return; }
+  const b = e.target.closest('[data-area],[data-kind],[data-dir],[data-size],[data-act]');
+  if(!b) return;
+  if(b.dataset.act === 'list'){ openProfList(); return; }
+  const f = profById(profView);
+  if(!f || !PROF_LOADED[f.id]) return;
+  const d = b.dataset;
+  if(d.act === 'start') return startQuiz('prof', f);
+  if(d.act === 'retry') return startQuiz('prof-retry', f);
+  if(d.act === 'dict') return openDict(f.c, f.id);
+  if(d.area !== undefined) prefs.prof.area = +d.area;
+  else if(d.kind) prefs.prof.kind = d.kind;
+  else if(d.dir) prefs.dir = d.dir;
+  else if(d.size) prefs.size = +d.size;
+  savePrefs(); renderProfDetail(f);
+});
+document.getElementById('prof-back').addEventListener('click', () => {
+  if(profView) openProfList(); else { updateHomeStats(); show('home'); }
+});
+document.getElementById('prof-entry').addEventListener('click', () =>
+  prefs.prof.fam ? openProf(prefs.prof.fam) : openProfList());
+
+// ══════════════════════════════════════════════════════════════════════════════
 // INIT + SERVICE WORKER
 // ══════════════════════════════════════════════════════════════════════════════
 migrateV1();
 renderAutoSpeak();
 updateHomeStats();
+// Carga en segundo plano la profesión elegida y las que tienen palabras falladas
+(async () => {
+  const fams = new Set(lsGet(FAILED_KEY, []).filter(isProfId).map(id => id.slice(1, id.indexOf(':'))));
+  if(prefs.prof.fam) fams.add(prefs.prof.fam);
+  for(const id of fams) if(profById(id)) await loadProf(id);
+  if(fams.size) updateHomeStats();
+})();
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('./sw.js');
 }

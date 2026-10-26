@@ -19,7 +19,8 @@ App web (PWA) para practicar vocabulario, verbos, tiempos verbales y gramática 
 | 🔊 **Pronunciación** | Escucha cualquier palabra o frase con el botón 🔊 (la app elige sola la voz en inglés más natural de tu dispositivo). El botón 🔈/🔊 del quiz activa la lectura automática. |
 | ❤️ **3 vidas, racha y racha de días** | Igual que antes. Las palabras que fallas se guardan, aparecen mezcladas en los turnos siguientes (hasta un 15 %) y puedes repasarlas aparte. |
 | 📖 **Diccionario** | Buscador en inglés o español, filtros por categoría y tipo, formas de los verbos, traducción literal de las expresiones y acceso a las explicaciones. |
-| ✕ **Salir del turno** | Puedes terminar un turno a la mitad y se guarda lo que llevas. |
+| 💼 **Inglés para tu profesión** | Vocabulario técnico y frases del trabajo para 15 familias de profesiones (negocios, finanzas, salud, ingeniería, TI, datos, derecho…), con filtro por profesión. Ver la sección más abajo. |
+| ✕ **Salir del turno** | Puedes terminar un turno a la mitad y se guarda lo que llevas. La confirmación es una ventana de la propia app: antes usaba la del navegador, que en la app instalada a veces quedaba bloqueada y el turno seguía. |
 
 ---
 
@@ -211,6 +212,55 @@ El nivel sigue el Marco Común Europeo (MCER). La columna **Libro** dice en qué
 
 ---
 
+## 💼 Inglés para tu profesión
+
+Sección aparte (botón **💼 Inglés para tu profesión** del inicio) con vocabulario técnico y **frases reales del trabajo** para 15 familias de profesiones. Cada familia tiene un área *General* y una por cada profesión, así que puedes practicar todo o solo la tuya.
+
+- **Elegir:** la app recuerda tu familia y la muestra en el inicio (*Tu profesión: …*). Dentro puedes filtrar por profesión, por **Palabras** o **Frases**, y elegir la dirección y el número de preguntas.
+- **Practicar:** las opciones incorrectas son del mismo tipo (términos con términos, frases con frases) y, si hay suficientes, de la misma profesión, para que no sea demasiado fácil.
+- **Repasar:** las falladas de cada profesión se guardan aparte (no se mezclan con los turnos normales) y tienen su botón *❌ Repasar las que fallé*.
+- **Ver la lista:** abre el diccionario filtrado por la familia, con filtro por profesión.
+- **Liviano:** cada familia está en su propio archivo y se descarga solo cuando la abres; después queda guardada para usarla sin conexión.
+
+| # | Familia | Archivo | Profesiones | Palabras | Frases | Total |
+|---|---|---|---|---:|---:|---:|
+| 1 | 📊 Negocios, gestión y estrategia | `prof/business.js` | Business Analyst, Management Consultant, Strategy Manager, Operations Manager, Project Manager | 272 | 58 | 330 |
+| 2 | 🤝 Ventas, marketing y negociación | `prof/sales.js` | Sales Executive, Business Development Manager, Marketing Specialist, Account Manager, Negotiator | 213 | 51 | 264 |
+| 3 | 💰 Finanzas, banca y contabilidad | `prof/finance.js` | Financial Analyst, Investment Banker, Accountant, Auditor, Risk Analyst, Actuary | 307 | 67 | 374 |
+| 4 | 🚚 Logística, cadena de suministro y compras | `prof/logistics.js` | Supply Chain Manager, Logistics Analyst, Procurement Specialist, Freight Forwarder, Demand Planner | 213 | 40 | 253 |
+| 5 | 🌾 Agricultura, agronegocios y producción de alimentos | `prof/agriculture.js` | Agronomist, Agricultural Engineer, Farm Manager, Agribusiness Analyst, Precision Agriculture Specialist | 211 | 35 | 246 |
+| 6 | 🧬 Biotecnología, ciencias de la vida y farmacéutica | `prof/biotech.js` | Biotechnologist, Bioprocess Engineer, Biomedical Scientist, Pharmaceutical Researcher, Clinical Research Associate | 204 | 35 | 239 |
+| 7 | 🩺 Salud y profesiones médicas | `prof/healthcare.js` | Physician, Specialist Nurse, Physiotherapist, Pharmacist, Medical Laboratory Scientist | 210 | 44 | 254 |
+| 8 | ⚙️ Ingeniería, manufactura y calidad | `prof/engineering.js` | Industrial Engineer, Mechanical Engineer, Manufacturing Engineer, Quality Engineer, Process Engineer | 215 | 36 | 251 |
+| 9 | ⚡ Energía, medio ambiente y sostenibilidad | `prof/energy.js` | Renewable Energy Engineer, Environmental Consultant, Energy Analyst, Sustainability Manager, Power Systems Engineer | 187 | 33 | 220 |
+| 10 | 🏗️ Construcción, arquitectura e infraestructura | `prof/construction.js` | Civil Engineer, Architect, Construction Manager, Quantity Surveyor, Structural Engineer | 211 | 36 | 247 |
+| 11 | 💻 Tecnología de la información y software | `prof/it.js` | Software Engineer, Cloud Engineer, Cybersecurity Specialist, Systems Administrator, Solutions Architect | 225 | 41 | 266 |
+| 12 | 🤖 Datos, inteligencia artificial y machine learning | `prof/data.js` | Data Scientist, Data Engineer, AI Engineer, ML Engineer, Quantitative Researcher | 194 | 35 | 229 |
+| 13 | 🔬 Investigación, ciencia y laboratorio | `prof/research.js` | Research Scientist, Chemist, Physicist, Statistician, Laboratory Technician | 200 | 35 | 235 |
+| 14 | ⚖️ Derecho, cumplimiento y comercio internacional | `prof/legal.js` | Lawyer, Compliance Officer, Contract Manager, International Trade Specialist, Customs Compliance Specialist | 195 | 38 | 233 |
+| 15 | 👥 Recursos humanos, educación y comunicación | `prof/hr.js` | HR Specialist, Recruiter, Corporate Trainer, Teacher, Technical Writer, Communications Specialist | 221 | 44 | 265 |
+| | **Total** | | | | | **3.906** |
+
+> **Meta: 2.000 palabras y frases por familia.** Esta primera versión trae el vocabulario esencial de cada profesión (entre 220 y 370 entradas por familia, 3.906 en total). Está escrito a partir de la terminología estándar de cada campo: manuales y glosarios técnicos, normas (ISO, NIIF, BPM…), prensa especializada y el lenguaje habitual en las empresas, con traducciones al español latinoamericano. La estructura ya está lista para seguir ampliando cada familia hasta la meta.
+
+### Cómo añadir palabras a una profesión
+
+Cada archivo `prof/<familia>.js` tiene áreas con dos bloques de texto: `w` (palabras y términos) y `p` (frases). Va **una entrada por línea**, con el inglés y el español separados por ` | ` (espacio, barra, espacio). Opcionalmente se puede agregar una tercera parte con un ejemplo:
+
+```js
+{ en: 'Accountant', es: 'Contador', w: `
+General ledger | Libro mayor
+Accounts payable | Cuentas por pagar | We need to pay the accounts payable by Friday.
+`, p: `
+The books are closed for the month. | Los libros del mes ya están cerrados.
+`},
+```
+
+- No repitas el mismo inglés dentro de una familia (es el identificador del progreso).
+- Para agregar una profesión, añade otra área `{ en, es, w, p }` **al final** de la lista `areas` (no cambies el orden de las que ya existen).
+- Después de editar, ejecuta `node tools/check-prof.js`: revisa el formato, avisa de repetidas y actualiza los contadores de `prof/index.js`.
+
+---
 ## Archivos
 
 | Archivo | Para qué sirve |
@@ -220,6 +270,9 @@ El nivel sigue el Marco Común Europeo (MCER). La columna **Libro** dice en qué
 | `grammar.js` | Tiempos verbales (`TENSES`) y gramática (`GRAMMAR`): explicaciones y ejercicios. |
 | `sw.js` | Service worker: permite usar la app sin conexión. |
 | `manifest.json`, `icon-*.png` | Datos de la PWA para instalarla en el celular. |
+| `prof/index.js` | Lista de las 15 familias de profesiones (nombre, ícono, profesiones y número de entradas). |
+| `prof/<familia>.js` | Vocabulario y frases de cada familia, por profesión. Se carga solo al abrir la familia. |
+| `tools/check-prof.js` | Revisa los archivos de profesiones y actualiza los contadores: `node tools/check-prof.js`. |
 | `awl-check.html` | Herramienta para ver cuánta de la Academic Word List cubre `vocab.js`. |
 | `Imagenes/` | Fotos de las páginas de tus libros (solo en tu computadora: están en `.gitignore` y **no se suben** a GitHub). |
 
