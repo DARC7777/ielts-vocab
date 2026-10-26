@@ -15,7 +15,7 @@ App web (PWA) para practicar vocabulario, verbos, tiempos verbales y gramática 
 | ⏳ **Tiempos verbales** | Los 12 tiempos + *going to*. Tres tipos de pregunta: completar la frase, identificar el tiempo y elegir la estructura. |
 | 📐 **Gramática** | 52 estructuras en 3 niveles, cada una con ejercicios para completar. |
 | 📚 **Aprender** | Guía con cada tiempo y estructura: fórmula (afirmativa, negativa y pregunta), **cuándo se usa**, palabras clave, ejemplos traducidos y el error típico de los hispanohablantes. Desde cualquier pregunta puedes abrir *📖 Ver explicación*. |
-| 🔊 **Pronunciación** | Escucha cualquier palabra o frase. La app elige sola la voz en inglés que suena más natural (*Natural / Neural / Online / Google*), y en el inicio puedes cambiar la voz y la velocidad (lenta, normal o rápida). El botón 🔈/🔊 del quiz activa la lectura automática. |
+| 🔊 **Pronunciación** | Escucha cualquier palabra o frase con el botón 🔊 (la app elige sola la voz en inglés más natural de tu dispositivo). El botón 🔈/🔊 del quiz activa la lectura automática. |
 | ❤️ **3 vidas, racha y racha de días** | Igual que antes. Las palabras que fallas se guardan, aparecen mezcladas en los turnos siguientes (hasta un 15 %) y puedes repasarlas aparte. |
 | 📖 **Diccionario** | Buscador en inglés o español, filtros por categoría y tipo, formas de los verbos, traducción literal de las expresiones y acceso a las explicaciones. |
 | ✕ **Salir del turno** | Puedes terminar un turno a la mitad y se guarda lo que llevas. |
@@ -154,14 +154,6 @@ Ideas para después, de más a menos útiles:
 10. **Exportar e importar el progreso**: copia de seguridad en un archivo para no perderlo si cambias de celular.
 
 ---
-
-## Voz más natural
-
-La voz la pone tu dispositivo, no la app. Para que suene menos robótica:
-
-- **Android**: en Ajustes busca «Texto a voz» (en Samsung: *Administración general › Idioma › Texto a voz*). Elige **Servicios de voz de Google** como motor preferido, entra en su configuración › *Instalar datos de voz* › **Inglés (Reino Unido)** y elige una voz. Luego, en la app, selecciónala en *🔊 Voz en inglés*.
-- **PC**: en **Microsoft Edge** aparecen voces «Microsoft … Online (Natural)», que suenan casi humanas. En Chrome, las mejores son «Google UK English Female / Male».
-- **iPhone / iPad**: Ajustes › Accesibilidad › Contenido leído › Voces › Inglés: descarga una voz «Mejorada» o «Premium».
 
 ## Desarrollo local
 

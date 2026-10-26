@@ -225,14 +225,6 @@ button{font-family:'Nunito',sans-serif}
 .vf-main b{font-size:.98rem;font-weight:900;color:var(--text);word-break:break-word}
 .vf-main i{font-style:normal;font-size:.86rem;font-weight:800;color:var(--muted-dark)}
 .vf small{font-size:.7rem;font-weight:700;color:var(--muted-dark);line-height:1.35}
-.voice-select{width:100%;padding:10px 12px;border:2px solid var(--border);border-radius:12px;background:#fff;
-  font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;color:var(--text)}
-.voice-row{display:flex;gap:8px;align-items:center}
-.voice-row .toggle-row{flex:1}
-.voice-test{padding:9px 14px;border:2px solid var(--border);border-radius:12px;background:#fff;color:var(--blue);
-  font-size:.8rem;font-weight:900;cursor:pointer;box-shadow:0 3px 0 var(--border);flex-shrink:0}
-.voice-test:active{transform:translateY(3px);box-shadow:none}
-.voice-tip{font-size:.7rem;font-weight:700;color:var(--muted-dark);line-height:1.45}
 .mini-speak{background:none;border:none;cursor:pointer;font-size:.95rem;padding:0 2px;vertical-align:middle}
 
 /* ══ GAME OVER ══ */
@@ -424,20 +416,6 @@ button.dict-item{cursor:pointer}
     <button class="size-btn" data-size="25">25<span class="size-sub">preguntas</span></button>
     <button class="size-btn" data-size="50">50<span class="size-sub">preguntas</span></button>
     <button class="size-btn" data-size="100">100<span class="size-sub">preguntas</span></button>
-  </div>
-
-  <div class="opt-panel" id="panel-voice" hidden>
-    <div class="opt-title">🔊 Voz en inglés</div>
-    <select class="voice-select" id="voice-select" aria-label="Voz"></select>
-    <div class="voice-row">
-      <div class="toggle-row" id="rate-toggle">
-        <button class="tog-btn" data-rate="0.75">Lenta</button>
-        <button class="tog-btn" data-rate="0.92">Normal</button>
-        <button class="tog-btn" data-rate="1.08">Rápida</button>
-      </div>
-      <button class="voice-test" id="voice-test">▶ Probar</button>
-    </div>
-    <div class="voice-tip">Las voces vienen de tu dispositivo. ¿Suenan robóticas? En Android busca «Texto a voz» en Ajustes, elige <b>Servicios de voz de Google</b> como motor e instala la voz <b>Inglés (Reino Unido)</b> en alta calidad. En PC, Microsoft Edge trae voces «Natural» muy realistas.</div>
   </div>
 
   <div class="stats-mini">
@@ -654,8 +632,7 @@ function lsGet(k, def){
 function lsSet(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
 
 const DEFAULT_PREFS = {dir:'en-es', size:25, cats:[4,6,2,8,5,1,9,7,10,3,11],
-  wtype:'all', ftype:'all', vmode:'both', irrOnly:false, typeForms:false, autoSpeak:false,
-  voice:'', rate:0.92};
+  wtype:'all', ftype:'all', vmode:'both', irrOnly:false, typeForms:false, autoSpeak:false};
 const prefs = Object.assign({}, DEFAULT_PREFS, lsGet(PREFS_KEY, {}));
 prefs.cats = prefs.cats.filter(c => CATS[c]);
 function savePrefs(){ lsSet(PREFS_KEY, prefs); }
@@ -845,9 +822,7 @@ function englishVoices(){
   return speechSynthesis.getVoices().filter(v => /^en([-_]|$)/i.test(v.lang)).sort((a, b) => voiceScore(b) - voiceScore(a));
 }
 function pickVoice(){
-  const list = englishVoices();
-  enVoice = list.find(v => v.voiceURI === prefs.voice) || list[0] || null;
-  renderVoicePanel();
+  enVoice = englishVoices()[0] || null;
 }
 if(TTS){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
 function speechText(s){
@@ -861,7 +836,7 @@ function speak(text){
     const u = new SpeechSynthesisUtterance(speechText(text));
     u.lang = enVoice ? enVoice.lang : 'en-GB';
     if(enVoice) u.voice = enVoice;
-    u.rate = prefs.rate || 0.92;
+    u.rate = 0.92;
     speechSynthesis.speak(u);
   } catch {}
 }
@@ -1711,26 +1686,6 @@ function renderAutoSpeak(){
   autoBtn.classList.toggle('on', prefs.autoSpeak);
   autoBtn.hidden = !TTS;
 }
-function renderVoicePanel(){
-  const list = englishVoices();
-  const panel = document.getElementById('panel-voice');
-  panel.hidden = list.length === 0;
-  if(list.length === 0) return;
-  const sel = document.getElementById('voice-select');
-  sel.innerHTML = list.map((v, i) =>
-    `<option value="${escapeHtml(v.voiceURI)}"${enVoice && v.voiceURI === enVoice.voiceURI ? ' selected' : ''}>${escapeHtml(v.name)} · ${escapeHtml(v.lang)}${i === 0 ? ' ⭐' : ''}</option>`).join('');
-  document.querySelectorAll('#rate-toggle .tog-btn').forEach(b => b.classList.toggle('active', +b.dataset.rate === prefs.rate));
-}
-document.getElementById('voice-select').addEventListener('change', e => {
-  prefs.voice = e.target.value; savePrefs(); pickVoice();
-  speak('Hello! This is my voice.');
-});
-document.getElementById('rate-toggle').addEventListener('click', e => {
-  const b = e.target.closest('.tog-btn'); if(!b) return;
-  prefs.rate = +b.dataset.rate; savePrefs(); renderVoicePanel();
-  speak('The early bird catches the worm.');
-});
-document.getElementById('voice-test').addEventListener('click', () => speak('The early bird catches the worm.'));
 autoBtn.addEventListener('click', () => {
   prefs.autoSpeak = !prefs.autoSpeak; savePrefs(); renderAutoSpeak();
   if(prefs.autoSpeak && q && q.speakNow && !locked) speak(q.speakNow);
