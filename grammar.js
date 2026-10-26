@@ -346,6 +346,35 @@ const TENSES = [
 const GRAMMAR = [
   // ── Básico ──
   {
+    id: 'verb-forms', level: 'A', name: 'Verb forms (base / past / participle)', es: 'Las 3 formas del verbo: cuándo usar cada una',
+    form: 'Base (write) · Pasado simple (wrote) · Participio pasado (written)',
+    uses: [
+      'BASE: presente (I write; con he / she / it añade -s: she writes), infinitivo (to write), después de modales (can, will, must, should + write), órdenes (Write!) y con do / does / did en preguntas y negativas (Did you write? / I didn\'t write).',
+      'PASADO SIMPLE: acciones terminadas en el pasado, solo en oraciones afirmativas (I wrote a letter yesterday). Es igual para todas las personas: I / you / she / they wrote.',
+      'PARTICIPIO: con have / has / had en los tiempos perfectos (I have written, she had written, we will have written) y con be en la voz pasiva (It was written in 1990). También funciona como adjetivo (a written exam = un examen escrito).',
+    ],
+    signals: 'did / didn\'t → base · yesterday, last week, ago → pasado · have / has / had, be (pasiva) → participio',
+    examples: [
+      { en: 'I write emails every day.', es: 'Escribo correos todos los días. (base)' },
+      { en: 'I wrote three emails yesterday.', es: 'Ayer escribí tres correos. (pasado)' },
+      { en: 'I have written three emails today.', es: 'Hoy he escrito tres correos. (participio)' },
+      { en: 'This email was written by my boss.', es: 'Este correo fue escrito por mi jefe. (participio en voz pasiva)' },
+    ],
+    tip: "Después de did / didn't va SIEMPRE la base (Did you go? / I didn't go), nunca el pasado. Después de have / has / had va SIEMPRE el participio (I have gone, no «I have went»). En los verbos regulares el pasado y el participio son iguales (worked – worked); en los irregulares hay que aprenderlos (go – went – gone).",
+    ex: [
+      { s: 'I have ___ three emails today.', h: 'write', a: 'written', o: ['wrote', 'write', 'writing'], es: 'Hoy he escrito tres correos.' },
+      { s: 'She ___ a letter to her grandmother yesterday.', h: 'write', a: 'wrote', o: ['written', 'write', 'writed'], es: 'Ayer le escribió una carta a su abuela.' },
+      { s: 'Did you ___ the report?', h: 'finish', a: 'finish', o: ['finished', 'finishing', 'finishes'], es: '¿Terminaste el informe?' },
+      { s: 'The bridge was ___ in 1890.', h: 'build', a: 'built', o: ['build', 'builded', 'building'], es: 'El puente fue construido en 1890.' },
+      { s: 'I can ___ three languages.', h: 'speak', a: 'speak', o: ['spoke', 'spoken', 'to speak'], es: 'Sé hablar tres idiomas.' },
+      { s: "He didn't ___ the answer.", h: 'know', a: 'know', o: ['knew', 'known', 'knowed'], es: 'No sabía la respuesta.' },
+      { s: 'We ___ to the beach last Sunday.', h: 'go', a: 'went', o: ['gone', 'go', 'goed'], es: 'Fuimos a la playa el domingo pasado.' },
+      { s: 'Have you ever ___ a horse?', h: 'ride', a: 'ridden', o: ['rode', 'ride', 'rided'], es: '¿Alguna vez has montado a caballo?' },
+      { s: 'They had already ___ when we arrived.', h: 'eat', a: 'eaten', o: ['ate', 'eat', 'eated'], es: 'Ya habían comido cuando llegamos.' },
+      { s: 'This song is ___ all over the world.', h: 'know', a: 'known', o: ['knew', 'know', 'knowed'], es: 'Esta canción es conocida en todo el mundo.' },
+    ],
+  },
+  {
     id: 'articles', level: 'A', name: 'Articles (a / an / the)', es: 'Artículos',
     form: 'a / an + singular contable no específico · the + algo específico o único · sin artículo para hablar en general',
     uses: ['a / an la primera vez que mencionas algo; an delante de sonido vocálico (an hour, an umbrella)', 'the cuando ya se sabe de qué hablamos o es único (the sun, the president)', 'Sin artículo para generalizar con plurales o incontables: I love music. Dogs are loyal.'],

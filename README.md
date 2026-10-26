@@ -11,11 +11,11 @@ App web (PWA) para practicar vocabulario, verbos, tiempos verbales y gramática 
 | | |
 |---|---|
 | 🎯 **Eliges qué practicar** | Marca una o varias categorías (solo gramática, solo vocabulario, solo tiempos verbales…). Dentro de Vocabulario y Académico puedes filtrar por **tipo de palabra** y en Funcionales por **subtipo** (pronombres, preposiciones…). |
-| 🔁 **Verbos con sus 3 formas** | Practica el **significado**, las **3 formas** (pasado y participio) o ambas. Después de cada respuesta ves la tabla *base → pasado → participio*. Opciones: *solo irregulares* y *✍️ escribir las formas* en lugar de elegirlas. |
+| 🔁 **Verbos con sus 3 formas** | Practica el **significado**, las **3 formas** (pasado y participio) o ambas. Después de cada respuesta ves cada forma **con su traducción y cuándo se usa**: *write = escribir · wrote = escribí (yo) · written = escrito (I have written = he escrito)*. La guía incluye el tema *«Las 3 formas del verbo: cuándo usar cada una»* con 10 ejercicios. En el modo «3 formas» solo salen los irregulares y los regulares con cambio de ortografía (*stop → stopped, study → studied*); los que solo añaden -ed se practican por significado. Opciones: *solo irregulares* y *✍️ escribir las formas*. |
 | ⏳ **Tiempos verbales** | Los 12 tiempos + *going to*. Tres tipos de pregunta: completar la frase, identificar el tiempo y elegir la estructura. |
-| 📐 **Gramática** | 51 estructuras en 3 niveles, cada una con ejercicios para completar. |
+| 📐 **Gramática** | 52 estructuras en 3 niveles, cada una con ejercicios para completar. |
 | 📚 **Aprender** | Guía con cada tiempo y estructura: fórmula (afirmativa, negativa y pregunta), **cuándo se usa**, palabras clave, ejemplos traducidos y el error típico de los hispanohablantes. Desde cualquier pregunta puedes abrir *📖 Ver explicación*. |
-| 🔊 **Pronunciación** | Escucha cualquier palabra o frase (voz del sistema, en inglés británico si está disponible). El botón 🔈/🔊 del quiz activa la lectura automática. |
+| 🔊 **Pronunciación** | Escucha cualquier palabra o frase. La app elige sola la voz en inglés que suena más natural (*Natural / Neural / Online / Google*), y en el inicio puedes cambiar la voz y la velocidad (lenta, normal o rápida). El botón 🔈/🔊 del quiz activa la lectura automática. |
 | ❤️ **3 vidas, racha y racha de días** | Igual que antes. Las palabras que fallas se guardan, aparecen mezcladas en los turnos siguientes (hasta un 15 %) y puedes repasarlas aparte. |
 | 📖 **Diccionario** | Buscador en inglés o español, filtros por categoría y tipo, formas de los verbos, traducción literal de las expresiones y acceso a las explicaciones. |
 | ✕ **Salir del turno** | Puedes terminar un turno a la mitad y se guarda lo que llevas. |
@@ -24,7 +24,7 @@ App web (PWA) para practicar vocabulario, verbos, tiempos verbales y gramática 
 
 ## Distribución actual de los datos
 
-**8.052 palabras/expresiones** en `vocab.js` + **193 ejercicios** en `grammar.js`.
+**8.052 palabras/expresiones** en `vocab.js` + **203 ejercicios** en `grammar.js`.
 
 | # | Categoría | Entradas | Qué contiene |
 |---|---|---:|---|
@@ -33,7 +33,7 @@ App web (PWA) para practicar vocabulario, verbos, tiempos verbales y gramática 
 | 2 | 🔁 Verbos | 643 | Cada verbo con sus 3 formas; 203 son irregulares. |
 | 8 | 🧩 Phrasal verbs | 217 | Los que ya tenías + ~95 frecuentes nuevos (incluye los típicos para describir gráficos del IELTS: *level off, account for, phase out*…). |
 | 5 | ⏳ Tiempos verbales | 13 temas · 78 ejercicios | Present / Past / Future × Simple / Continuous / Perfect / Perfect Continuous + *going to*. |
-| 1 | 📐 Gramática | 51 temas · 115 ejercicios | Básico (20), Intermedio (21) y Avanzado (10): condicionales, pasiva, wish, used to, reported speech, inversión… |
+| 1 | 📐 Gramática | 52 temas · 125 ejercicios | Básico (21), Intermedio (21) y Avanzado (10): las 3 formas del verbo, condicionales, pasiva, wish, used to, reported speech, inversión… |
 | 9 | 🤝 Collocations | 114 | Combinaciones naturales: *make a decision, heavy rain, sharp decline, raise awareness*… |
 | 7 | 🔗 Conectores | 251 | Conectores y frases para Writing/Speaking: *however, in addition, on the other hand*… |
 | 10 | 🔤 Palabras funcionales | 270 | Pronombres (41) · artículos (2) · determinantes (19) · cuantificadores (24) · preposiciones (49) · conjunciones (18) · interrogativos (17) · auxiliares (5) · modales (16) · interjecciones (18) · números (61). |
@@ -97,7 +97,7 @@ Ejemplos por categoría:
 {en:"un-",es:"No, lo contrario",c:11,t:"pref",ex:"unhappy (infeliz), unfair (injusto)"},
 ```
 
-> La app detecta sola si un verbo es regular o irregular a partir de sus formas.
+> La app detecta sola si un verbo es regular o irregular a partir de sus formas, y conjuga en español el primer significado de `es` para mostrar *escribir → escribí → escrito* (incluye los irregulares del español: hice, dije, puse, tuve, vine, escrito, roto, vuelto…). Por eso conviene que el primer significado de un verbo sea un infinitivo («Escribir», «Estar de acuerdo»).
 > Las etiquetas `t` de Vocabulario y Académico se asignaron automáticamente con reglas (sufijos en inglés + forma de la traducción) y solo cuando la regla era fiable. Si ves una mal puesta en el diccionario, cámbiala o bórrala en esa línea.
 
 ### Un ejercicio nuevo (`grammar.js`)
@@ -154,6 +154,14 @@ Ideas para después, de más a menos útiles:
 10. **Exportar e importar el progreso**: copia de seguridad en un archivo para no perderlo si cambias de celular.
 
 ---
+
+## Voz más natural
+
+La voz la pone tu dispositivo, no la app. Para que suene menos robótica:
+
+- **Android**: en Ajustes busca «Texto a voz» (en Samsung: *Administración general › Idioma › Texto a voz*). Elige **Servicios de voz de Google** como motor preferido, entra en su configuración › *Instalar datos de voz* › **Inglés (Reino Unido)** y elige una voz. Luego, en la app, selecciónala en *🔊 Voz en inglés*.
+- **PC**: en **Microsoft Edge** aparecen voces «Microsoft … Online (Natural)», que suenan casi humanas. En Chrome, las mejores son «Google UK English Female / Male».
+- **iPhone / iPad**: Ajustes › Accesibilidad › Contenido leído › Voces › Inglés: descarga una voz «Mejorada» o «Premium».
 
 ## Desarrollo local
 

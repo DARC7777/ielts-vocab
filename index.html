@@ -219,10 +219,20 @@ button{font-family:'Nunito',sans-serif}
 .fb-after .topic-link{align-self:flex-start}
 .fb-sheet.wrong .btn-primary{background:var(--wrong);box-shadow:0 4px 0 var(--wrong-dark)}
 .fb-next[hidden]{display:none}
-.forms{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.forms div{background:#fff;border-radius:10px;padding:6px 6px;text-align:center;display:flex;flex-direction:column}
-.forms span{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted-dark)}
-.forms b{font-size:.9rem;font-weight:900;color:var(--text);word-break:break-word}
+.vforms{display:flex;flex-direction:column;gap:5px}
+.vf{background:#fff;border-radius:11px;padding:7px 10px;display:flex;flex-direction:column;gap:1px}
+.vf-l{font-size:.56rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#e07c00}
+.vf-main b{font-size:.98rem;font-weight:900;color:var(--text);word-break:break-word}
+.vf-main i{font-style:normal;font-size:.86rem;font-weight:800;color:var(--muted-dark)}
+.vf small{font-size:.7rem;font-weight:700;color:var(--muted-dark);line-height:1.35}
+.voice-select{width:100%;padding:10px 12px;border:2px solid var(--border);border-radius:12px;background:#fff;
+  font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:800;color:var(--text)}
+.voice-row{display:flex;gap:8px;align-items:center}
+.voice-row .toggle-row{flex:1}
+.voice-test{padding:9px 14px;border:2px solid var(--border);border-radius:12px;background:#fff;color:var(--blue);
+  font-size:.8rem;font-weight:900;cursor:pointer;box-shadow:0 3px 0 var(--border);flex-shrink:0}
+.voice-test:active{transform:translateY(3px);box-shadow:none}
+.voice-tip{font-size:.7rem;font-weight:700;color:var(--muted-dark);line-height:1.45}
 .mini-speak{background:none;border:none;cursor:pointer;font-size:.95rem;padding:0 2px;vertical-align:middle}
 
 /* ══ GAME OVER ══ */
@@ -416,6 +426,20 @@ button.dict-item{cursor:pointer}
     <button class="size-btn" data-size="100">100<span class="size-sub">preguntas</span></button>
   </div>
 
+  <div class="opt-panel" id="panel-voice" hidden>
+    <div class="opt-title">🔊 Voz en inglés</div>
+    <select class="voice-select" id="voice-select" aria-label="Voz"></select>
+    <div class="voice-row">
+      <div class="toggle-row" id="rate-toggle">
+        <button class="tog-btn" data-rate="0.75">Lenta</button>
+        <button class="tog-btn" data-rate="0.92">Normal</button>
+        <button class="tog-btn" data-rate="1.08">Rápida</button>
+      </div>
+      <button class="voice-test" id="voice-test">▶ Probar</button>
+    </div>
+    <div class="voice-tip">Las voces vienen de tu dispositivo. ¿Suenan robóticas? En Android busca «Texto a voz» en Ajustes, elige <b>Servicios de voz de Google</b> como motor e instala la voz <b>Inglés (Reino Unido)</b> en alta calidad. En PC, Microsoft Edge trae voces «Natural» muy realistas.</div>
+  </div>
+
   <div class="stats-mini">
     <div class="smc"><div class="smv" id="home-streak">🔥 0</div><div class="sml">Mejor racha</div></div>
     <div class="smc"><div class="smv" id="home-sessions">0</div><div class="sml">Turnos jugados</div></div>
@@ -566,6 +590,28 @@ const TYPE_SHORT = {n:'sustantivo', v:'verbo', adj:'adjetivo', adv:'adverbio',
 const LEVELS = {A:'Básico (A1–A2)', B:'Intermedio (B1–B2)', C:'Avanzado (C1)'};
 const catLabel = c => CATS[c] ? CATS[c].icon + ' ' + CATS[c].name : '';
 
+// Conjugación española de las traducciones de verbos (ver esForms)
+// [terminación, pretérito «yo», participio]; null = se conjuga como regular
+const ES_IRR = [
+  ['satisfacer','satisfice','satisfecho'], ['bendecir','bendije','bendecido'], ['maldecir','maldije','maldecido'],
+  ['hacer','hice','hecho'], ['decir','dije','dicho'], ['poner','puse','puesto'], ['tener','tuve',null],
+  ['venir','vine',null], ['traer','traje','traído'], ['ducir','duje',null], ['querer','quise',null],
+  ['scribir',null,'scrito'], ['volver',null,'vuelto'], ['solver',null,'suelto'], ['cubrir',null,'cubierto'],
+  ['prever','preví','previsto'],
+];
+// Verbos que en español se usan en 3.ª persona (llueve, sucede, me gusta)
+const ES_THIRD = {
+  llover:{pret:'llovió', have:'ha llovido', subj:'it'}, nevar:{pret:'nevó', have:'ha nevado', subj:'it'},
+  suceder:{pret:'sucedió', have:'ha sucedido', subj:'it'}, ocurrir:{pret:'ocurrió', have:'ha ocurrido', subj:'it'},
+  acontecer:{pret:'aconteció', have:'ha acontecido', subj:'it'}, costar:{pret:'costó', have:'ha costado', subj:'it'},
+  doler:{pret:'dolió', have:'ha dolido', subj:'it'}, gustar:{pret:'me gustó', have:'me ha gustado', subj:'I', obj:' it'},
+};
+const ES_EXACT = {
+  ser:['fui','sido'], ir:['fui','ido'], ver:['vi','visto'], dar:['di',null], estar:['estuve',null],
+  poder:['pude',null], saber:['supe',null], caber:['cupe',null], andar:['anduve',null], haber:['hube',null],
+  romper:[null,'roto'], abrir:[null,'abierto'], morir:[null,'muerto'], 'freír':['freí','frito'], imprimir:[null,'impreso'],
+};
+
 // ══ ÍTEMS DE PRÁCTICA ══
 // Palabras/verbos de vocab.js + ejercicios de grammar.js. Cada uno tiene un id estable.
 const ITEMS = [], BY_ID = new Map(), POOL = {}, WORD_BY_EN = new Map();
@@ -577,7 +623,11 @@ function addItem(it){
 }
 VOCAB.forEach(w => {
   const it = Object.assign({}, w, {id: w.c + ':' + w.en.toLowerCase(), kind: w.c === 2 ? 'verb' : 'word'});
-  if(it.kind === 'verb') it.irr = isIrregular(it.v);
+  if(it.kind === 'verb'){
+    it.irr = isIrregular(it.v);
+    it.trivial = !it.irr && isTrivialRegular(it.v);
+    it.esf = esForms(it.es);
+  }
   addItem(it);
   if(it.kind === 'word') w.en.toLowerCase().split(' / ').forEach(k => { if(!WORD_BY_EN.has(k)) WORD_BY_EN.set(k, it.id); });
 });
@@ -604,7 +654,8 @@ function lsGet(k, def){
 function lsSet(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
 
 const DEFAULT_PREFS = {dir:'en-es', size:25, cats:[4,6,2,8,5,1,9,7,10,3,11],
-  wtype:'all', ftype:'all', vmode:'both', irrOnly:false, typeForms:false, autoSpeak:false};
+  wtype:'all', ftype:'all', vmode:'both', irrOnly:false, typeForms:false, autoSpeak:false,
+  voice:'', rate:0.92};
 const prefs = Object.assign({}, DEFAULT_PREFS, lsGet(PREFS_KEY, {}));
 prefs.cats = prefs.cats.filter(c => CATS[c]);
 function savePrefs(){ lsSet(PREFS_KEY, prefs); }
@@ -728,14 +779,75 @@ function ingForm(b){
   if(b.endsWith('e') && !b.endsWith('ee')) return b.slice(0, -1) + 'ing';
   return b + 'ing';
 }
+// Regular sin cambio de ortografía (work → worked): sus formas no merecen pregunta propia
+function isTrivialRegular(v){
+  const [b, p, pp] = v;
+  return [...p.split('/'), ...pp.split('/')].every(f => f === b + 'ed' || f === b + 'd');
+}
+
+// ══ ESPAÑOL: pretérito (yo) y participio a partir del infinitivo de la traducción ══
+function esRegular(inf){
+  const m = inf.match(/^(.+?)(ar|er|ir|ír)$/);
+  if(!m) return null;
+  const st = m[1];
+  if(m[2] === 'ar'){
+    let ps = st;
+    if(st.endsWith('c')) ps = st.slice(0, -1) + 'qu';        // buscar → busqué
+    else if(st.endsWith('gu')) ps = st.slice(0, -2) + 'gü';  // averiguar → averigüé
+    else if(st.endsWith('g')) ps = st + 'u';                 // pagar → pagué
+    else if(st.endsWith('z')) ps = st.slice(0, -1) + 'c';    // empezar → empecé
+    return [ps + 'é', st + 'ado'];
+  }
+  return [st + 'í', st + (/[aeo]$/.test(st) ? 'ído' : 'ido')]; // leer → leí, leído
+}
+function esForms(es){
+  const first = es.split(/[,;(]/)[0].trim().toLowerCase();
+  const words = first.split(/\s+/);
+  let inf = words[0];
+  const tail = words.length > 1 ? ' ' + words.slice(1).join(' ') : '';
+  let refl = false;
+  if(/(ar|er|ir|ír)se$/.test(inf)){ refl = true; inf = inf.slice(0, -2); }
+  const reg = esRegular(inf) || (ES_EXACT[inf] ? [] : null); // «ir» no tiene raíz regular
+  if(!reg) return null;
+  let pret = null, part = null;
+  if(ES_EXACT[inf]) [pret, part] = ES_EXACT[inf];
+  else {
+    const irr = ES_IRR.find(([suf]) => inf.endsWith(suf));
+    if(irr){
+      const pre = inf.slice(0, -irr[0].length);
+      if(irr[1]) pret = pre + irr[1];
+      if(irr[2]) part = pre + irr[2];
+    }
+  }
+  pret = pret || reg[0]; part = part || reg[1];
+  const me = refl ? 'me ' : '';
+  const third = !refl && ES_THIRD[inf];
+  if(third) return {inf: inf + tail, pret: third.pret + tail, part: part + tail, have: third.have + tail, third};
+  return {inf: inf + (refl ? 'se' : '') + tail, pret: me + pret + tail, part: part + tail, have: me + 'he ' + part + tail};
+}
 
 // ══ PRONUNCIACIÓN (Web Speech API, funciona sin internet en la mayoría de móviles) ══
 const TTS = 'speechSynthesis' in window;
 let enVoice = null;
+// Puntúa las voces: las «Natural» / «Neural» / «Online» / Google suenan mucho menos robóticas
+function voiceScore(v){
+  let s = 0;
+  if(/natural|neural/i.test(v.name)) s += 10;
+  if(/online/i.test(v.name)) s += 4;
+  if(/google/i.test(v.name)) s += 5;
+  if(/premium|enhanced|siri/i.test(v.name)) s += 5;
+  if(/en[-_]GB/i.test(v.lang)) s += 2; else if(/en[-_]US/i.test(v.lang)) s += 1;
+  if(!v.localService) s += 1;
+  return s;
+}
+function englishVoices(){
+  if(!TTS) return [];
+  return speechSynthesis.getVoices().filter(v => /^en([-_]|$)/i.test(v.lang)).sort((a, b) => voiceScore(b) - voiceScore(a));
+}
 function pickVoice(){
-  if(!TTS) return;
-  const vs = speechSynthesis.getVoices();
-  enVoice = vs.find(v => /en[-_]GB/i.test(v.lang)) || vs.find(v => /^en/i.test(v.lang)) || null;
+  const list = englishVoices();
+  enVoice = list.find(v => v.voiceURI === prefs.voice) || list[0] || null;
+  renderVoicePanel();
 }
 if(TTS){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
 function speechText(s){
@@ -749,7 +861,7 @@ function speak(text){
     const u = new SpeechSynthesisUtterance(speechText(text));
     u.lang = enVoice ? enVoice.lang : 'en-GB';
     if(enVoice) u.voice = enVoice;
-    u.rate = 0.92;
+    u.rate = prefs.rate || 0.92;
     speechSynthesis.speak(u);
   } catch {}
 }
@@ -768,6 +880,8 @@ function passesFilter(it){
   if((it.c === 4 || it.c === 6) && prefs.wtype !== 'all') return it.t === prefs.wtype;
   if(it.c === 10 && prefs.ftype !== 'all') return it.t === prefs.ftype;
   if(it.c === 2 && prefs.irrOnly) return it.irr;
+  // En «3 formas» se omiten los regulares sin cambio de ortografía (work → worked)
+  if(it.c === 2 && prefs.vmode === 'forms') return !it.trivial;
   return true;
 }
 function poolFor(c){ return POOL[c].filter(passesFilter); }
@@ -839,14 +953,27 @@ function resolveDir(){
   return prefs.dir === 'mixed' ? (Math.random() < .5 ? 'en-es' : 'es-en') : prefs.dir;
 }
 
+// Las 3 formas con su traducción y cuándo se usa cada una
 function formsHtml(it){
   const [b, p, pp] = it.v;
-  return `<div class="forms">
-      <div><span>Base</span><b>${escapeHtml(b)}</b></div>
-      <div><span>Pasado</span><b>${escapeHtml(p.replace(/\//g, ' / '))}</b></div>
-      <div><span>Participio</span><b>${escapeHtml(pp.replace(/\//g, ' / '))}</b></div>
+  const p1 = p.split('/')[0], pp1 = pp.split('/')[0];
+  const f = it.esf;
+  const subj = f && f.third ? f.third.subj : 'I', obj = f && f.third && f.third.obj || '';
+  const row = (label, en, es, use) => `<div class="vf">
+      <span class="vf-l">${label}</span>
+      <span class="vf-main"><b>${escapeHtml(en.replace(/\//g, ' / '))}</b>${es ? ` <i>= ${escapeHtml(es)}</i>` : ''}</span>
+      <small>${use}</small>
+    </div>`;
+  return `<div class="vforms">
+      ${row('Base', b, f && f.inf,
+        `Presente, infinitivo y tras can / will / did: ${subj} ${escapeHtml(b)}${obj} · to ${escapeHtml(b)} · ${subj} didn't ${escapeHtml(b)}${obj}`)}
+      ${row('Pasado', p, f && (f.third ? f.pret : f.pret + ' (yo)'),
+        `Acción terminada (yesterday, last year…): ${subj} ${escapeHtml(p1)}${obj}. Igual para todas las personas.`)}
+      ${row('Participio', pp, f && f.part,
+        `Con have: ${subj} ${subj === 'it' ? 'has' : 'have'} ${escapeHtml(pp1)}${obj}${f ? ' = ' + escapeHtml(f.have) : ''} · y en voz pasiva con be.`)}
     </div>
-    <div class="muted">${escapeHtml(it.es)} · ${it.irr ? 'irregular' : 'regular'} ${speakBtn(b + ', ' + p.split('/')[0] + ', ' + pp.split('/')[0])}</div>`;
+    <div class="muted">${it.irr ? 'Verbo irregular' : 'Verbo regular'} ${speakBtn(b + ', ' + p1 + ', ' + pp1)}</div>
+    <button class="link-btn topic-link" data-topic="verb-forms">📖 ¿Cuándo uso cada forma?</button>`;
 }
 function wordAfter(it){
   const parts = [];
@@ -889,12 +1016,33 @@ function makeVerbMeaningQ(it){
   };
 }
 
+// Opciones trampa a mano para verbos especiales
+const FORM_TRAPS = {
+  be:   {p:['been', 'is', 'be'], pp:['was', 'being', 'be']},
+  have: {p:['haved', 'has', 'having'], pp:['haved', 'has', 'having']},
+};
 function formDistractors(it, which){
   const [b, p, pp] = it.v;
   const correct = (which === 'p' ? p : pp).split('/');
   const other = (which === 'p' ? pp : p).split('/');
-  const first = [...other, regPast(b), b + 'ed'];
-  const rest = shuffle([b, b + 'en', p.split('/')[0] + 'en', b + 's', ingForm(b), b + 't', p.split('/')[0] + 'ed']);
+  const p1 = p.split('/')[0];
+  const third = /[^aeiou]y$/.test(b) ? b.slice(0, -1) + 'ies' : /(s|sh|ch|x|z|o)$/.test(b) ? b + 'es' : b + 's';
+  const plainEd = b.endsWith('e') ? null : b + 'ed'; // evita «writeed»
+  const dbl = /[^aeiouywx]$/.test(b) && [regPast(b), ...correct, ...other].includes(b + b.slice(-1) + 'ed');
+  const ing = dbl ? b + b.slice(-1) + 'ing' : ingForm(b); // stop → stopping
+  let first, rest;
+  if(FORM_TRAPS[b]){
+    first = FORM_TRAPS[b][which]; rest = [];
+  } else if(it.irr){
+    // Irregulares: la otra forma, la forma «regularizada» (goed) y la base
+    first = [...other, regPast(b), plainEd];
+    rest = [...shuffle([b, which === 'pp' ? (p1.endsWith('e') ? p1 + 'n' : p1 + 'en') : null, third, ing]), b + 'en', p1 + 'ed'];
+  } else {
+    // Regulares con cambio de ortografía: errores típicos (stoped, studyed, prefered)
+    const canDouble = /[^aeiouywx]$/.test(b);
+    first = [plainEd, canDouble ? b + b.slice(-1) + 'ed' : null, /[^aeiou]y$/.test(b) ? b.slice(0, -1) + 'ed' : null];
+    rest = shuffle([ing, third, b]);
+  }
   const out = [];
   [...first, ...rest].forEach(x => {
     if(out.length < 3 && x && !correct.includes(x) && !out.includes(x)) out.push(x);
@@ -978,7 +1126,7 @@ function makeQuestion(it){
   if(it.kind === 'ex') return makeExQ(it);
   if(it.kind === 'verb'){
     const m = prefs.vmode;
-    const forms = m === 'forms' || (m === 'both' && Math.random() < (it.irr ? .65 : .3));
+    const forms = !it.trivial && (m === 'forms' || (m === 'both' && Math.random() < (it.irr ? .65 : .4)));
     return forms ? makeVerbFormQ(it) : makeVerbMeaningQ(it);
   }
   return makeWordQ(it);
@@ -1466,6 +1614,7 @@ function dictRender(reset){
         ${failed ? '<span class="di-fail">❌ fallada</span>' : ''}
       </div>
       ${w.v ? `<div class="di-forms">${escapeHtml(w.v.map(f => f.replace(/\//g, ' / ')).join('  →  '))}${w.irr ? '' : ' · regular'}</div>` : ''}
+      ${w.esf ? `<div class="di-extra">${escapeHtml(w.esf.inf + '  →  ' + w.esf.pret + '  →  ' + w.esf.part)}</div>` : ''}
       <div class="di-es">${escapeHtml(w.es)}</div>
       ${w.lit ? `<div class="di-extra">Literal: «${escapeHtml(w.lit)}»</div>` : ''}
       ${w.ex ? `<div class="di-extra">Ej.: ${escapeHtml(w.ex)}</div>` : ''}
@@ -1562,6 +1711,26 @@ function renderAutoSpeak(){
   autoBtn.classList.toggle('on', prefs.autoSpeak);
   autoBtn.hidden = !TTS;
 }
+function renderVoicePanel(){
+  const list = englishVoices();
+  const panel = document.getElementById('panel-voice');
+  panel.hidden = list.length === 0;
+  if(list.length === 0) return;
+  const sel = document.getElementById('voice-select');
+  sel.innerHTML = list.map((v, i) =>
+    `<option value="${escapeHtml(v.voiceURI)}"${enVoice && v.voiceURI === enVoice.voiceURI ? ' selected' : ''}>${escapeHtml(v.name)} · ${escapeHtml(v.lang)}${i === 0 ? ' ⭐' : ''}</option>`).join('');
+  document.querySelectorAll('#rate-toggle .tog-btn').forEach(b => b.classList.toggle('active', +b.dataset.rate === prefs.rate));
+}
+document.getElementById('voice-select').addEventListener('change', e => {
+  prefs.voice = e.target.value; savePrefs(); pickVoice();
+  speak('Hello! This is my voice.');
+});
+document.getElementById('rate-toggle').addEventListener('click', e => {
+  const b = e.target.closest('.tog-btn'); if(!b) return;
+  prefs.rate = +b.dataset.rate; savePrefs(); renderVoicePanel();
+  speak('The early bird catches the worm.');
+});
+document.getElementById('voice-test').addEventListener('click', () => speak('The early bird catches the worm.'));
 autoBtn.addEventListener('click', () => {
   prefs.autoSpeak = !prefs.autoSpeak; savePrefs(); renderAutoSpeak();
   if(prefs.autoSpeak && q && q.speakNow && !locked) speak(q.speakNow);
