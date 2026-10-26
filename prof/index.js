@@ -5,7 +5,7 @@
 // ══════════════════════════════════════════════════════════════════════════
 const PROF_FAMILIES = [
   { id: 'business', icon: '📊', n: 2004, en: 'Business, Management & Strategy', es: 'Negocios, gestión y estrategia', jobs: 'Business Analyst, Management Consultant, Strategy Manager, Operations Manager, Project Manager' },
-  { id: 'sales', icon: '🤝', n: 264, en: 'Sales, Marketing & Negotiation', es: 'Ventas, marketing y negociación', jobs: 'Sales Executive, Business Development Manager, Marketing Specialist, Account Manager, Negotiator' },
+  { id: 'sales', icon: '🤝', n: 1966, en: 'Sales, Marketing & Negotiation', es: 'Ventas, marketing y negociación', jobs: 'Sales Executive, Business Development Manager, Marketing Specialist, Account Manager, Negotiator' },
   { id: 'finance', icon: '💰', n: 374, en: 'Finance, Banking & Accounting', es: 'Finanzas, banca y contabilidad', jobs: 'Financial Analyst, Investment Banker, Accountant, Auditor, Risk Analyst, Actuary' },
   { id: 'logistics', icon: '🚚', n: 253, en: 'Logistics, Supply Chain & Procurement', es: 'Logística, cadena de suministro y compras', jobs: 'Supply Chain Manager, Logistics Analyst, Procurement Specialist, Freight Forwarder, Demand Planner' },
   { id: 'agriculture', icon: '🌾', n: 246, en: 'Agriculture, Agribusiness & Food Production', es: 'Agricultura, agronegocios y producción de alimentos', jobs: 'Agronomist, Agricultural Engineer, Farm Manager, Agribusiness Analyst, Precision Agriculture Specialist' },
