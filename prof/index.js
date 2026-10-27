@@ -17,6 +17,6 @@ const PROF_FAMILIES = [
   { id: 'it', icon: '💻', n: 2002, en: 'Information Technology & Software', es: 'Tecnología de la información y software', jobs: 'Software Engineer, Cloud Engineer, Cybersecurity Specialist, Systems Administrator, Solutions Architect' },
   { id: 'data', icon: '🤖', n: 2000, en: 'Data, Artificial Intelligence & Machine Learning', es: 'Datos, inteligencia artificial y machine learning', jobs: 'Data Scientist, Data Engineer, AI Engineer, ML Engineer, Quantitative Researcher' },
   { id: 'research', icon: '🔬', n: 2002, en: 'Research, Science & Laboratory', es: 'Investigación, ciencia y laboratorio', jobs: 'Research Scientist, Chemist, Physicist, Statistician, Laboratory Technician' },
-  { id: 'legal', icon: '⚖️', n: 233, en: 'Legal, Compliance & International Trade', es: 'Derecho, cumplimiento y comercio internacional', jobs: 'Lawyer, Compliance Officer, Contract Manager, International Trade Specialist, Customs Compliance Specialist' },
+  { id: 'legal', icon: '⚖️', n: 2000, en: 'Legal, Compliance & International Trade', es: 'Derecho, cumplimiento y comercio internacional', jobs: 'Lawyer, Compliance Officer, Contract Manager, International Trade Specialist, Customs Compliance Specialist' },
   { id: 'hr', icon: '👥', n: 265, en: 'Human Resources, Education & Communication', es: 'Recursos humanos, educación y comunicación', jobs: 'HR Specialist, Recruiter, Corporate Trainer, Teacher, Technical Writer, Communications Specialist' },
 ];
