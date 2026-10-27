@@ -605,6 +605,14 @@ The design freeze is at the end of the month. | El congelamiento del diseño es 
 We spent two hundred man-hours on the design. | Gastamos doscientas horas-hombre en el diseño.
 Please send a technical query to the engineering firm. | Por favor envía una consulta técnica a la firma de ingeniería.
 The supplier gave us remote assistance by video call. | El proveedor nos dio asistencia remota por videollamada.
+The new machine pays for itself in eighteen months. | La máquina nueva se paga sola en dieciocho meses.
+We're waiting for the spare parts to arrive from Germany. | Estamos esperando que lleguen los repuestos de Alemania.
+The operators reported a burning smell near the motor. | Los operarios reportaron olor a quemado cerca del motor.
+Let's check the temperature with the thermal camera. | Revisemos la temperatura con la cámara térmica.
+The maintenance team worked all night to restart the line. | El equipo de mantenimiento trabajó toda la noche para arrancar la línea.
+Please lock out the machine before you start. | Por favor bloquea la máquina antes de empezar.
+We replaced the damaged cable and tested the circuit. | Cambiamos el cable dañado y probamos el circuito.
+The engineering team approved the new design. | El equipo de ingeniería aprobó el nuevo diseño.
 `},
     { en: 'Industrial Engineer', es: 'Ingeniero industrial', w: `
 Industrial engineering | Ingeniería industrial
