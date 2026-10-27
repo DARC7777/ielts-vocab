@@ -245,6 +245,285 @@ Torque wrench | Torquímetro
 Tape measure | Flexómetro
 Level (tool) | Nivel
 Toolbox | Caja de herramientas
+Engineering project | Proyecto de ingeniería
+Project scope (engineering) | Alcance del proyecto
+Technical requirements | Requisitos técnicos
+Functional requirements | Requisitos funcionales
+Design criteria | Criterios de diseño
+Design basis | Bases de diseño
+Feasibility study (engineering) | Estudio de factibilidad
+Conceptual engineering | Ingeniería conceptual
+Basic engineering | Ingeniería básica
+Detailed engineering | Ingeniería de detalle
+Engineering deliverables | Entregables de ingeniería
+Technical specification document | Documento de especificaciones técnicas
+Datasheet | Hoja de datos
+Equipment list | Lista de equipos
+Bill of quantities | Lista de cantidades
+Vendor documents | Documentos del proveedor
+Technical bid evaluation | Evaluación técnica de ofertas
+Factory acceptance test (FAT) | Prueba de aceptación en fábrica (FAT)
+Site acceptance test (SAT) | Prueba de aceptación en sitio (SAT)
+As-built drawings | Planos según lo construido (as-built)
+Operation and maintenance manual | Manual de operación y mantenimiento
+Engineering standards | Normas de ingeniería
+International standard | Norma internacional
+Technical standard | Norma técnica
+Code compliance | Cumplimiento de códigos
+ASME code | Código ASME
+ISO standard | Norma ISO
+Certification (product) | Certificación
+CE marking | Marcado CE
+Safety regulations | Normas de seguridad
+Risk matrix | Matriz de riesgos
+Hazard identification | Identificación de peligros
+Job safety analysis | Análisis de trabajo seguro
+Safety induction | Inducción de seguridad
+Toolbox talk | Charla de seguridad
+Safety officer | Coordinador de seguridad
+Incident report | Reporte de incidente
+Lost time injury | Accidente con tiempo perdido
+Machine guarding | Guardas de seguridad
+Emergency stop button | Botón de parada de emergencia
+Safety interlock | Enclavamiento de seguridad
+Light curtain | Cortina de luz
+Ear protection | Protección auditiva
+Safety gloves | Guantes de seguridad
+Fall protection | Protección contra caídas
+Safety harness | Arnés de seguridad
+Working at heights | Trabajo en alturas
+Electrical safety | Seguridad eléctrica
+Arc flash | Arco eléctrico
+Energy isolation | Aislamiento de energías
+Engineering calculation | Cálculo de ingeniería
+Spreadsheet calculation | Cálculo en hoja de cálculo
+Unit conversion | Conversión de unidades
+Metric system | Sistema métrico
+Imperial units | Unidades imperiales
+Kilowatt | Kilovatio
+Horsepower (engineering) | Caballos de fuerza
+Newton | Newton
+Pascal | Pascal
+Bar (pressure) | Bar
+PSI | PSI (libras por pulgada cuadrada)
+Revolutions per minute (engineering) | Revoluciones por minuto
+Hertz | Hercio
+Ampere | Amperio
+Volt | Voltio
+Ohm | Ohmio
+Watt | Vatio
+Kilowatt-hour | Kilovatio hora
+Three-phase power | Energía trifásica
+Single-phase | Monofásico
+Alternating current (AC) | Corriente alterna
+Direct current (DC) | Corriente continua
+Power consumption | Consumo de energía
+Energy audit (plant) | Auditoría energética
+Engineer in training | Ingeniero en formación
+Professional engineer license | Matrícula profesional de ingeniero
+Engineering degree | Título de ingeniería
+Engineering internship | Práctica de ingeniería
+Technical interview | Entrevista técnica
+Design (verb) | Diseñar
+Build (verb) | Construir
+Assemble | Ensamblar
+Disassemble | Desarmar
+Install (verb) | Instalar
+Commission (verb) | Poner en marcha
+Maintain | Mantener
+Repair | Reparar
+Replace | Reemplazar
+Adjust | Ajustar
+Align | Alinear
+Tighten | Apretar
+Loosen | Aflojar
+Lubricate | Lubricar
+Clean (equipment) | Limpiar
+Inspect (equipment) | Inspeccionar
+Test (verb) | Probar
+Measure (engineering) | Medir
+Weld (verb) | Soldar
+Cut (verb) | Cortar
+Drill (verb) | Taladrar
+Grind (verb) | Pulir, esmerilar
+Machine (verb) | Mecanizar
+Bend (verb) | Doblar
+Mount (verb) | Montar
+Fasten | Fijar, sujetar
+Connect | Conectar
+Disconnect | Desconectar
+Switch on | Encender
+Switch off | Apagar
+Start up (machine) | Arrancar
+Shut down (machine) | Apagar, detener
+Reset (machine) | Reiniciar
+Troubleshoot | Diagnosticar fallas
+Fix (verb) | Arreglar
+Upgrade (verb) | Actualizar, mejorar
+Optimize | Optimizar
+Automate | Automatizar
+Simulate | Simular
+Calculate | Calcular
+Specify | Especificar
+Prototype (verb) | Prototipar
+Scale up (production) | Escalar
+Wear out | Desgastarse
+Break down (machine) | Dañarse, vararse
+Seize up | Trabarse
+Jam (verb) | Atascarse
+Leak (verb) | Gotear, tener fuga
+Overheat (verb) | Recalentarse
+Vibrate | Vibrar
+Rust (verb) | Oxidarse
+Crack (verb) | Agrietarse
+Fail (equipment) | Fallar
+Malfunction | Mal funcionamiento
+Faulty | Defectuoso
+Worn | Desgastado
+Loose | Flojo
+Tight | Apretado
+Damaged | Dañado
+Out of order | Fuera de servicio
+In working order | En buen estado de funcionamiento
+Heavy-duty | De servicio pesado
+Lightweight | Liviano
+Durable | Durable
+Reliable (equipment) | Confiable
+Efficient | Eficiente
+Robust | Robusto
+Compact | Compacto
+Portable | Portátil
+Adjustable | Ajustable
+Interchangeable | Intercambiable
+Waterproof | Impermeable
+Heat-resistant | Resistente al calor
+Corrosion-resistant | Resistente a la corrosión
+Electrical engineering | Ingeniería eléctrica
+Electronic engineering | Ingeniería electrónica
+Mechatronics | Mecatrónica
+Control engineering | Ingeniería de control
+Automation engineer | Ingeniero de automatización
+Electrical diagram | Diagrama eléctrico
+Wiring diagram | Diagrama de cableado
+Single-line diagram | Diagrama unifilar
+Control panel | Panel de control
+Motor control center (MCC) | Centro de control de motores
+Contactor | Contactor
+Relay | Relé
+Overload relay | Relé térmico
+Soft starter | Arrancador suave
+Inverter | Inversor
+Power supply | Fuente de alimentación
+Terminal block | Bornera
+Cable tray | Bandeja portacables
+Conduit | Tubería conduit
+Junction box | Caja de paso
+Limit switch | Final de carrera
+Proximity sensor | Sensor de proximidad
+Photoelectric sensor | Sensor fotoeléctrico
+Encoder | Encoder
+Servo motor | Servomotor
+Stepper motor | Motor paso a paso
+PLC programming | Programación de PLC
+Ladder logic | Lógica de escalera
+Input/output (I/O) | Entradas y salidas
+Analog signal | Señal analógica
+Digital signal | Señal digital
+Fieldbus | Bus de campo
+Profinet | Profinet
+Modbus | Modbus
+SCADA system | Sistema SCADA
+Remote monitoring (plant) | Monitoreo remoto
+Alarm history | Historial de alarmas
+Fault code | Código de falla
+Error message | Mensaje de error
+Firmware update | Actualización de firmware
+Backup (PLC program) | Copia de seguridad
+Electrical maintenance | Mantenimiento eléctrico
+Insulation resistance test | Prueba de aislamiento
+Power quality | Calidad de la energía
+Harmonics | Armónicos
+Power factor | Factor de potencia
+Voltage drop | Caída de tensión
+Peak demand (electricity) | Demanda pico
+Uninterruptible power supply (UPS) | Sistema de alimentación ininterrumpida (UPS)
+Emergency generator | Planta eléctrica de emergencia
+Materials engineering | Ingeniería de materiales
+Metallurgy | Metalurgia
+Material properties | Propiedades de los materiales
+Mechanical properties | Propiedades mecánicas
+Physical properties | Propiedades físicas
+Chemical properties | Propiedades químicas
+Melting point | Punto de fusión
+Elasticity | Elasticidad
+Plasticity | Plasticidad
+Rigidity | Rigidez
+Resistance (material) | Resistencia
+Conductivity | Conductividad
+Insulator | Aislante
+Conductor | Conductor
+Semiconductor | Semiconductor
+Ceramic | Cerámica
+Glass | Vidrio
+Wood | Madera
+Concrete | Concreto
+Fiberglass | Fibra de vidrio
+Plywood | Triplex
+Foam (material) | Espuma
+Adhesive | Adhesivo
+Sealant | Sellante
+Paint | Pintura
+Primer (paint) | Imprimante
+Varnish | Barniz
+Solvent (industrial) | Solvente
+Raw material supplier | Proveedor de materias primas
+Steel sheet | Lámina de acero
+Steel bar | Barra de acero
+Steel tube | Tubo de acero
+Steel plate | Placa de acero
+Angle iron | Ángulo de hierro
+I-beam | Viga en I
+Round bar | Barra redonda
+Hexagonal bar | Barra hexagonal
+Wire rod | Alambrón
+Aluminum profile | Perfil de aluminio
+Plastic sheet | Lámina de plástico
+Polyethylene | Polietileno
+Polypropylene | Polipropileno
+PVC | PVC
+Nylon | Nailon
+Acrylic | Acrílico
+Silicone | Silicona
+Teflon (PTFE) | Teflón
+Engineering plastics | Plásticos de ingeniería
+Recycled material | Material reciclado
+Material certificate | Certificado de material
+Mill test certificate | Certificado de calidad de la acería
+Engineering firm | Firma de ingeniería
+Engineering consultancy | Consultoría de ingeniería
+EPC contractor (engineering, procurement and construction) | Contratista EPC (ingeniería, compras y construcción)
+Owner's engineer | Ingeniero del propietario
+Technical consultant | Consultor técnico
+Engineering services | Servicios de ingeniería
+Engineering hours | Horas de ingeniería
+Man-hours | Horas-hombre
+Technical meeting | Reunión técnica
+Kick-off meeting (engineering) | Reunión de arranque
+Design freeze | Congelamiento del diseño
+Engineering approval | Aprobación de ingeniería
+Technical query | Consulta técnica
+Request for information (engineering) | Solicitud de información
+Technical deviation | Desviación técnica
+Nonconformance report | Reporte de no conformidad
+Lessons learned (project) | Lecciones aprendidas
+Project close-out | Cierre del proyecto
+Engineering software | Software de ingeniería
+AutoCAD | AutoCAD
+Digital twin (plant) | Gemelo digital
+Predictive analytics (maintenance) | Analítica predictiva
+Machine learning in manufacturing | Aprendizaje automático en manufactura
+Augmented reality (maintenance) | Realidad aumentada
+Remote assistance | Asistencia remota
 `, p: `
 The machine broke down during the night shift. | La máquina se dañó en el turno de la noche.
 We need to replace the bearing. | Tenemos que cambiar el rodamiento.
@@ -274,6 +553,58 @@ Availability improved after the new maintenance plan. | La disponibilidad mejor�
 The belt is worn and needs to be replaced. | La correa está desgastada y hay que cambiarla.
 Turn off the machine before cleaning it. | Apaga la máquina antes de limpiarla.
 Who's on call this weekend? | ¿Quién está de turno este fin de semana?
+The FAT is scheduled at the supplier's factory next month. | La prueba de aceptación en fábrica está programada en la planta del proveedor el próximo mes.
+Please send the as-built drawings when the project is finished. | Por favor envía los planos as-built cuando termine el proyecto.
+The design must comply with the ASME code. | El diseño debe cumplir el código ASME.
+We'll do a toolbox talk before starting the job. | Haremos una charla de seguridad antes de empezar el trabajo.
+You need a harness to work at heights. | Necesitas arnés para trabajar en alturas.
+Isolate all energy sources before maintenance. | Aísla todas las fuentes de energía antes del mantenimiento.
+Press the emergency stop if anything goes wrong. | Oprime la parada de emergencia si algo sale mal.
+Convert the pressure from PSI to bar. | Convierte la presión de PSI a bar.
+The motor consumes fifteen kilowatts. | El motor consume quince kilovatios.
+We've had zero lost time injuries this year. | Este año hemos tenido cero accidentes con tiempo perdido.
+The guard was removed, so the machine can't run. | Quitaron la guarda, así que la máquina no puede operar.
+I'll prepare the technical specifications for the tender. | Prepararé las especificaciones técnicas para la licitación.
+The conveyor jammed again. | La banda transportadora se atascó otra vez.
+This machine has been out of order since Monday. | Esta máquina está fuera de servicio desde el lunes.
+The bolts were loose, so the guard was vibrating. | Los pernos estaban flojos, por eso la guarda vibraba.
+Don't start up the machine until the guard is in place. | No arranques la máquina hasta que la guarda esté puesta.
+We're troubleshooting the problem with the sensor. | Estamos diagnosticando la falla del sensor.
+Disconnect the power before opening the panel. | Desconecta la energía antes de abrir el tablero.
+The pump seized up because it ran dry. | La bomba se trabó porque trabajó en seco.
+These parts are interchangeable between both machines. | Estas piezas son intercambiables entre las dos máquinas.
+We need heavy-duty bearings for this load. | Necesitamos rodamientos de servicio pesado para esta carga.
+The old compressor is still in working order. | El compresor viejo todavía funciona bien.
+The PLC shows fault code twenty-three. | El PLC muestra el código de falla veintitrés.
+The proximity sensor isn't detecting the part. | El sensor de proximidad no está detectando la pieza.
+Check the wiring diagram before changing the relay. | Revisa el diagrama de cableado antes de cambiar el relé.
+We installed a soft starter to reduce the starting current. | Instalamos un arrancador suave para reducir la corriente de arranque.
+Always make a backup before changing the PLC program. | Siempre haz una copia de seguridad antes de cambiar el programa del PLC.
+The low power factor is increasing the electricity bill. | El bajo factor de potencia está aumentando la factura de energía.
+The UPS keeps the servers running during power cuts. | La UPS mantiene los servidores funcionando durante los cortes de luz.
+We can monitor the line remotely from the SCADA. | Podemos monitorear la línea a distancia desde el SCADA.
+What's the status of the repair? | ¿Cómo va la reparación?
+How long will the machine be down? | ¿Cuánto tiempo va a estar parada la máquina?
+Can you send me the technical datasheet? | ¿Me envías la ficha técnica?
+We need a quote for the new equipment. | Necesitamos una cotización del equipo nuevo.
+The supplier will send a technician tomorrow. | El proveedor enviará un técnico mañana.
+The warranty covers parts but not labor. | La garantía cubre las piezas pero no la mano de obra.
+Let's schedule the maintenance for the weekend. | Programemos el mantenimiento para el fin de semana.
+We have to finish before the production run starts. | Tenemos que terminar antes de que empiece la producción.
+I'll write a technical report on the failure. | Voy a escribir un informe técnico sobre la falla.
+Who approved this engineering change? | ¿Quién aprobó este cambio de ingeniería?
+The project is behind schedule and over budget. | El proyecto va atrasado y por encima del presupuesto.
+Safety comes first. | La seguridad es lo primero.
+Report any unsafe condition to your supervisor. | Reporta cualquier condición insegura a tu supervisor.
+This area is restricted to authorized personnel. | Esta área es solo para personal autorizado.
+We need the material certificate for this steel. | Necesitamos el certificado del material de este acero.
+Aluminum is lighter but less strong than steel. | El aluminio es más liviano pero menos resistente que el acero.
+Nylon works well for low-friction parts. | El nailon funciona bien para piezas de baja fricción.
+Apply primer before painting the metal. | Aplica imprimante antes de pintar el metal.
+The design freeze is at the end of the month. | El congelamiento del diseño es a fin de mes.
+We spent two hundred man-hours on the design. | Gastamos doscientas horas-hombre en el diseño.
+Please send a technical query to the engineering firm. | Por favor envía una consulta técnica a la firma de ingeniería.
+The supplier gave us remote assistance by video call. | El proveedor nos dio asistencia remota por videollamada.
 `},
     { en: 'Industrial Engineer', es: 'Ingeniero industrial', w: `
 Industrial engineering | Ingeniería industrial
@@ -427,6 +758,92 @@ Planned downtime | Paradas programadas
 Unplanned downtime | Paradas no programadas
 Minor stoppages | Microparadas
 Speed losses | Pérdidas de velocidad
+Maintenance management | Gestión del mantenimiento
+Computerized maintenance management system (CMMS) | Sistema computarizado de gestión del mantenimiento (GMAO)
+Reliability-centered maintenance (RCM) | Mantenimiento centrado en la confiabilidad
+Failure analysis | Análisis de fallas
+Failure rate | Tasa de fallas
+Failure mode | Modo de falla
+Asset management | Gestión de activos
+Asset life cycle | Ciclo de vida del activo
+Equipment criticality | Criticidad de los equipos
+Maintenance backlog | Pendientes de mantenimiento
+Maintenance cost | Costo de mantenimiento
+Maintenance KPIs | Indicadores de mantenimiento
+Planned maintenance percentage | Porcentaje de mantenimiento planeado
+Work request | Solicitud de trabajo
+Maintenance planner | Planeador de mantenimiento
+Lubrication route | Ruta de lubricación
+Inspection route | Ruta de inspección
+Spare parts management | Gestión de repuestos
+Minimum stock (spares) | Stock mínimo
+Obsolete equipment | Equipo obsoleto
+Replacement cost | Costo de reposición
+Depreciation (equipment) | Depreciación
+Total cost of ownership (equipment) | Costo total de propiedad
+Production cost analysis | Análisis de costos de producción
+Standard cost | Costo estándar
+Variance analysis (plant) | Análisis de variaciones
+Key performance indicator (plant) | Indicador clave de desempeño
+Plant performance dashboard | Tablero de desempeño de la planta
+Benchmarking (plant) | Comparación con otras plantas
+Best practices | Buenas prácticas
+Lean transformation | Transformación lean
+Change management (lean) | Gestión del cambio
+Employee engagement | Compromiso de los empleados
+Suggestion system | Sistema de sugerencias
+Improvement team | Equipo de mejora
+Quality circle | Círculo de calidad
+Lean manufacturing (principles) | Principios de manufactura esbelta
+Lean office | Oficina esbelta
+Lean champion | Líder lean
+Continuous improvement manager | Gerente de mejora continua
+Operational excellence program | Programa de excelencia operacional
+Improvement roadmap | Hoja de ruta de mejora
+Process standardization | Estandarización de procesos
+Standard operating sheet | Hoja de operación estándar
+Job breakdown sheet | Hoja de desglose del trabajo
+Training within industry (TWI) | Entrenamiento dentro de la industria (TWI)
+Visual factory | Fábrica visual
+Floor markings | Demarcación del piso
+Shadow board | Tablero de sombras
+Red tag | Tarjeta roja
+Sort (5S) | Clasificar
+Set in order (5S) | Ordenar
+Shine (5S) | Limpiar
+Standardize (5S) | Estandarizar
+Sustain (5S) | Mantener
+5S audit | Auditoría 5S
+Daily management system | Sistema de gestión diaria
+Tiered meetings | Reuniones escalonadas
+Escalation process | Proceso de escalamiento
+Problem-solving | Solución de problemas
+Countermeasure | Contramedida
+Root cause (industrial) | Causa raíz
+Pilot area | Área piloto
+Rollout | Despliegue
+Sustainment | Sostenibilidad de la mejora
+Savings validation | Validación de ahorros
+Industrial engineer (title) | Ingeniero industrial
+Operations analyst | Analista de operaciones
+Process improvement engineer | Ingeniero de mejora de procesos
+Lean specialist | Especialista lean
+Production planner | Planeador de producción
+Production planning and control | Planeación y control de la producción
+Make-to-stock production | Producción para inventario
+Make-to-order production | Producción bajo pedido
+Mixed-model line | Línea de modelos mixtos
+Product mix | Mezcla de productos
+Batch size | Tamaño del lote
+Lot sizing | Dimensionamiento de lotes
+Setup cost | Costo de alistamiento
+Holding cost | Costo de mantener inventario
+Finite capacity scheduling | Programación con capacidad finita
+Rush order (plant) | Pedido urgente
+Order backlog (plant) | Pedidos atrasados
+On-time production | Producción a tiempo
+Schedule adherence | Cumplimiento del programa
+Production variance | Variación de producción
 `, p: `
 Our takt time is forty-five seconds per unit. | Nuestro takt time es de cuarenta y cinco segundos por unidad.
 We redesigned the layout to reduce walking distance. | Rediseñamos la distribución para reducir los desplazamientos.
@@ -448,6 +865,28 @@ Minor stoppages are our biggest loss. | Las microparadas son nuestra mayor pérd
 The simulation shows we need a second machine. | La simulación muestra que necesitamos una segunda máquina.
 We need to reduce overtime costs this quarter. | Tenemos que reducir los costos de horas extras este trimestre.
 This workstation causes back pain; let's redesign it. | Este puesto de trabajo causa dolor de espalda; rediseñémoslo.
+We need to standardize the work across all three shifts. | Tenemos que estandarizar el trabajo en los tres turnos.
+The new layout reduced material handling by forty percent. | La nueva distribución redujo el manejo de materiales en un cuarenta por ciento.
+Let's calculate the takt time based on customer demand. | Calculemos el takt time según la demanda del cliente.
+Changeovers are eating up our capacity. | Los cambios de referencia se están comiendo nuestra capacidad.
+We'll run a kaizen event next week on the packing line. | La próxima semana haremos un evento kaizen en la línea de empaque.
+The operators suggested a simple improvement. | Los operarios sugirieron una mejora sencilla.
+All work requests must be entered in the CMMS. | Todas las solicitudes de trabajo deben registrarse en el GMAO.
+The maintenance backlog is three weeks. | Los pendientes de mantenimiento suman tres semanas.
+We ranked the equipment by criticality. | Clasificamos los equipos por criticidad.
+Most failures happen in the first month after repair. | La mayoría de las fallas ocurren el primer mes después de la reparación.
+The suggestion system received fifty ideas this month. | El sistema de sugerencias recibió cincuenta ideas este mes.
+Put a red tag on everything that isn't needed. | Ponle tarjeta roja a todo lo que no se necesita.
+Each tool has its place on the shadow board. | Cada herramienta tiene su lugar en el tablero de sombras.
+The 5S audit score went up to eighty-five. | El puntaje de la auditoría 5S subió a ochenta y cinco.
+If you can't solve it, escalate it to the next level. | Si no lo puedes resolver, escálalo al siguiente nivel.
+We'll roll out the improvement to the other lines. | Desplegaremos la mejora en las demás líneas.
+Each operator handles two machines. | Cada operario maneja dos máquinas.
+The study showed thirty percent idle time. | El estudio mostró un treinta por ciento de tiempo ocioso.
+We added a buffer before the bottleneck station. | Pusimos un inventario de amortiguación antes de la estación cuello de botella.
+Productivity rose after we balanced the line. | La productividad subió después de balancear la línea.
+Smaller batch sizes reduce inventory but increase changeovers. | Los lotes más pequeños reducen el inventario pero aumentan los cambios de referencia.
+Schedule adherence was ninety-two percent last week. | El cumplimiento del programa fue del noventa y dos por ciento la semana pasada.
 `},
     { en: 'Mechanical Engineer', es: 'Ingeniero mecánico', w: `
 Mechanical design | Diseño mecánico
@@ -577,6 +1016,125 @@ Assembly (CAD) | Ensamble
 Part file | Archivo de pieza
 SolidWorks | SolidWorks
 Reverse engineering | Ingeniería inversa
+Hydraulic system | Sistema hidráulico
+Pneumatic system | Sistema neumático
+Hydraulic pump | Bomba hidráulica
+Hydraulic motor | Motor hidráulico
+Accumulator | Acumulador
+Directional valve | Válvula direccional
+Flow control valve | Válvula de control de caudal
+Air compressor | Compresor de aire
+Air dryer | Secador de aire
+Air receiver | Tanque pulmón
+Pressure regulator (industrial) | Regulador de presión
+FRL unit (filter, regulator, lubricator) | Unidad de mantenimiento FRL
+Vacuum pump | Bomba de vacío
+Suction cup | Ventosa
+Mechanical seal | Sello mecánico
+Packing gland | Prensaestopas
+Lubrication system | Sistema de lubricación
+Grease nipple | Grasera
+Oil level | Nivel de aceite
+Oil change | Cambio de aceite
+Bearing failure | Falla del rodamiento
+Bearing housing | Soporte del rodamiento
+Lubrication interval | Intervalo de lubricación
+Vibration sensor | Sensor de vibración
+Temperature rise | Aumento de temperatura
+Thermal stress | Esfuerzo térmico
+Pressure rating | Presión nominal
+Burst pressure | Presión de rotura
+Wall thickness | Espesor de pared
+Pipe schedule | Cédula de la tubería
+Mechanical drawing | Plano mecánico
+Mechanical installation | Montaje mecánico
+Alignment tool | Herramienta de alineación
+Laser alignment | Alineación láser
+Balancing machine | Balanceadora
+Thermal analysis | Análisis térmico
+Structural analysis | Análisis estructural
+Computational fluid dynamics (CFD) | Dinámica de fluidos computacional (CFD)
+Mesh (FEA) | Malla
+Boundary conditions | Condiciones de frontera
+Load case | Caso de carga
+Stress concentration | Concentración de esfuerzos
+Von Mises stress | Esfuerzo de Von Mises
+Deflection | Deflexión
+Buckling | Pandeo
+Modal analysis | Análisis modal
+Prototype testing | Pruebas del prototipo
+Test rig | Banco de pruebas
+Strain gauge | Galga extensiométrica
+Load cell | Celda de carga
+Accelerometer | Acelerómetro
+Data acquisition system | Sistema de adquisición de datos
+Tolerance stack-up | Acumulación de tolerancias
+Fit (mechanical) | Ajuste
+Clearance fit | Ajuste con juego
+Interference fit | Ajuste a presión
+Press fit | Ajuste forzado
+Surface roughness | Rugosidad superficial
+Mechanical engineer (title) | Ingeniero mecánico
+Design engineer | Ingeniero de diseño
+Product engineer | Ingeniero de producto
+Drafter | Dibujante técnico
+CAD technician | Técnico CAD
+Engineering drawing standards | Normas de dibujo técnico
+Technical drawing (mechanical) | Dibujo mecánico
+Orthographic projection | Proyección ortogonal
+Front view | Vista frontal
+Side view | Vista lateral
+Top view | Vista superior
+Hidden lines | Líneas ocultas
+Centerline | Línea de centro
+Chamfer | Chaflán
+Fillet | Redondeo
+Thread (screw) | Rosca
+Hole | Agujero
+Slot | Ranura
+Groove | Ranura, canal
+Flange (part) | Pestaña
+Weldment | Conjunto soldado
+Sheet metal part | Pieza de lámina
+Machined part | Pieza mecanizada
+Cast part | Pieza fundida
+Molded part | Pieza moldeada
+Off-the-shelf component | Componente comercial
+Custom part | Pieza a medida
+Part number | Número de parte
+Design for assembly (DFA) | Diseño para ensamble
+Design validation | Validación del diseño
+Design verification | Verificación del diseño
+Air conditioning | Aire acondicionado
+Ventilation | Ventilación
+Heating system | Sistema de calefacción
+Heat pump | Bomba de calor
+Refrigerant | Refrigerante
+Evaporator coil | Serpentín evaporador
+Condenser unit | Unidad condensadora
+Expansion valve | Válvula de expansión
+Thermostat | Termostato
+Airflow | Caudal de aire
+Air filter | Filtro de aire
+Duct leakage | Fugas en ductos
+Cooling capacity | Capacidad de enfriamiento
+BTU | BTU
+Ton of refrigeration | Tonelada de refrigeración
+Elevator | Ascensor
+Escalator | Escalera eléctrica
+Lifting equipment | Equipos de izaje
+Vehicle engineering | Ingeniería automotriz
+Engine | Motor
+Transmission (vehicle) | Transmisión
+Brakes | Frenos
+Suspension | Suspensión
+Chassis | Chasis
+Exhaust system | Sistema de escape
+Fuel injection | Inyección de combustible
+Electric vehicle | Vehículo eléctrico
+Battery pack | Paquete de baterías
+Agricultural machinery (mechanical) | Maquinaria agrícola
+Mining equipment | Equipos de minería
 `, p: `
 The FEA shows high stress at the joint. | El análisis por elementos finitos muestra un esfuerzo alto en la unión.
 We need a stiffer material for this bracket. | Necesitamos un material más rígido para este soporte.
@@ -593,6 +1151,23 @@ I'll send you the 3D model for review. | Te envío el modelo 3D para revisión.
 The design review is scheduled for Thursday. | La revisión de diseño está programada para el jueves.
 The bracket failed due to fatigue. | El soporte falló por fatiga.
 We need to add insulation to the hot pipes. | Tenemos que aislar las tuberías calientes.
+The hydraulic pressure dropped because of a worn seal. | La presión hidráulica bajó por un sello desgastado.
+Change the oil every two thousand hours. | Cambia el aceite cada dos mil horas.
+The bearing failed because of poor lubrication. | El rodamiento falló por mala lubricación.
+We'll do a laser alignment of the motor and the pump. | Haremos una alineación láser del motor y la bomba.
+The compressor isn't building enough pressure. | El compresor no está generando suficiente presión.
+The CFD shows a recirculation zone after the elbow. | El CFD muestra una zona de recirculación después del codo.
+Maximum deflection is within the allowable limit. | La deflexión máxima está dentro del límite permitido.
+We'll put strain gauges on the prototype. | Pondremos galgas extensiométricas en el prototipo.
+The tolerance stack-up causes interference in the assembly. | La acumulación de tolerancias causa interferencia en el ensamble.
+Add a chamfer to the edge to remove the sharp corner. | Agrega un chaflán al borde para quitar la esquina filosa.
+We can use an off-the-shelf bearing instead of a custom part. | Podemos usar un rodamiento comercial en vez de una pieza a medida.
+The part number must appear on every drawing. | El número de parte debe aparecer en cada plano.
+Fewer parts make the assembly faster. | Menos piezas hacen más rápido el ensamble.
+The air conditioning isn't cooling enough. | El aire acondicionado no está enfriando lo suficiente.
+The refrigerant level is low; there may be a leak. | El nivel de refrigerante está bajo; puede haber una fuga.
+Replace the air filters every three months. | Cambia los filtros de aire cada tres meses.
+We need forty tons of refrigeration for the building. | Necesitamos cuarenta toneladas de refrigeración para el edificio.
 `},
     { en: 'Manufacturing Engineer', es: 'Ingeniero de manufactura', w: `
 Manufacturing process | Proceso de manufactura
@@ -741,6 +1316,97 @@ Production part approval process (PPAP) | Proceso de aprobación de piezas de pr
 Process validation (manufacturing) | Validación del proceso
 Capacity study | Estudio de capacidad
 Run at rate | Prueba a cadencia
+Production floor | Piso de producción
+Production cell | Celda de producción
+Production capacity (plant) | Capacidad productiva
+Production bottleneck | Cuello de botella de producción
+Production rate | Tasa de producción
+Production loss | Pérdida de producción
+Production report | Informe de producción
+Production meeting | Reunión de producción
+Shift handover | Entrega de turno
+Daily production meeting | Reunión diaria de producción
+Hourly output board | Tablero de producción por hora
+Takt board | Tablero de takt
+Downtime log | Registro de paradas
+Reason codes (downtime) | Códigos de causa de parada
+Scrap report | Informe de desperdicio
+Rework area | Área de reproceso
+Material shortage (line) | Falta de material
+Line feeding (manufacturing) | Abastecimiento de línea
+Kitting area | Área de kits
+Work instructions (visual) | Instrucciones visuales de trabajo
+Operator training matrix | Matriz de habilidades de los operarios
+Skills matrix | Matriz de polivalencia
+Multiskilled operator | Operario polivalente
+Job rotation | Rotación de puestos
+Error-proofing | A prueba de errores
+Process parameters sheet | Hoja de parámetros
+Machine settings | Ajustes de la máquina
+Recipe (machine) | Receta
+Setup sheet | Hoja de alistamiento
+Tool change | Cambio de herramienta
+Die change | Cambio de troquel
+Quick changeover | Cambio rápido
+Mold maintenance | Mantenimiento de moldes
+Tool crib | Pañol de herramientas
+Gauge room | Cuarto de metrología
+Engineering samples | Muestras de ingeniería
+Trial run | Corrida de prueba
+Production readiness | Preparación para producción
+Start of production (SOP) | Inicio de producción
+End of production | Fin de producción
+Volume ramp-up | Aumento progresivo de volumen
+Capacity expansion | Ampliación de capacidad
+Capital expenditure (plant) | Inversión de capital
+Equipment specification | Especificación del equipo
+Equipment supplier | Proveedor del equipo
+Machine acceptance | Aceptación de la máquina
+Food manufacturing | Fabricación de alimentos
+Pharmaceutical manufacturing | Fabricación farmacéutica
+Automotive industry | Industria automotriz
+Aerospace industry | Industria aeroespacial
+Electronics manufacturing | Manufactura electrónica
+Printed circuit board (PCB) | Tarjeta de circuito impreso
+Surface-mount technology (SMT) | Tecnología de montaje superficial
+Soldering | Soldadura de estaño
+Textile industry | Industria textil
+Garment manufacturing | Confección
+Furniture manufacturing | Fabricación de muebles
+Packaging industry | Industria de empaques
+Steel mill | Siderúrgica
+Foundry | Fundición
+Machine shop | Taller de mecanizado
+Fabrication shop | Taller de fabricación metálica
+Clean manufacturing | Manufactura limpia
+Sustainable manufacturing | Manufactura sostenible
+Waste reduction (plant) | Reducción de residuos
+Recycling (plant) | Reciclaje
+Energy savings (plant) | Ahorro de energía
+Manufacturing strategy | Estrategia de manufactura
+Manufacturing footprint | Huella de manufactura
+Plant layout drawing | Plano de distribución de la planta
+Equipment layout | Distribución de equipos
+Floor space | Espacio en planta
+Utilities connection | Conexión de servicios
+Foundation (machine) | Base de la máquina
+Anchor bolts | Pernos de anclaje
+Leveling (machine) | Nivelación
+Machine relocation | Traslado de máquina
+Rigging | Izaje y maniobras
+Overhead crane | Puente grúa
+Hoist | Polipasto
+Lifting capacity | Capacidad de izaje
+Manufacturing engineer (title) | Ingeniero de manufactura
+Process technician (manufacturing) | Técnico de procesos
+Tooling engineer | Ingeniero de herramentales
+Automation technician | Técnico de automatización
+Robotics engineer | Ingeniero en robótica
+Toolmaker | Matricero
+CNC operator | Operador CNC
+Machinist | Tornero, maquinista
+Assembler | Ensamblador
+Production worker | Operario de producción
 `, p: `
 The changeover takes too long. | El cambio de referencia tarda demasiado.
 We reduced setup time from two hours to thirty minutes. | Redujimos el tiempo de alistamiento de dos horas a treinta minutos.
@@ -759,6 +1425,24 @@ We'll 3D print a prototype to test the fit. | Imprimiremos en 3D un prototipo pa
 The PPAP must be approved before mass production. | El PPAP debe aprobarse antes de la producción en serie.
 The run at rate showed we can make four hundred parts per hour. | La prueba a cadencia mostró que podemos hacer cuatrocientas piezas por hora.
 The paint is peeling because of poor surface preparation. | La pintura se está pelando por una mala preparación de la superficie.
+The hourly board shows we're behind by fifty units. | El tablero por hora muestra que vamos atrasados cincuenta unidades.
+We stopped the line because of a material shortage. | Paramos la línea por falta de material.
+Let's update the skills matrix after the training. | Actualicemos la matriz de habilidades después de la capacitación.
+The trial run will be on the night shift. | La corrida de prueba será en el turno de noche.
+Start of production is planned for the first week of May. | El inicio de producción está planeado para la primera semana de mayo.
+The die change now takes only twelve minutes. | El cambio de troquel ahora tarda solo doce minutos.
+We need a second line to meet the new volume. | Necesitamos una segunda línea para cumplir el nuevo volumen.
+We supply parts to the automotive industry. | Suministramos piezas a la industria automotriz.
+The PCB line runs three shifts. | La línea de tarjetas electrónicas trabaja tres turnos.
+We reduced plant waste by thirty percent. | Redujimos los residuos de la planta en un treinta por ciento.
+The new machine increased capacity by twenty-five percent. | La máquina nueva aumentó la capacidad en un veinticinco por ciento.
+We're moving production of this part to the other plant. | Vamos a trasladar la producción de esta pieza a la otra planta.
+The operators need training on the new equipment. | Los operarios necesitan capacitación en el equipo nuevo.
+The machine needs a concrete foundation. | La máquina necesita una base de concreto.
+We'll relocate the press to the other side of the plant. | Trasladaremos la prensa al otro lado de la planta.
+The overhead crane can lift up to ten tons. | El puente grúa puede levantar hasta diez toneladas.
+We're hiring two CNC operators for the night shift. | Estamos contratando dos operadores CNC para el turno de noche.
+The toolmaker will repair the die this afternoon. | El matricero va a reparar el troquel esta tarde.
 `},
     { en: 'Quality Engineer', es: 'Ingeniero de calidad', w: `
 Quality management system (QMS) | Sistema de gestión de calidad
@@ -889,6 +1573,84 @@ Check sheet | Hoja de verificación
 Six Sigma level | Nivel sigma
 Zero defects | Cero defectos
 Right first time | Bien a la primera
+Quality inspection report | Informe de inspección
+Inspection plan | Plan de inspección
+Inspection frequency | Frecuencia de inspección
+Visual inspection (quality) | Inspección visual
+Dimensional inspection | Inspección dimensional
+Functional test | Prueba funcional
+Leak test (quality) | Prueba de hermeticidad
+Destructive test | Ensayo destructivo
+Non-destructive testing (NDT) | Ensayos no destructivos
+X-ray inspection | Inspección por rayos X
+Ultrasonic inspection | Inspección por ultrasonido
+Dye penetrant test | Prueba de tintas penetrantes
+Magnetic particle test | Prueba de partículas magnéticas
+Salt spray test | Prueba de niebla salina
+Reliability test | Prueba de confiabilidad
+Life test | Prueba de vida útil
+Environmental test | Prueba ambiental
+Test report | Informe de pruebas
+Test specification | Especificación de prueba
+Pass/fail criteria | Criterios de aceptación y rechazo
+Deviation request | Solicitud de desviación
+Concession (quality) | Concesión
+Use as is | Usar como está
+Scrap decision | Decisión de desecho
+Material review board (MRB) | Comité de revisión de materiales
+Quality cost report | Informe de costos de calidad
+Complaint handling | Gestión de reclamos
+Customer audit | Auditoría del cliente
+Quality agreement (customer) | Acuerdo de calidad
+Quality culture | Cultura de calidad
+Quality awareness | Conciencia de calidad
+Quality training | Capacitación en calidad
+Quality gate | Puerta de calidad
+Quality wall | Muro de calidad
+Quality review meeting | Reunión de revisión de calidad
+Management review | Revisión por la dirección
+Document management | Gestión documental
+Document revision | Revisión del documento
+Obsolete document | Documento obsoleto
+Record retention | Conservación de registros
+Product traceability | Trazabilidad del producto
+Lot traceability | Trazabilidad por lote
+Serial traceability | Trazabilidad por número de serie
+Recall procedure | Procedimiento de retiro
+Product safety | Seguridad del producto
+Regulatory compliance | Cumplimiento normativo
+Product certification | Certificación de producto
+Type approval | Homologación
+Conformity assessment | Evaluación de la conformidad
+Testing laboratory | Laboratorio de ensayos
+Accredited laboratory | Laboratorio acreditado
+Metrology | Metrología
+Measuring instrument | Instrumento de medición
+Measurement traceability | Trazabilidad metrológica
+Calibration laboratory | Laboratorio de calibración
+Calibration interval | Intervalo de calibración
+Out of calibration | Fuera de calibración
+Gauge control | Control de instrumentos de medición
+Inspection fixture | Dispositivo de control
+Customer satisfaction (quality) | Satisfacción del cliente
+Voice of the customer | Voz del cliente
+Critical to quality (CTQ) | Crítico para la calidad (CTQ)
+Key characteristic | Característica clave
+Special characteristic | Característica especial
+Safety characteristic | Característica de seguridad
+Quality engineer (title) | Ingeniero de calidad
+Supplier quality engineer | Ingeniero de calidad de proveedores
+Customer quality engineer | Ingeniero de calidad del cliente
+Quality assurance manager | Gerente de aseguramiento de calidad
+Metrologist | Metrólogo
+Quality auditor | Auditor de calidad
+Inspection station | Estación de inspección
+Final audit (product) | Auditoría final del producto
+Outgoing inspection | Inspección de salida
+Defect tag | Etiqueta de defecto
+Defect log | Registro de defectos
+Defect classification | Clasificación de defectos
+Quality escape | Fuga de calidad
 `, p: `
 We opened a CAPA for this nonconformity. | Abrimos una acción correctiva para esta no conformidad.
 The defect rate dropped to fifty parts per million. | La tasa de defectos bajó a cincuenta partes por millón.
@@ -909,6 +1671,23 @@ The auditor raised one minor nonconformity. | El auditor levantó una no conform
 The point outside the control limit shows a special cause. | El punto fuera del límite de control muestra una causa especial.
 Compare the part with the golden sample. | Compara la pieza con la muestra patrón.
 Our goal is zero defects at the customer. | Nuestra meta es cero defectos en el cliente.
+The weld passed the X-ray inspection. | La soldadura pasó la inspección por rayos X.
+The parts failed the salt spray test after two hundred hours. | Las piezas fallaron la prueba de niebla salina a las doscientas horas.
+We'll ask the customer for a concession to use these parts. | Le pediremos al cliente una concesión para usar estas piezas.
+The material review board decided to scrap the lot. | El comité de revisión de materiales decidió desechar el lote.
+The customer audit is next Tuesday; let's get ready. | La auditoría del cliente es el próximo martes; preparémonos.
+Every product must pass the quality gate before shipping. | Cada producto debe pasar la puerta de calidad antes del despacho.
+Remove obsolete documents from the shop floor. | Retira los documentos obsoletos de la planta.
+We can trace every part back to the raw material lot. | Podemos rastrear cada pieza hasta el lote de materia prima.
+This gauge is out of calibration; don't use it. | Este instrumento está fuera de calibración; no lo uses.
+The management review is held twice a year. | La revisión por la dirección se hace dos veces al año.
+The supplier sent the parts without a certificate of conformity. | El proveedor envió las piezas sin certificado de conformidad.
+Let's check whether the problem is in design or in production. | Revisemos si el problema está en el diseño o en la producción.
+The corrective action was effective; we can close it. | La acción correctiva fue eficaz; podemos cerrarla.
+We had three customer complaints this month. | Tuvimos tres reclamos de clientes este mes.
+This is a safety characteristic, so we inspect every part. | Esta es una característica de seguridad, así que inspeccionamos cada pieza.
+This was a quality escape; the defect reached the customer. | Fue una fuga de calidad; el defecto llegó al cliente.
+Record every defect in the defect log. | Registra cada defecto en el registro de defectos.
 `},
     { en: 'Process Engineer', es: 'Ingeniero de procesos', w: `
 Process engineering | Ingeniería de procesos
@@ -1074,6 +1853,130 @@ Refinery | Refinería
 Petrochemical plant | Planta petroquímica
 Cement plant | Planta de cemento
 Mining processing | Procesamiento minero
+Process engineer (title) | Ingeniero de procesos
+Process technician | Técnico de procesos
+Panel operator | Operador de consola
+Field operator | Operador de campo
+Plant operator | Operador de planta
+Process control engineer | Ingeniero de control de procesos
+Instrumentation technician | Técnico de instrumentación
+Process improvement project | Proyecto de mejora del proceso
+Process audit (plant) | Auditoría del proceso
+Process stability | Estabilidad del proceso
+Process variability | Variabilidad del proceso
+Process drift | Deriva del proceso
+Process upset | Perturbación del proceso
+Process trip | Disparo del proceso
+Unplanned shutdown | Parada no programada
+Planned shutdown | Parada programada
+Start-up procedure | Procedimiento de arranque
+Shutdown procedure | Procedimiento de parada
+Emergency procedure | Procedimiento de emergencia
+Purging | Purga
+Venting | Venteo
+Draining | Drenaje
+Flushing (pipes) | Lavado de líneas
+Line blinding | Bloqueo de líneas con ciegos
+Blind flange | Brida ciega
+Isolation valve | Válvula de aislamiento
+Bypass | Bypass (desvío)
+Sample point | Punto de muestreo
+Lab analysis (process) | Análisis de laboratorio
+Online analyzer | Analizador en línea
+Quality parameters (process) | Parámetros de calidad
+Viscosity | Viscosidad
+Moisture content | Contenido de humedad
+Particle size distribution | Distribución de tamaño de partícula
+Specific gravity | Gravedad específica
+Boiling point | Punto de ebullición
+Freezing point | Punto de congelación
+Flash point | Punto de inflamación
+Vapor pressure | Presión de vapor
+Saturation | Saturación
+Phase separation | Separación de fases
+Emulsion | Emulsión
+Foaming | Formación de espuma
+Fouling (heat exchanger) | Ensuciamiento
+Scaling | Incrustación
+Corrosion inhibitor | Inhibidor de corrosión
+Chemical dosing | Dosificación de químicos
+Neutralization | Neutralización
+Hazardous chemicals | Químicos peligrosos
+Chemical compatibility | Compatibilidad química
+Material of construction | Material de construcción del equipo
+Process safety management | Gestión de seguridad de procesos
+Loss of containment | Pérdida de contención
+Toxic release | Fuga tóxica
+Explosion risk | Riesgo de explosión
+Explosive atmosphere (ATEX) | Atmósfera explosiva (ATEX)
+Hazardous area classification | Clasificación de áreas peligrosas
+Gas detector | Detector de gases
+Fire and gas system | Sistema de fuego y gas
+Deluge system | Sistema de diluvio
+Bunding | Dique de contención
+Spill containment | Contención de derrames
+Environmental compliance | Cumplimiento ambiental
+Emission limits | Límites de emisión
+Effluent treatment | Tratamiento de efluentes
+Mass flow | Flujo másico
+Volumetric flow | Flujo volumétrico
+Laminar flow | Flujo laminar
+Turbulent flow | Flujo turbulento
+Reynolds number | Número de Reynolds
+Heat duty | Carga térmica
+Heat transfer coefficient | Coeficiente de transferencia de calor
+Log mean temperature difference | Diferencia de temperatura media logarítmica
+Enthalpy | Entalpía
+Specific heat | Calor específico
+Latent heat | Calor latente
+Thermal efficiency | Eficiencia térmica
+Combustion | Combustión
+Burner | Quemador
+Furnace | Horno
+Kiln | Horno rotatorio
+Flue gas | Gases de combustión
+Stack (chimney) | Chimenea
+Process design package | Paquete de diseño del proceso
+Process description | Descripción del proceso
+Block flow diagram | Diagrama de bloques
+Stream table | Tabla de corrientes
+Equipment datasheet | Hoja de datos del equipo
+Instrument datasheet | Hoja de datos del instrumento
+Line list | Listado de líneas
+Cause and effect matrix | Matriz causa-efecto
+Control narrative | Filosofía de control
+Operating philosophy | Filosofía de operación
+Design pressure | Presión de diseño
+Design temperature | Temperatura de diseño
+Operating pressure | Presión de operación
+Operating temperature | Temperatura de operación
+Turndown ratio | Relación de reducción (turndown)
+Nameplate capacity | Capacidad nominal
+Plant capacity | Capacidad de la planta
+Production yield (plant) | Rendimiento de producción
+Specific consumption | Consumo específico
+Raw material consumption | Consumo de materias primas
+Utility consumption | Consumo de servicios
+Plant efficiency | Eficiencia de la planta
+Water treatment plant (process) | Planta de tratamiento de agua
+Reverse osmosis | Ósmosis inversa
+Ion exchange | Intercambio iónico
+Water softener | Ablandador de agua
+Clarifier | Clarificador
+Coagulation | Coagulación
+Flocculation | Floculación
+Sedimentation | Sedimentación
+Disinfection (water) | Desinfección
+Chlorination | Cloración
+Sludge | Lodo
+Sludge treatment | Tratamiento de lodos
+Biological treatment | Tratamiento biológico
+Activated sludge | Lodos activados
+Aeration tank | Tanque de aireación
+Chemical oxygen demand (COD) | Demanda química de oxígeno (DQO)
+Biological oxygen demand (BOD) | Demanda biológica de oxígeno (DBO)
+Total suspended solids | Sólidos suspendidos totales
+Discharge permit | Permiso de vertimientos
 `, p: `
 The temperature is drifting away from the set point. | La temperatura se está alejando del valor de consigna.
 Let's check the mass balance for this unit. | Revisemos el balance de masa de esta unidad.
@@ -1095,6 +1998,26 @@ Debottlenecking the dryer will increase capacity by twenty percent. | Eliminar e
 The plant turnaround will last three weeks. | La parada general de planta durará tres semanas.
 Please record all events in the shift log. | Por favor registra todos los eventos en la bitácora de turno.
 The steam traps are leaking and wasting energy. | Las trampas de vapor tienen fugas y desperdician energía.
+The plant tripped because of a power dip. | La planta se disparó por una caída de tensión.
+Follow the start-up procedure step by step. | Sigue el procedimiento de arranque paso a paso.
+Purge the line with nitrogen before opening it. | Purga la línea con nitrógeno antes de abrirla.
+Take a sample every two hours for the lab. | Toma una muestra cada dos horas para el laboratorio.
+The viscosity is too high; increase the temperature. | La viscosidad está muy alta; sube la temperatura.
+The heat exchanger is fouled and needs cleaning. | El intercambiador está sucio y hay que limpiarlo.
+This area is classified as an explosive atmosphere. | Esta área está clasificada como atmósfera explosiva.
+The gas detector alarm went off near the reactor. | Sonó la alarma del detector de gases cerca del reactor.
+We must stay below the emission limits. | Debemos mantenernos por debajo de los límites de emisión.
+Open the bypass while we change the filter. | Abre el bypass mientras cambiamos el filtro.
+The flow is turbulent at this velocity. | El flujo es turbulento a esta velocidad.
+We need to recalculate the heat duty of the exchanger. | Tenemos que recalcular la carga térmica del intercambiador.
+The burner needs to be adjusted to reduce emissions. | Hay que ajustar el quemador para reducir las emisiones.
+The plant is running at eighty percent of nameplate capacity. | La planta está trabajando al ochenta por ciento de su capacidad nominal.
+The operating pressure must stay below the design pressure. | La presión de operación debe mantenerse por debajo de la presión de diseño.
+Specific steam consumption went down after the project. | El consumo específico de vapor bajó después del proyecto.
+Let's review the cause and effect matrix with operations. | Revisemos la matriz causa-efecto con operaciones.
+The COD in the effluent is above the limit. | La DQO del efluente está por encima del límite.
+We'll add a reverse osmosis unit to reuse water. | Agregaremos una unidad de ósmosis inversa para reutilizar el agua.
+The sludge is sent to an authorized landfill. | Los lodos se envían a un relleno autorizado.
 `},
   ],
 });
