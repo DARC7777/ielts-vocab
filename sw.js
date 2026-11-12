@@ -3,7 +3,7 @@
 // cuando hay internet) y caché como respaldo sin conexión. Las fuentes de Google van
 // «primero caché». Ya no hace falta subir la versión en cada cambio; súbela solo si
 // cambias la lista ASSETS o quieres forzar una limpieza de la caché.
-const CACHE_NAME = 'vocab-quiz-v6';
+const CACHE_NAME = 'vocab-quiz-v7';
 
 const ASSETS = [
   './',
@@ -11,6 +11,7 @@ const ASSETS = [
   './vocab.js',
   './grammar.js',
   './prof/index.js',
+  './niveles/index.js',
   './manifest.json',
   './icon-192.png',
   './icon-512.png'

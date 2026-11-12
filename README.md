@@ -17,7 +17,9 @@ App web (PWA) para practicar vocabulario, verbos, tiempos verbales y gramática 
 | 🎚️ **Nivel A1–C1** | Cada tiempo verbal y cada tema tiene su nivel MCER. En el inicio, el filtro **Nivel** deja practicar solo los niveles que elijas (por ejemplo, solo B2 y C1). |
 | 📚 **Aprender** | Guía con cada tiempo y estructura: fórmula (afirmativa, negativa y pregunta), **cuándo se usa**, palabras clave, ejemplos traducidos y el error típico de los hispanohablantes. Pestañas: *Tiempos*, *Gramática* (por nivel) y **📘 Mis libros** (los temas de cada libro, unidad por unidad). Desde cualquier pregunta puedes abrir *📖 Ver explicación*. |
 | 🔊 **Pronunciación** | Escucha cualquier palabra o frase con el botón 🔊 (la app elige sola la voz en inglés más natural de tu dispositivo). El botón 🔈/🔊 del quiz activa la lectura automática. |
-| ❤️ **3 vidas, racha y racha de días** | Igual que antes. Las palabras que fallas se guardan, aparecen mezcladas en los turnos siguientes (hasta un 15 %) y puedes repasarlas aparte. |
+| 🎯 **Temas por nivel** | 103 temas de **A1 a C1** con 20.138 palabras, collocations, phrasal verbs y frases: ropa, comida, viajes, salud, trabajo, tecnología… Practicas un tema o el nivel completo. Ver la sección más abajo. |
+| ❤️ **3 vidas o ilimitadas** | Elige **❤️ 3 vidas** o **♾️ Ilimitadas** en el inicio, en cada nivel y en cada profesión. Con vidas ilimitadas el turno nunca se corta y en el quiz ves ❤️ ∞. También puedes abrir la versión con vidas ilimitadas directamente: https://darc7777.github.io/ielts-vocab/?vidas=ilimitadas (y `?vidas=3` para volver). |
+| 🔥 **Racha y racha de días** | Igual que antes. Las palabras que fallas se guardan, aparecen mezcladas en los turnos siguientes (hasta un 15 %) y puedes repasarlas aparte. |
 | 📖 **Diccionario** | Buscador en inglés o español, filtros por categoría y tipo, formas de los verbos, traducción literal de las expresiones y acceso a las explicaciones. |
 | 💼 **Inglés para tu profesión** | Vocabulario técnico y frases del trabajo para 15 familias de profesiones (negocios, finanzas, salud, ingeniería, TI, datos, derecho…), con filtro por profesión. Ver la sección más abajo. |
 | ✕ **Salir del turno** | Puedes terminar un turno a la mitad y se guarda lo que llevas. La confirmación es una ventana de la propia app: antes usaba la del navegador, que en la app instalada a veces quedaba bloqueada y el turno seguía. |
@@ -212,6 +214,31 @@ El nivel sigue el Marco Común Europeo (MCER). La columna **Libro** dice en qué
 
 ---
 
+## 🎯 Temas por nivel
+
+Sección aparte (botón **🎯 Temas por nivel** del inicio) con vocabulario organizado por tema y nivel MCER, de lo más básico a lo avanzado.
+
+- **Elegir:** primero el nivel y después un tema, o *Practicar todo el nivel*. La app recuerda tu nivel y lo muestra en el inicio (*Tu nivel: …*).
+- **Qué practicar:** *Todo*, solo **Palabras** o solo **Frases** (collocations, phrasal verbs, frases y expresiones), con la dirección, el número de preguntas y las vidas que quieras.
+- **Practicar:** las opciones incorrectas son del mismo tipo (palabras con palabras, collocations con collocations) y, si hay suficientes, del mismo tema.
+- **Progreso:** cada nivel y cada tema muestran cuántas has visto. Las falladas de cada nivel se guardan aparte y tienen su botón *❌ Repasar las que fallé*.
+- **Ver la lista:** abre el diccionario filtrado por el nivel, con filtro por tema.
+- **Liviano:** cada nivel está en su propio archivo y se descarga solo cuando lo abres; después queda guardado para usarlo sin conexión.
+
+| Nivel | Archivo | Temas | Palabras | Frases | Total |
+|---|---|---:|---:|---:|---:|
+| 🌱 A1 · Principiante | `niveles/a1.js` | 18 | 883 | 2.400 | 3.283 |
+| 🌿 A2 · Básico | `niveles/a2.js` | 18 | 793 | 2.639 | 3.432 |
+| 🌳 B1 · Intermedio | `niveles/b1.js` | 18 | 686 | 2.848 | 3.534 |
+| 🚀 B1+ · Intermedio + | `niveles/b1p.js` | 18 | 764 | 2.874 | 3.638 |
+| ⛰️ B2 · Intermedio alto | `niveles/b2.js` | 19 | 639 | 3.262 | 3.901 |
+| 🏆 C1 · Avanzado | `niveles/c1.js` | 12 | 461 | 1.889 | 2.350 |
+| **Total** | | **103** | **4.226** | **15.912** | **20.138** |
+
+Cada archivo tiene sus temas con una entrada por línea: `inglés | español | tipo`, donde el tipo es `w` (palabra), `c` (collocation), `v` (phrasal verb), `p` (frase) o `e` (expresión). No repitas el mismo inglés dentro de un nivel: es el identificador del progreso. Para agregar un tema, ponlo **al final** de su nivel en `niveles/index.js` y en el archivo del nivel.
+
+---
+
 ## 💼 Inglés para tu profesión
 
 Sección aparte (botón **💼 Inglés para tu profesión** del inicio) con vocabulario técnico y **frases reales del trabajo** para 15 familias de profesiones. Cada familia tiene un área *General* y una por cada profesión, así que puedes practicar todo o solo la tuya.
@@ -270,6 +297,8 @@ The books are closed for the month. | Los libros del mes ya están cerrados.
 | `grammar.js` | Tiempos verbales (`TENSES`) y gramática (`GRAMMAR`): explicaciones y ejercicios. |
 | `sw.js` | Service worker: permite usar la app sin conexión. |
 | `manifest.json`, `icon-*.png` | Datos de la PWA para instalarla en el celular. |
+| `niveles/index.js` | Lista de los 6 niveles y sus 103 temas (nombre, ícono y número de entradas). |
+| `niveles/<nivel>.js` | Vocabulario de cada nivel, por tema. Se carga solo al abrir el nivel. |
 | `prof/index.js` | Lista de las 15 familias de profesiones (nombre, ícono, profesiones y número de entradas). |
 | `prof/<familia>.js` | Vocabulario y frases de cada familia, por profesión. Se carga solo al abrir la familia. |
 | `tools/check-prof.js` | Revisa los archivos de profesiones y actualiza los contadores: `node tools/check-prof.js`. |
@@ -385,12 +414,26 @@ Ideas para después, de más a menos útiles:
 
 ---
 
-## Desarrollo local
+## Usarlo en tu computador (sin GitHub)
 
-Cualquier servidor estático sirve, por ejemplo:
+La app son archivos estáticos: solo necesitas Python, que ya tienes instalado.
+
+1. Abre PowerShell en la carpeta del proyecto:
+
+```bash
+cd C:\Users\danie\Desktop\INGLES\ielts-vocab
+```
+
+2. Arranca un servidor local:
 
 ```bash
 python -m http.server 8765
 ```
 
-y abre `http://localhost:8765`. El progreso se guarda en el `localStorage` del navegador (claves `vq_*_v2`); el de la versión anterior se migra solo la primera vez que abres la nueva.
+3. Abre `http://localhost:8765` en el navegador. Para terminar, presiona Ctrl+C en PowerShell.
+
+Abrir `index.html` con doble clic no funciona bien: la política de seguridad de la página y el modo sin conexión necesitan un servidor. La letra Nunito se descarga de Google Fonts; sin internet se ve con la letra del sistema.
+
+**Desde el celular, en la misma red Wi-Fi:** usa `python -m http.server 8765 --bind 0.0.0.0` y abre `http://<IP de tu PC>:8765` (la IP sale con `ipconfig`). Funciona, pero no se puede instalar como app ni usar sin conexión, porque eso exige https.
+
+El progreso se guarda en el navegador y **por dirección**: lo que tienes en `darc7777.github.io` no aparece en `localhost:8765`, y al revés. El progreso se guarda en el `localStorage` del navegador (claves `vq_*_v2`); el de la versión anterior se migra solo la primera vez que abres la nueva.

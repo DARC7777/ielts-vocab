@@ -163,6 +163,32 @@ button{font-family:'Nunito',sans-serif}
 .pf-head .pf-num{font-size:.78rem;font-weight:800;color:var(--muted-dark)}
 .pf-msg{text-align:center;padding:30px 10px;font-weight:800;color:var(--muted-dark)}
 
+/* ══ TEMAS POR NIVEL ══ */
+.lvl-entry{background:linear-gradient(135deg,#eefaff,#dcf2ff);border-color:#a8ddfb;box-shadow:0 3px 0 #a8ddfb}
+.lvl-entry:active{box-shadow:0 1px 0 #a8ddfb}
+.lvl-entry .pe-txt b{color:#0b6aa2}
+.lvl-entry .pe-txt small{color:#1b85c4}
+.lvl-entry .pe-arrow{color:#1899d6}
+.lv-big{flex-shrink:0;width:54px;height:54px;border-radius:15px;display:grid;place-items:center;
+  color:#fff;font-weight:900;font-size:1.1rem;box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.lv-c-a1{background:linear-gradient(140deg,#7ee03a,#58cc02)}
+.lv-c-a2{background:linear-gradient(140deg,#3fd9c0,#14b39a)}
+.lv-c-b1{background:linear-gradient(140deg,#4cc6ff,#1899d6)}
+.lv-c-b1p{background:linear-gradient(140deg,#9d86ff,#6c4cf5)}
+.lv-c-b2{background:linear-gradient(140deg,#ff7ab6,#e0357f)}
+.lv-c-c1{background:linear-gradient(140deg,#ffb340,#ff9600)}
+.pf-card.lv-card.current{border-color:#1cb0f6}
+.pf-main small.lv-small{color:#1899d6}
+.pf-bar.lvl i{background:linear-gradient(90deg,#4cc6ff,#1cb0f6)}
+.pf-head.lvl-head{background:linear-gradient(135deg,#eefaff,#dcf2ff);border-color:#a8ddfb;flex-direction:row;align-items:center;gap:14px}
+.lvl-head .pf-big{color:#0b6aa2}
+.lvl-head .pf-en{color:#1b85c4}
+.lvl-head .pf-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.lv-topic .pf-ic{font-size:1.5rem}
+.lv-topic .pe-arrow{font-size:1.3rem;color:var(--blue)}
+.clvl{background:#ddf4ff;color:#1475b8}
+.life-inf{font-size:1.15rem;font-weight:900;color:var(--wrong);line-height:1}
+
 /* Stats mini */
 .stats-mini{display:flex;gap:9px;width:100%}
 .smc{flex:1;background:#fff;border:2px solid var(--border);
@@ -425,6 +451,12 @@ button.dict-item{cursor:pointer}
     </div>
   </div>
 
+  <button class="prof-entry lvl-entry" id="lvl-entry">
+    <span class="pe-icon">🎯</span>
+    <span class="pe-txt"><b id="le-title">Temas por nivel</b><small id="le-sub">De A1 a C1: ropa, viajes, salud, trabajo…</small></span>
+    <span class="pe-arrow">›</span>
+  </button>
+
   <button class="prof-entry" id="prof-entry">
     <span class="pe-icon" id="pe-icon">💼</span>
     <span class="pe-txt"><b id="pe-title">Inglés para tu profesión</b><small id="pe-sub">15 áreas: negocios, finanzas, salud, ingeniería, TI…</small></span>
@@ -467,6 +499,12 @@ button.dict-item{cursor:pointer}
     <button class="tog-btn" data-dir="en-es">🇬🇧 → 🇪🇸</button>
     <button class="tog-btn" data-dir="es-en">🇪🇸 → 🇬🇧</button>
     <button class="tog-btn" data-dir="mixed">🔀 Mixto</button>
+  </div>
+
+  <div class="sec-label">Vidas</div>
+  <div class="toggle-row" id="lives-toggle">
+    <button class="tog-btn" data-lives="3">❤️ 3 vidas</button>
+    <button class="tog-btn" data-lives="inf">♾️ Ilimitadas</button>
   </div>
 
   <div class="sec-label">Preguntas por turno</div>
@@ -569,6 +607,15 @@ button.dict-item{cursor:pointer}
   <div class="guide-body" id="prof-body"></div>
 </div>
 
+<!-- ══ TEMAS POR NIVEL ══ -->
+<div id="lvl" class="screen">
+  <div class="dict-header">
+    <button class="dict-back" id="lvl-back" aria-label="Volver">←</button>
+    <div class="guide-title" id="lvl-title">🎯 Temas por nivel</div>
+  </div>
+  <div class="guide-body" id="lvl-body"></div>
+</div>
+
 <!-- ══ CONFIRMACIÓN ══ -->
 <div id="confirm" hidden>
   <div class="cf-box" role="dialog" aria-modal="true" aria-labelledby="cf-msg">
@@ -617,6 +664,7 @@ button.dict-item{cursor:pointer}
 <script src="vocab.js"></script>
 <script src="grammar.js"></script>
 <script src="prof/index.js"></script>
+<script src="niveles/index.js"></script>
 
 <script>
 // ══════════════════════════════════════════════════════════════════════════════
@@ -654,9 +702,14 @@ const levelBadge = lv => `<span class="lv-badge lv-${lv}">${lv}</span>`;
 // Familias de «Inglés para tu profesión» (prof/index.js): categorías 101–115, aparte de la lista del inicio
 const PROF_BASE = 100;
 PROF_FAMILIES.forEach((f, i) => { f.c = PROF_BASE + i + 1; CATS[f.c] = {name: f.es, icon: f.icon, w: 1}; });
+// Niveles de «Temas por nivel» (niveles/index.js): categorías 201–206, también aparte de la lista del inicio
+const LEVEL_BASE = 200;
+LEVEL_GROUPS.forEach((g, i) => { g.c = LEVEL_BASE + i + 1; CATS[g.c] = {name: 'Nivel ' + g.level, icon: g.icon, w: 1}; });
+// isProfCat: cualquier categoría que no está en la lista del inicio (profesiones y niveles)
 const isProfCat = c => +c > PROF_BASE;
+const isLvlCat = c => +c > LEVEL_BASE;
 const catLabel = c => CATS[c] ? CATS[c].icon + ' ' + CATS[c].name : '';
-const pillClass = c => isProfCat(c) ? 'cprof' : 'c' + c;
+const pillClass = c => isLvlCat(c) ? 'clvl' : isProfCat(c) ? 'cprof' : 'c' + c;
 
 // Conjugación española de las traducciones de verbos (ver esForms)
 // [terminación, pretérito «yo», participio]; null = se conjuga como regular
@@ -733,14 +786,21 @@ function lsSet(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch 
 
 const DEFAULT_PREFS = {dir:'en-es', size:25, cats:[4,6,2,8,5,1,9,7,10,3,11],
   wtype:'all', ftype:'all', vmode:'both', irrOnly:false, typeForms:false, autoSpeak:false, levels:[...LEVEL_KEYS],
-  prof:{fam:null, area:-1, kind:'all'}};
+  prof:{fam:null, area:-1, kind:'all'}, lvl:{id:null, kind:'all'}, infLives:false};
 const prefs = Object.assign({}, DEFAULT_PREFS, lsGet(PREFS_KEY, {}));
 prefs.cats = prefs.cats.filter(c => CATS[c] && !isProfCat(c));
 prefs.prof = Object.assign({}, DEFAULT_PREFS.prof, prefs.prof);
 if(!PROF_FAMILIES.some(f => f.id === prefs.prof.fam)) prefs.prof.fam = null;
+prefs.lvl = Object.assign({}, DEFAULT_PREFS.lvl, prefs.lvl);
+if(!LEVEL_GROUPS.some(g => g.id === prefs.lvl.id)) prefs.lvl.id = null;
+// Versión con vidas ilimitadas por enlace: ...?vidas=ilimitadas (y ?vidas=3 para volver)
+const urlLives = new URLSearchParams(location.search).get('vidas');
+if(urlLives === 'ilimitadas') prefs.infLives = true;
+else if(urlLives === '3') prefs.infLives = false;
 prefs.levels = (Array.isArray(prefs.levels) ? prefs.levels : []).filter(l => LEVELS[l]);
 if(prefs.levels.length === 0) prefs.levels = [...LEVEL_KEYS];
 function savePrefs(){ lsSet(PREFS_KEY, prefs); }
+if(urlLives) savePrefs();
 
 function getHist(){ return lsGet(HIST_KEY, {}); }
 function saveHist(h){ lsSet(HIST_KEY, h); }
@@ -756,7 +816,8 @@ function markSeen(items){
 
 // Las falladas de una profesión que todavía no se ha cargado se conservan (ids «p<familia>:...»)
 const isProfId = id => /^p[a-z-]+:/.test(id);
-function getFailedRaw(){ return lsGet(FAILED_KEY, []).filter(id => BY_ID.has(id) || isProfId(id)); }
+const isLvlId = id => /^n(a1|a2|b1|b1p|b2|c1):/.test(id);
+function getFailedRaw(){ return lsGet(FAILED_KEY, []).filter(id => BY_ID.has(id) || isProfId(id) || isLvlId(id)); }
 function getFailed(){ return lsGet(FAILED_KEY, []).filter(id => BY_ID.has(id)); }
 function addFailed(it){ const a = getFailedRaw(); if(!a.includes(it.id)){ a.push(it.id); lsSet(FAILED_KEY, a); } }
 function removeFailed(it){ lsSet(FAILED_KEY, getFailedRaw().filter(id => id !== it.id)); }
@@ -1034,7 +1095,7 @@ function distinctPicks(pool, n, key, exclude){
 function wordPool(it){
   if(it.k){
     // Profesión: opciones del mismo tipo (términos con términos, frases con frases), mejor si son de la misma área
-    const same = POOL[it.c].filter(w => w.k === it.k);
+    const same = POOL[it.c].filter(w => w.k === it.k && w.gk === it.gk);
     const area = same.filter(w => w.a === it.a);
     return area.length >= 12 ? area : same.length >= 4 ? same : POOL[it.c];
   }
@@ -1085,7 +1146,7 @@ function makeWordQ(it){
   const options = shuffle([answer, ...distinctPicks(pool, 3, enAsk ? 'es' : 'en', [answer])]);
   return {
     label: enAsk ? '¿Qué significa…?' : '¿Cómo se dice en inglés…?',
-    prompt: enAsk ? it.en : it.es, sentence: it.k === 'p',
+    prompt: enAsk ? it.en : it.es, sentence: it.k === 'p' && (!it.gk || it.gk === 'p' || it.gk === 'e'),
     sub: enAsk && it.c === 11 && it.ex ? it.ex : '',
     mode: enAsk ? '🇬🇧 → 🇪🇸  elige la traducción en español' : '🇪🇸 → 🇬🇧  elige la traducción en inglés',
     answer, options,
@@ -1250,6 +1311,11 @@ function vibrate(p){ if(navigator.vibrate) navigator.vibrate(p); }
 function renderLives(){
   const row = document.getElementById('lives-row');
   row.innerHTML = '';
+  row.title = lives === Infinity ? 'Vidas ilimitadas' : '';
+  if(lives === Infinity){
+    row.innerHTML = '<span class="life">❤️</span><span class="life-inf">∞</span>';
+    return;
+  }
   for(let i = 0; i < 3; i++){
     const s = document.createElement('span');
     s.className = 'life' + (i >= lives ? ' lost' : '');
@@ -1294,6 +1360,7 @@ function renderHomeOptions(){
   document.getElementById('irr-chip').classList.toggle('active', prefs.irrOnly);
   document.getElementById('type-chip').classList.toggle('active', prefs.typeForms);
   document.querySelectorAll('#dir-toggle .tog-btn').forEach(b => b.classList.toggle('active', b.dataset.dir === prefs.dir));
+  document.querySelectorAll('#lives-toggle .tog-btn').forEach(b => b.classList.toggle('active', (b.dataset.lives === 'inf') === !!prefs.infLives));
   document.querySelectorAll('.size-btn').forEach(b => b.classList.toggle('active', +b.dataset.size === prefs.size));
   document.getElementById('start-btn').disabled = prefs.cats.length === 0;
 }
@@ -1304,6 +1371,7 @@ function updateHomeStats(){
   const words = VOCAB.length;
   const exs = ITEMS.filter(it => it.kind === 'ex').length;
   renderProfEntry();
+  renderLvlEntry();
 
   document.getElementById('home-streak').textContent       = '🔥 ' + getBestStreak();
   document.getElementById('home-sessions').textContent     = sessions;
@@ -1333,6 +1401,7 @@ function updateHomeStats(){
 // Último modo jugado: «Nuevo turno», «Repasar» y «Volver» repiten o regresan al mismo lugar
 let lastMode = 'normal', lastTopic = null;
 const isProfMode = () => lastMode === 'prof' || lastMode === 'prof-retry';
+const isLvlMode = () => lastMode === 'lvl' || lastMode === 'lvl-retry';
 function startQuiz(mode, topic){
   if(mode === 'retry'){
     const failed = getFailed().filter(id => !isProfCat(BY_ID.get(id).c));
@@ -1344,6 +1413,13 @@ function startQuiz(mode, topic){
   } else if(mode === 'prof'){
     queue = buildProfQueue(topic, prefs.size);
     if(queue.length < 4){ notify('Con ese filtro no hay suficientes palabras. Elige otra área o «Todo».'); return; }
+  } else if(mode === 'lvl'){
+    queue = buildLvlQueue(topic, prefs.size);
+    if(queue.length < 4){ notify('Con ese filtro no hay suficientes palabras. Elige «Todo» u otro tema.'); return; }
+  } else if(mode === 'lvl-retry'){
+    const failed = lvlFailed(topic.g);
+    if(failed.length < 4){ notify('Necesitas al menos 4 palabras falladas de este nivel para repasar.'); return; }
+    queue = shuffle(failed).slice(0, Math.min(failed.length, prefs.size));
   } else if(mode === 'prof-retry'){
     const failed = profFailed(topic);
     if(failed.length < 4){ notify('Necesitas al menos 4 palabras falladas de esta profesión para repasar.'); return; }
@@ -1355,7 +1431,7 @@ function startQuiz(mode, topic){
   lastMode = mode; lastTopic = topic || null;
 
   current = 0; correct = 0; wrong = 0;
-  lives = 3; streak = 0; sessionBest = 0;
+  lives = prefs.infLives ? Infinity : 3; streak = 0; sessionBest = 0;
   locked = false; gameOverSaved = false; finished = false; dayStreakResult = null;
 
   closeTopic();
@@ -1541,8 +1617,10 @@ function buildResultsScreen(){
 
   // En una profesión se muestran solo sus falladas; en el resto, las de las categorías generales
   const failed    = getFailed().map(id => BY_ID.get(id))
-    .filter(it => isProfMode() ? lastTopic && it.c === lastTopic.c : !isProfCat(it.c));
-  document.getElementById('home-btn').textContent = isProfMode() ? '← Volver a tu profesión' : '← Inicio';
+    .filter(it => isLvlMode() ? lastTopic && it.c === lastTopic.g.c
+      : isProfMode() ? lastTopic && it.c === lastTopic.c : !isProfCat(it.c));
+  document.getElementById('home-btn').textContent =
+    isLvlMode() ? '← Volver a los temas' : isProfMode() ? '← Volver a tu profesión' : '← Inicio';
   const failedSec = document.getElementById('failed-section');
   if(failed.length > 0){
     failedSec.style.display = 'block';
@@ -1693,6 +1771,11 @@ const DICT_ENTRIES = [
   ...ITEMS.filter(it => it.kind !== 'ex'),
 ];
 function subTypesFor(c){
+  if(isLvlCat(c)){
+    // Temas del nivel: t = 'l<c>-<n>'
+    const g = LEVEL_GROUPS.find(x => String(x.c) === c);
+    return g ? Object.fromEntries(g.topics.map((t, i) => ['l' + g.c + '-' + i, t.icon + ' ' + t.es])) : null;
+  }
   if(isProfCat(c)){
     // Áreas (profesiones) de la familia: t = 'p<c>-<n>'
     const f = PROF_FAMILIES.find(x => String(x.c) === c);
@@ -1776,16 +1859,16 @@ function dictRender(reset){
 function renderDictChips(){
   document.getElementById('dict-chips').innerHTML =
     `<button class="chip${dictCorr === 'all' ? ' active' : ''}" data-c="all">Todas</button>` +
-    [...CAT_ORDER, ...PROF_FAMILIES.filter(f => PROF_LOADED[f.id]).map(f => f.c)]
+    [...CAT_ORDER, ...LEVEL_GROUPS.filter(g => LVL_LOADED[g.id]).map(g => g.c), ...PROF_FAMILIES.filter(f => PROF_LOADED[f.id]).map(f => f.c)]
       .map(c => `<button class="chip${dictCorr === String(c) ? ' active' : ''}" data-c="${c}">${catLabel(c)}</button>`).join('') +
     `<button class="chip${dictCorr === 'failed' ? ' active' : ''}" data-c="failed">❌ Falladas</button>`;
   const sub = subTypesFor(dictCorr);
   const row = document.getElementById('dict-subchips');
   row.hidden = !sub;
-  row.innerHTML = sub ? chipsHtml(sub, dictSub, isProfCat(dictCorr) ? 'Todas las áreas' : 'Todos los tipos') : '';
+  row.innerHTML = sub ? chipsHtml(sub, dictSub, isLvlCat(dictCorr) ? 'Todos los temas' : isProfCat(dictCorr) ? 'Todas las áreas' : 'Todos los tipos') : '';
 }
 
-let dictFrom = null; // familia de profesión desde la que se abrió (para volver)
+let dictFrom = null; // familia de profesión, o «lvl:<nivel>», desde la que se abrió (para volver)
 function openDict(c, from){
   dictQuery = ''; dictCorr = c ? String(c) : 'all'; dictSub = 'all';
   dictFrom = from || null;
@@ -1834,6 +1917,10 @@ document.getElementById('dir-toggle').addEventListener('click', e => {
   const b = e.target.closest('.tog-btn'); if(!b) return;
   prefs.dir = b.dataset.dir; savePrefs(); renderHomeOptions();
 });
+document.getElementById('lives-toggle').addEventListener('click', e => {
+  const b = e.target.closest('.tog-btn'); if(!b) return;
+  prefs.infLives = b.dataset.lives === 'inf'; savePrefs(); renderHomeOptions();
+});
 document.getElementById('size-grid').addEventListener('click', e => {
   const b = e.target.closest('.size-btn'); if(!b) return;
   prefs.size = parseInt(b.dataset.size); savePrefs(); renderHomeOptions();
@@ -1846,17 +1933,19 @@ document.getElementById('guide-btn').addEventListener('click', openGuide);
 
 document.getElementById('restart-btn').addEventListener('click', restartQuiz);
 document.getElementById('retry-failed-btn').addEventListener('click', () =>
-  isProfMode() ? startQuiz('prof-retry', lastTopic) : startQuiz('retry'));
+  isLvlMode() ? startQuiz('lvl-retry', lastTopic) : isProfMode() ? startQuiz('prof-retry', lastTopic) : startQuiz('retry'));
 document.getElementById('home-btn').addEventListener('click', leaveQuiz);
 function restartQuiz(){
   if(lastMode === 'retry' && getFailed().length < 4) return startQuiz('normal');
   if(lastMode === 'prof-retry' && profFailed(lastTopic).length < 4) return startQuiz('prof', lastTopic);
+  if(lastMode === 'lvl-retry' && lvlFailed(lastTopic.g).length < 4) return startQuiz('lvl', lastTopic);
   startQuiz(lastMode, lastTopic);
 }
 // Salir del quiz o de los resultados: a la profesión si venías de ahí, si no al inicio
 function leaveQuiz(){
   hideSheet();
-  if(isProfMode() && lastTopic) openProf(lastTopic.id);
+  if(isLvlMode() && lastTopic) openLvl(lastTopic.g.id);
+  else if(isProfMode() && lastTopic) openProf(lastTopic.id);
   else { updateHomeStats(); show('home'); }
 }
 
@@ -1938,7 +2027,11 @@ document.getElementById('clear-failed-btn').addEventListener('click', async () =
 });
 
 // Diccionario
-document.getElementById('dict-back').addEventListener('click', () => { if(dictFrom) openProf(dictFrom); else { updateHomeStats(); show('home'); } });
+document.getElementById('dict-back').addEventListener('click', () => {
+  if(dictFrom && dictFrom.startsWith('lvl:')) openLvl(dictFrom.slice(4));
+  else if(dictFrom) openProf(dictFrom);
+  else { updateHomeStats(); show('home'); }
+});
 document.getElementById('dict-search').addEventListener('input', (e) => { dictQuery = e.target.value; dictRender(true); });
 document.getElementById('dict-chips').addEventListener('click', e => {
   const ch = e.target.closest('.chip'); if(!ch) return;
@@ -2095,6 +2188,8 @@ function renderProfDetail(f){
     ${tog('pf-dir', [['en-es', '🇬🇧 → 🇪🇸'], ['es-en', '🇪🇸 → 🇬🇧'], ['mixed', '🔀 Mixto']], prefs.dir, 'dir')}
     <div class="sec-label">Preguntas por turno</div>
     ${tog('pf-size', [10, 25, 50, 100].map(n => [n, n]), prefs.size, 'size')}
+    <div class="sec-label">Vidas</div>
+    ${tog('pf-lives', LIVES_OPTS, prefs.infLives ? 'inf' : '3', 'lives')}
     <button class="btn-primary" data-act="start"${pool.length < 4 ? ' disabled' : ''}>Empezar · ${num(pool.length)} disponibles</button>
     <button class="btn-secondary" data-act="dict">📖 Ver la lista de palabras y frases</button>
     ${failed.length >= 4 ? `<button class="btn-secondary" data-act="retry" style="color:var(--wrong)">❌ Repasar las que fallé (${failed.length})</button>` : ''}
@@ -2103,7 +2198,7 @@ function renderProfDetail(f){
 document.getElementById('prof-body').addEventListener('click', e => {
   const card = e.target.closest('[data-fam]');
   if(card){ openProf(card.dataset.fam); return; }
-  const b = e.target.closest('[data-area],[data-kind],[data-dir],[data-size],[data-act]');
+  const b = e.target.closest('[data-area],[data-kind],[data-dir],[data-size],[data-lives],[data-act]');
   if(!b) return;
   if(b.dataset.act === 'list'){ openProfList(); return; }
   const f = profById(profView);
@@ -2116,6 +2211,7 @@ document.getElementById('prof-body').addEventListener('click', e => {
   else if(d.kind) prefs.prof.kind = d.kind;
   else if(d.dir) prefs.dir = d.dir;
   else if(d.size) prefs.size = +d.size;
+  else if(d.lives) prefs.infLives = d.lives === 'inf';
   savePrefs(); renderProfDetail(f);
 });
 document.getElementById('prof-back').addEventListener('click', () => {
@@ -2123,6 +2219,185 @@ document.getElementById('prof-back').addEventListener('click', () => {
 });
 document.getElementById('prof-entry').addEventListener('click', () =>
   prefs.prof.fam ? openProf(prefs.prof.fam) : openProfList());
+
+// ══════════════════════════════════════════════════════════════════════════════
+// TEMAS POR NIVEL
+// Cada nivel vive en niveles/<id>.js y se carga solo cuando se abre, igual que las profesiones.
+// ══════════════════════════════════════════════════════════════════════════════
+const LVL_LOADED = {}, lvlLoading = {};
+const LVL_KINDS = {all: 'Todo', w: 'Palabras', p: 'Frases'};
+const LIVES_OPTS = [['3', '❤️ 3 vidas'], ['inf', '♾️ Ilimitadas']];
+const lvlById = id => LEVEL_GROUPS.find(g => g.id === id);
+const LVL_TOTAL = LEVEL_GROUPS.reduce((s, g) => s + g.n, 0);
+const LVL_TOPICS = LEVEL_GROUPS.reduce((s, g) => s + g.topics.length, 0);
+let lvlView = null; // nivel abierto en la pantalla (null = lista de niveles)
+
+// La llaman los archivos niveles/<id>.js. Cada línea: «inglés | español | tipo»
+function registerLevel(d){
+  const g = lvlById(d.id);
+  if(!g || LVL_LOADED[d.id]) return;
+  d.topics.forEach(tp => {
+    const ti = g.topics.findIndex(x => x.id === tp.id);
+    if(ti < 0) return;
+    const t = 'l' + g.c + '-' + ti;
+    TYPE_SHORT[t] = g.topics[ti].es;
+    tp.w.split('\n').forEach(line => {
+      const [en, es, gk] = line.split(' | ').map(s => s && s.trim());
+      if(!en || !es) return;
+      const it = {id: 'n' + g.id + ':' + en.toLowerCase(), en, es, c: g.c, kind: 'word', t, k: gk === 'w' ? 'w' : 'p', gk: gk || 'w', a: ti};
+      if(BY_ID.has(it.id)) return;
+      addItem(it); DICT_ENTRIES.push(it);
+    });
+  });
+  POOL[g.c] = POOL[g.c] || [];
+  g.n = POOL[g.c].length;
+  LVL_LOADED[d.id] = true;
+}
+function loadLevel(id){
+  if(LVL_LOADED[id]) return Promise.resolve(true);
+  return lvlLoading[id] = lvlLoading[id] || new Promise(resolve => {
+    const s = document.createElement('script');
+    const end = ok => { delete lvlLoading[id]; if(!ok) s.remove(); resolve(ok); };
+    s.onload = () => end(!!LVL_LOADED[id]);
+    s.onerror = () => end(false);
+    s.src = 'niveles/' + id + '.js';
+    document.head.appendChild(s);
+  });
+}
+
+const lvlMatches = it => prefs.lvl.kind === 'all' || it.k === prefs.lvl.kind;
+const lvlPool = (g, ti) => (POOL[g.c] || []).filter(it => lvlMatches(it) && (ti < 0 || it.a === ti));
+const lvlFailed = g => g ? getFailed().map(id => BY_ID.get(id)).filter(it => it.c === g.c) : [];
+function buildLvlQueue(sel, n){
+  const {g, ti} = sel;
+  let selected = pickFromPool(g.c, lvlPool(g, ti), n);
+  // Igual que en el turno normal: hasta un 15 % de falladas del mismo tema o nivel
+  const inQueue = new Set(selected.map(it => it.id));
+  const failed = shuffle(lvlFailed(g).filter(it => lvlMatches(it) && (ti < 0 || it.a === ti) && !inQueue.has(it.id)));
+  const k = Math.min(failed.length, Math.floor(selected.length * 0.15));
+  if(k > 0){
+    selected = shuffle(selected);
+    selected.splice(selected.length - k, k, ...failed.slice(0, k));
+  }
+  return shuffle(selected);
+}
+
+function renderLvlEntry(){
+  const g = lvlById(prefs.lvl.id);
+  document.getElementById('le-title').textContent = g ? 'Tu nivel: ' + g.level + ' · ' + g.name : 'Temas por nivel';
+  document.getElementById('le-sub').textContent = g
+    ? 'Toca para practicar o cambiar de nivel'
+    : LVL_TOPICS + ' temas de A1 a C1 · ' + LVL_TOTAL.toLocaleString('es-CO') + ' palabras y frases';
+}
+function openLvlList(){
+  lvlView = null;
+  const h = getHist();
+  document.getElementById('lvl-title').textContent = '🎯 Temas por nivel';
+  document.getElementById('lvl-body').innerHTML =
+    `<div class="g-intro">Vocabulario por temas, del nivel más básico al avanzado: palabras, collocations, phrasal verbs y frases de uso diario. Elige tu nivel; adentro practicas un tema o el nivel completo.</div>
+     <div class="pf-grid">${LEVEL_GROUPS.map(g => {
+       const seen = Math.min(g.n, (h[g.c] || []).length);
+       return `<button class="pf-card lv-card${prefs.lvl.id === g.id ? ' current' : ''}" data-lvl="${g.id}">
+         <span class="lv-big lv-c-${g.id}">${g.level}</span>
+         <span class="pf-main"><b>${g.icon} ${escapeHtml(g.name)}</b>
+           <span>${g.topics.length} temas: ${escapeHtml(g.topics.slice(0, 3).map(t => t.es).join(', '))}…</span>
+           <small class="lv-small">${g.n.toLocaleString('es-CO')} palabras y frases${seen ? ' · vistas ' + seen.toLocaleString('es-CO') : ''}</small>
+           <span class="pf-bar lvl"><i style="width:${g.n ? Math.round(seen / g.n * 100) : 0}%"></i></span></span>
+       </button>`;
+     }).join('')}</div>`;
+  show('lvl');
+}
+async function openLvl(id){
+  const g = lvlById(id);
+  if(!g) return openLvlList();
+  if(prefs.lvl.id !== id){ prefs.lvl.id = id; savePrefs(); }
+  lvlView = id;
+  document.getElementById('lvl-title').textContent = g.icon + ' Nivel ' + g.level;
+  show('lvl');
+  if(!LVL_LOADED[id]){
+    const body = document.getElementById('lvl-body');
+    body.innerHTML = '<div class="pf-msg">Cargando vocabulario…</div>';
+    const ok = await loadLevel(id);
+    if(lvlView !== id) return;
+    if(!ok){
+      body.innerHTML = `<div class="pf-msg">No se pudo cargar este nivel. Revisa tu conexión e inténtalo de nuevo.</div>
+        <button class="btn-secondary" data-act="list">← Ver todos los niveles</button>`;
+      return;
+    }
+  }
+  renderLvlDetail(g);
+}
+function renderLvlDetail(g){
+  const all = POOL[g.c] || [];
+  const seenIds = new Set(getHist()[g.c] || []);
+  const seenIn = items => items.filter(it => seenIds.has(it.id)).length;
+  const nW = all.filter(it => it.k === 'w').length, nP = all.length - nW;
+  const pool = lvlPool(g, -1), failed = lvlFailed(g);
+  const num = n => n.toLocaleString('es-CO');
+  const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
+  const tog = (id, entries, cur, attr) => `<div class="toggle-row" id="${id}">${entries.map(([v, l]) =>
+    `<button class="tog-btn${String(cur) === String(v) ? ' active' : ''}" data-${attr}="${v}">${l}</button>`).join('')}</div>`;
+  const seenAll = seenIn(all);
+  document.getElementById('lvl-body').innerHTML = `
+    <div class="pf-head lvl-head">
+      <span class="lv-big lv-c-${g.id}">${g.level}</span>
+      <div class="pf-info">
+        <div class="pf-big">${escapeHtml(g.name)}</div>
+        <div class="pf-en">${g.topics.length} temas</div>
+        <div class="pf-num">${num(nW)} palabras · ${num(nP)} frases · vistas ${num(seenAll)} de ${num(all.length)}</div>
+        <div class="pf-bar lvl"><i style="width:${pct(seenAll, all.length)}%"></i></div>
+      </div>
+    </div>
+    <div class="opt-panel">
+      <div class="opt-title">¿Qué practicar?</div>
+      ${tog('lv-kind', Object.entries(LVL_KINDS), prefs.lvl.kind, 'kind')}
+    </div>
+    <div class="sec-label">Dirección de la pregunta</div>
+    ${tog('lv-dir', [['en-es', '🇬🇧 → 🇪🇸'], ['es-en', '🇪🇸 → 🇬🇧'], ['mixed', '🔀 Mixto']], prefs.dir, 'dir')}
+    <div class="sec-label">Preguntas por turno</div>
+    ${tog('lv-size', [10, 25, 50, 100].map(n => [n, n]), prefs.size, 'size')}
+    <div class="sec-label">Vidas</div>
+    ${tog('lv-lives', LIVES_OPTS, prefs.infLives ? 'inf' : '3', 'lives')}
+    <button class="btn-primary" data-act="start"${pool.length < 4 ? ' disabled' : ''}>Practicar todo el nivel · ${num(pool.length)}</button>
+    <div class="sec-label">O elige un tema</div>
+    <div class="pf-grid">${g.topics.map((t, i) => {
+      const items = all.filter(it => it.a === i), seen = seenIn(items);
+      return `<button class="pf-card lv-topic" data-ti="${i}">
+        <span class="pf-ic">${t.icon}</span>
+        <span class="pf-main"><b>${escapeHtml(t.es)}</b><span>${escapeHtml(t.en)}</span>
+          <small class="lv-small">${num(items.length)} palabras y frases${seen ? ' · vistas ' + num(seen) : ''}</small>
+          <span class="pf-bar lvl"><i style="width:${pct(seen, items.length)}%"></i></span></span>
+        <span class="pe-arrow">›</span>
+      </button>`;
+    }).join('')}</div>
+    <button class="btn-secondary" data-act="dict">📖 Ver la lista de palabras y frases</button>
+    ${failed.length >= 4 ? `<button class="btn-secondary" data-act="retry" style="color:var(--wrong)">❌ Repasar las que fallé (${failed.length})</button>` : ''}
+    <button class="btn-secondary" data-act="list">↔ Cambiar de nivel</button>`;
+}
+document.getElementById('lvl-body').addEventListener('click', e => {
+  const card = e.target.closest('[data-lvl]');
+  if(card){ openLvl(card.dataset.lvl); return; }
+  const b = e.target.closest('[data-ti],[data-kind],[data-dir],[data-size],[data-lives],[data-act]');
+  if(!b) return;
+  if(b.dataset.act === 'list'){ openLvlList(); return; }
+  const g = lvlById(lvlView);
+  if(!g || !LVL_LOADED[g.id]) return;
+  const d = b.dataset;
+  if(d.ti !== undefined) return startQuiz('lvl', {g, ti: +d.ti});
+  if(d.act === 'start') return startQuiz('lvl', {g, ti: -1});
+  if(d.act === 'retry') return startQuiz('lvl-retry', {g, ti: -1});
+  if(d.act === 'dict') return openDict(g.c, 'lvl:' + g.id);
+  if(d.kind) prefs.lvl.kind = d.kind;
+  else if(d.dir) prefs.dir = d.dir;
+  else if(d.size) prefs.size = +d.size;
+  else if(d.lives) prefs.infLives = d.lives === 'inf';
+  savePrefs(); renderLvlDetail(g);
+});
+document.getElementById('lvl-back').addEventListener('click', () => {
+  if(lvlView) openLvlList(); else { updateHomeStats(); show('home'); }
+});
+document.getElementById('lvl-entry').addEventListener('click', () =>
+  prefs.lvl.id ? openLvl(prefs.lvl.id) : openLvlList());
 
 // ══════════════════════════════════════════════════════════════════════════════
 // INIT + SERVICE WORKER
@@ -2135,7 +2410,11 @@ updateHomeStats();
   const fams = new Set(lsGet(FAILED_KEY, []).filter(isProfId).map(id => id.slice(1, id.indexOf(':'))));
   if(prefs.prof.fam) fams.add(prefs.prof.fam);
   for(const id of fams) if(profById(id)) await loadProf(id);
-  if(fams.size) updateHomeStats();
+  // Lo mismo con los niveles: el que usaste por última vez y los que tienen falladas
+  const lvls = new Set(lsGet(FAILED_KEY, []).filter(isLvlId).map(id => id.slice(1, id.indexOf(':'))));
+  if(prefs.lvl.id) lvls.add(prefs.lvl.id);
+  for(const id of lvls) if(lvlById(id)) await loadLevel(id);
+  if(fams.size || lvls.size) updateHomeStats();
 })();
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('./sw.js');
