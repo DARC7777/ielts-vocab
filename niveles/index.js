@@ -1,10 +1,11 @@
 // ══════════════════════════════════════════════════════════════════════════
 // TEMAS POR NIVEL — lista de niveles y temas.
 // El vocabulario de cada nivel está en niveles/<id>.js y la app lo carga solo cuando
-// se abre ese nivel. n = número de entradas.
+// se abre ese nivel. n = número de entradas; k = entradas por tipo
+// (w palabras · c collocations · v phrasal verbs · p frases · e expresiones).
 // ══════════════════════════════════════════════════════════════════════════
 const LEVEL_GROUPS = [
-  { id: "a1", level: "A1", name: "Principiante", icon: "🌱", n: 3283, topics: [
+  { id: "a1", level: "A1", name: "Principiante", icon: "🌱", n: 3283, k: { w: 883, c: 1141, v: 60, p: 1197, e: 2 }, topics: [
     { id: "a1-common-things", icon: "🎒", n: 200, en: "Common things", es: "Cosas comunes" },
     { id: "a1-common-verbs", icon: "🏃", n: 200, en: "Common verbs and verb phrases", es: "Verbos y frases verbales comunes" },
     { id: "a1-family", icon: "👨‍👩‍👧", n: 201, en: "Family and relatives", es: "Familia y parientes" },
@@ -24,7 +25,7 @@ const LEVEL_GROUPS = [
     { id: "a1-time-words", icon: "⏰", n: 120, en: "Time words", es: "Palabras de tiempo" },
     { id: "a1-basic-phrasal-verbs", icon: "🧩", n: 200, en: "Basic phrasal verbs", es: "Phrasal verbs básicos" }
   ] },
-  { id: "a2", level: "A2", name: "Básico", icon: "🌿", n: 3432, topics: [
+  { id: "a2", level: "A2", name: "Básico", icon: "🌿", n: 3432, k: { w: 793, c: 1712, v: 138, p: 659, e: 130 }, topics: [
     { id: "a2-words-with-prepositions", icon: "🔗", n: 201, en: "Words with prepositions", es: "Palabras con preposiciones" },
     { id: "a2-appearance", icon: "🪞", n: 200, en: "Describing people's appearance", es: "Describir la apariencia de las personas" },
     { id: "a2-personality", icon: "🧠", n: 200, en: "Describing people's personality", es: "Describir la personalidad" },
@@ -44,7 +45,7 @@ const LEVEL_GROUPS = [
     { id: "a2-technology", icon: "💻", n: 204, en: "Technology", es: "Tecnología" },
     { id: "a2-everyday-problems", icon: "📅", n: 202, en: "Everyday problems and solutions", es: "Problemas cotidianos y soluciones" }
   ] },
-  { id: "b1", level: "B1", name: "Intermedio", icon: "🌳", n: 3534, topics: [
+  { id: "b1", level: "B1", name: "Intermedio", icon: "🌳", n: 3534, k: { w: 686, c: 2469, v: 14, p: 279, e: 86 }, topics: [
     { id: "b1-more-daily-routines", icon: "⏰", n: 201, en: "More daily routines", es: "Más rutinas diarias" },
     { id: "b1-relationships", icon: "💞", n: 201, en: "Relationships", es: "Relaciones" },
     { id: "b1-education", icon: "🎓", n: 209, en: "Education", es: "Educación" },
@@ -64,7 +65,7 @@ const LEVEL_GROUPS = [
     { id: "b1-age-life-stages", icon: "🎂", n: 200, en: "Age and life stages", es: "Edad y etapas de la vida" },
     { id: "b1-pollution", icon: "🌍", n: 200, en: "Pollution and how to stop it", es: "La contaminación y cómo detenerla" }
   ] },
-  { id: "b1p", level: "B1+", name: "Intermedio +", icon: "🚀", n: 3638, topics: [
+  { id: "b1p", level: "B1+", name: "Intermedio +", icon: "🚀", n: 3638, k: { w: 764, c: 2289, v: 155, p: 155, e: 275 }, topics: [
     { id: "b1p-weather-disasters", icon: "🌪️", n: 201, en: "The weather and natural disasters", es: "El clima y los desastres naturales" },
     { id: "b1p-health-problems", icon: "🩺", n: 220, en: "Health problems and injuries", es: "Problemas de salud y lesiones" },
     { id: "b1p-air-travel", icon: "✈️", n: 201, en: "Air travel", es: "Viajes en avión" },
@@ -84,7 +85,7 @@ const LEVEL_GROUPS = [
     { id: "b1p-social-media", icon: "📱", n: 201, en: "Social media actions", es: "Acciones en redes sociales" },
     { id: "b1p-phrasal-verbs-1", icon: "🧩", n: 201, en: "Phrasal verbs I", es: "Phrasal verbs I" }
   ] },
-  { id: "b2", level: "B2", name: "Intermedio alto", icon: "⛰️", n: 3901, topics: [
+  { id: "b2", level: "B2", name: "Intermedio alto", icon: "⛰️", n: 3901, k: { w: 639, c: 2873, v: 140, p: 65, e: 184 }, topics: [
     { id: "b2-relationships", icon: "💞", n: 200, en: "Relationships", es: "Relaciones" },
     { id: "b2-feelings-emotions", icon: "😊", n: 200, en: "Feelings and emotions", es: "Sentimientos y emociones" },
     { id: "b2-news-media", icon: "📰", n: 200, en: "News and media", es: "Noticias y medios" },
@@ -105,7 +106,7 @@ const LEVEL_GROUPS = [
     { id: "b2-phrasal-verbs-1", icon: "🧩", n: 201, en: "Phrasal verbs I", es: "Phrasal verbs I" },
     { id: "b2-phrasal-verbs-2", icon: "🧩", n: 259, en: "Phrasal verbs II", es: "Phrasal verbs II" }
   ] },
-  { id: "c1", level: "C1", name: "Avanzado", icon: "🏆", n: 2350, topics: [
+  { id: "c1", level: "C1", name: "Avanzado", icon: "🏆", n: 2350, k: { w: 461, c: 1136, v: 20, p: 27, e: 706 }, topics: [
     { id: "c1-feelings-reactions", icon: "😊", n: 202, en: "Feelings and reactions", es: "Sentimientos y reacciones" },
     { id: "c1-ways-of-walking", icon: "🚶", n: 82, en: "Ways of walking", es: "Formas de caminar" },
     { id: "c1-vague-language", icon: "🌫️", n: 200, en: "Vague language: imprecision", es: "Lenguaje vago: imprecisión" },

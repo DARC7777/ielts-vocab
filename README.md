@@ -17,7 +17,7 @@ App web (PWA) para practicar vocabulario, verbos, tiempos verbales y gramática 
 | 🎚️ **Nivel A1–C1** | Cada tiempo verbal y cada tema tiene su nivel MCER. En el inicio, el filtro **Nivel** deja practicar solo los niveles que elijas (por ejemplo, solo B2 y C1). |
 | 📚 **Aprender** | Guía con cada tiempo y estructura: fórmula (afirmativa, negativa y pregunta), **cuándo se usa**, palabras clave, ejemplos traducidos y el error típico de los hispanohablantes. Pestañas: *Tiempos*, *Gramática* (por nivel) y **📘 Mis libros** (los temas de cada libro, unidad por unidad). Desde cualquier pregunta puedes abrir *📖 Ver explicación*. |
 | 🔊 **Pronunciación** | Escucha cualquier palabra o frase con el botón 🔊 (la app elige sola la voz en inglés más natural de tu dispositivo). El botón 🔈/🔊 del quiz activa la lectura automática. |
-| 🎯 **Temas por nivel** | 103 temas de **A1 a C1** con 20.138 palabras, collocations, phrasal verbs y frases: ropa, comida, viajes, salud, trabajo, tecnología… Practicas un tema o el nivel completo. Ver la sección más abajo. |
+| 🎯 **Temas por nivel** | 103 temas de **A1 a C1** con 20.138 palabras, collocations, phrasal verbs y frases: ropa, comida, viajes, salud, trabajo, tecnología… Practicas un tema o el nivel completo, o lo mezclas en el turno normal desde la fila **🎯 Temas por nivel** de la lista del inicio, eligiendo niveles y tipos. Ver la sección más abajo. |
 | ❤️ **3 vidas o ilimitadas** | Elige **❤️ 3 vidas** o **♾️ Ilimitadas** en el inicio, en cada nivel y en cada profesión. Con vidas ilimitadas el turno nunca se corta y en el quiz ves ❤️ ∞. También puedes abrir la versión con vidas ilimitadas directamente: https://darc7777.github.io/ielts-vocab/?vidas=ilimitadas (y `?vidas=3` para volver). |
 | 🔥 **Racha y racha de días** | Igual que antes. Las palabras que fallas se guardan, aparecen mezcladas en los turnos siguientes (hasta un 15 %) y puedes repasarlas aparte. |
 | 📖 **Diccionario** | Buscador en inglés o español, filtros por categoría y tipo, formas de los verbos, traducción literal de las expresiones y acceso a las explicaciones. |
@@ -28,7 +28,7 @@ App web (PWA) para practicar vocabulario, verbos, tiempos verbales y gramática 
 
 ## Distribución actual de los datos
 
-**8.566 palabras/expresiones** en `vocab.js` + **902 ejercicios** en `grammar.js`.
+**8.566 palabras/expresiones** en `vocab.js` + **20.138** en `niveles/` + **902 ejercicios** en `grammar.js`. El contador del inicio suma las dos primeras (28.704).
 
 | # | Categoría | Entradas | Qué contiene |
 |---|---|---:|---|
@@ -216,7 +216,10 @@ El nivel sigue el Marco Común Europeo (MCER). La columna **Libro** dice en qué
 
 ## 🎯 Temas por nivel
 
-Sección aparte (botón **🎯 Temas por nivel** del inicio) con vocabulario organizado por tema y nivel MCER, de lo más básico a lo avanzado.
+Vocabulario organizado por tema y nivel MCER, de lo más básico a lo avanzado. Se practica de dos formas:
+
+- **En el turno normal:** la fila **🎯 Temas por nivel** de la lista *¿Qué quieres practicar?*. Al marcarla aparece debajo un panel para escoger **niveles** (A1 a C1) y **tipos** (palabras, collocations, phrasal verbs, frases y expresiones), con el número de entradas de cada uno. Al tocar *Empezar* se descargan los niveles elegidos y se mezclan con las demás categorías. Sus falladas cuentan en el inicio y en *❌ Solo las que fallé*.
+- **Por tema:** el botón **🎯 Temas por nivel** del inicio, descrito a continuación.
 
 - **Elegir:** primero el nivel y después un tema, o *Practicar todo el nivel*. La app recuerda tu nivel y lo muestra en el inicio (*Tu nivel: …*).
 - **Qué practicar:** *Todo*, solo **Palabras** o solo **Frases** (collocations, phrasal verbs, frases y expresiones), con la dirección, el número de preguntas y las vidas que quieras.

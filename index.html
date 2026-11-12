@@ -113,6 +113,7 @@ button{font-family:'Nunito',sans-serif}
 .chip-wrap{display:flex;flex-wrap:wrap;gap:6px}
 
 /* Colores de categoría */
+.d12{background:linear-gradient(90deg,#4cc6ff,#1cb0f6)}
 .d1{background:#ff4b4b}.d2{background:#ff9600}.d3{background:#ffc800}.d4{background:#58cc02}
 .d5{background:#ce82ff}.d6{background:#1cb0f6}.d7{background:#00c2a8}.d8{background:#a5714e}
 .d9{background:#ff86d0}.d10{background:#6b7fd7}.d11{background:#8fb300}
@@ -469,6 +470,13 @@ button.dict-item{cursor:pointer}
   </div>
   <div class="cat-list" id="cat-list"></div>
 
+  <div class="opt-panel" id="panel-lvlhome" hidden>
+    <div class="opt-title">🎯 Temas por nivel: ¿qué niveles?</div>
+    <div class="chip-wrap" id="chips-lvlhome"></div>
+    <div class="opt-title">🎯 Temas por nivel: ¿qué tipos?</div>
+    <div class="chip-wrap" id="chips-lvlkind"></div>
+  </div>
+
   <div class="opt-panel" id="panel-wtype" hidden>
     <div class="opt-title">Tipo de palabra (Vocabulario y Académico)</div>
     <div class="chip-wrap" id="chips-wtype"></div>
@@ -674,6 +682,7 @@ button.dict-item{cursor:pointer}
 const CATS = {
   4:  {name:'Vocabulario',        icon:'📗', w:22},
   6:  {name:'Académico IELTS',    icon:'🎓', w:14},
+  12: {name:'Temas por nivel',    icon:'🎯', w:16}, // reúne los niveles de niveles/*.js (categorías 201–206)
   2:  {name:'Verbos',             icon:'🔁', w:14},
   8:  {name:'Phrasal verbs',      icon:'🧩', w:10},
   5:  {name:'Tiempos verbales',   icon:'⏳', w:10},
@@ -684,7 +693,10 @@ const CATS = {
   3:  {name:'Expresiones',        icon:'💬', w:4},
   11: {name:'Prefijos y sufijos', icon:'✂️', w:1},
 };
-const CAT_ORDER = [4,6,2,8,5,1,9,7,10,3,11];
+const CAT_ORDER = [4,6,12,2,8,5,1,9,7,10,3,11];
+const LVL_HOME_CAT = 12;
+// Tipos de entrada de «Temas por nivel»
+const LVL_GK = {w:'Palabras', c:'Collocations', v:'Phrasal verbs', p:'Frases', e:'Expresiones'};
 const WTYPES = {n:'Sustantivos', v:'Verbos', adj:'Adjetivos', adv:'Adverbios'};
 const FTYPES = {pron:'Pronombres', art:'Artículos', det:'Determinantes', quant:'Cuantificadores',
   prep:'Preposiciones', conj:'Conjunciones', qw:'Interrogativos', aux:'Auxiliares',
@@ -708,6 +720,9 @@ LEVEL_GROUPS.forEach((g, i) => { g.c = LEVEL_BASE + i + 1; CATS[g.c] = {name: 'N
 // isProfCat: cualquier categoría que no está en la lista del inicio (profesiones y niveles)
 const isProfCat = c => +c > PROF_BASE;
 const isLvlCat = c => +c > LEVEL_BASE;
+const lvlOfCat = c => LEVEL_GROUPS[c - LEVEL_BASE - 1];
+// Lo que se practica desde el inicio: todo menos las profesiones
+const isHomeItem = it => !isProfCat(it.c) || isLvlCat(it.c);
 const catLabel = c => CATS[c] ? CATS[c].icon + ' ' + CATS[c].name : '';
 const pillClass = c => isLvlCat(c) ? 'clvl' : isProfCat(c) ? 'cprof' : 'c' + c;
 
@@ -784,14 +799,22 @@ function lsGet(k, def){
 }
 function lsSet(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
 
-const DEFAULT_PREFS = {dir:'en-es', size:25, cats:[4,6,2,8,5,1,9,7,10,3,11],
+const DEFAULT_PREFS = {dir:'en-es', size:25, cats:[4,6,12,2,8,5,1,9,7,10,3,11],
   wtype:'all', ftype:'all', vmode:'both', irrOnly:false, typeForms:false, autoSpeak:false, levels:[...LEVEL_KEYS],
-  prof:{fam:null, area:-1, kind:'all'}, lvl:{id:null, kind:'all'}, infLives:false};
+  prof:{fam:null, area:-1, kind:'all'}, lvl:{id:null, kind:'all'}, infLives:false,
+  lvlHome:{levels:LEVEL_GROUPS.map(g => g.id), kinds:Object.keys(LVL_GK)}};
 const prefs = Object.assign({}, DEFAULT_PREFS, lsGet(PREFS_KEY, {}));
 prefs.cats = prefs.cats.filter(c => CATS[c] && !isProfCat(c));
 prefs.prof = Object.assign({}, DEFAULT_PREFS.prof, prefs.prof);
 if(!PROF_FAMILIES.some(f => f.id === prefs.prof.fam)) prefs.prof.fam = null;
 prefs.lvl = Object.assign({}, DEFAULT_PREFS.lvl, prefs.lvl);
+// Una sola vez: la fila nueva «Temas por nivel» llega marcada también a quien ya tenía la app
+if(!prefs.lvlCatAdded){ if(!prefs.cats.includes(LVL_HOME_CAT)) prefs.cats.push(LVL_HOME_CAT); prefs.lvlCatAdded = true; }
+prefs.lvlHome = Object.assign({}, DEFAULT_PREFS.lvlHome, prefs.lvlHome);
+prefs.lvlHome.levels = (Array.isArray(prefs.lvlHome.levels) ? prefs.lvlHome.levels : []).filter(id => LEVEL_GROUPS.some(g => g.id === id));
+if(prefs.lvlHome.levels.length === 0) prefs.lvlHome.levels = LEVEL_GROUPS.map(g => g.id);
+prefs.lvlHome.kinds = (Array.isArray(prefs.lvlHome.kinds) ? prefs.lvlHome.kinds : []).filter(k => LVL_GK[k]);
+if(prefs.lvlHome.kinds.length === 0) prefs.lvlHome.kinds = Object.keys(LVL_GK);
 if(!LEVEL_GROUPS.some(g => g.id === prefs.lvl.id)) prefs.lvl.id = null;
 // Versión con vidas ilimitadas por enlace: ...?vidas=ilimitadas (y ?vidas=3 para volver)
 const urlLives = new URLSearchParams(location.search).get('vidas');
@@ -1024,6 +1047,7 @@ document.addEventListener('click', e => {
 // CONSTRUCCIÓN DEL TURNO
 // ══════════════════════════════════════════════════════════════════════════════
 function passesFilter(it){
+  if(isLvlCat(it.c)) return prefs.lvlHome.levels.includes(lvlOfCat(it.c).id) && prefs.lvlHome.kinds.includes(it.gk);
   if((it.c === 4 || it.c === 6) && prefs.wtype !== 'all') return it.t === prefs.wtype;
   if(it.c === 10 && prefs.ftype !== 'all') return it.t === prefs.ftype;
   if((it.c === 5 || it.c === 1) && prefs.levels.length < LEVEL_KEYS.length) return prefs.levels.includes(it.topic.level);
@@ -1032,11 +1056,20 @@ function passesFilter(it){
   if(it.c === 2 && prefs.vmode === 'forms') return !it.trivial;
   return true;
 }
-function poolFor(c){ return POOL[c].filter(passesFilter); }
+function poolFor(c){
+  if(c === LVL_HOME_CAT)
+    return LEVEL_GROUPS.filter(g => LVL_LOADED[g.id] && prefs.lvlHome.levels.includes(g.id)).flatMap(g => POOL[g.c].filter(passesFilter));
+  return POOL[c].filter(passesFilter);
+}
+// Vistas de una categoría; la 12 junta las de todos los niveles
+function seenIdsFor(c, h = getHist()){
+  if(c === LVL_HOME_CAT) return LEVEL_GROUPS.flatMap(g => h[g.c] || []);
+  return h[c] || [];
+}
 
 function pickFromPool(c, pool, n){
   if(n <= 0 || pool.length === 0) return [];
-  const seenSet = new Set(getHist()[c] || []);
+  const seenSet = new Set(seenIdsFor(c));
   const unseen  = shuffle(pool.filter(it => !seenSet.has(it.id)));
   const seen    = shuffle(pool.filter(it =>  seenSet.has(it.id)));
   return [...unseen, ...seen].slice(0, n);
@@ -1066,7 +1099,7 @@ function buildQueue(n){
   // Repaso: mezcla hasta un 15 % de palabras falladas de las categorías elegidas
   const inQueue = new Set(selected.map(it => it.id));
   const failed = shuffle(getFailed().map(id => BY_ID.get(id))
-    .filter(it => it && cats.includes(it.c) && passesFilter(it) && !inQueue.has(it.id)));
+    .filter(it => it && cats.includes(isLvlCat(it.c) ? LVL_HOME_CAT : it.c) && passesFilter(it) && !inQueue.has(it.id)));
   const k = Math.min(failed.length, Math.floor(selected.length * 0.15));
   if(k > 0){
     selected = shuffle(selected);
@@ -1332,8 +1365,8 @@ function chipsHtml(map, active, allLabel){
 function renderHomeOptions(){
   const h = getHist();
   document.getElementById('cat-list').innerHTML = CAT_ORDER.map(c => {
-    const total = POOL[c].length;
-    const seen  = Math.min(total, (h[c] || []).length);
+    const total = c === LVL_HOME_CAT ? LVL_TOTAL : POOL[c].length;
+    const seen  = Math.min(total, seenIdsFor(c, h).length);
     const pct   = total ? Math.round(seen / total * 100) : 0;
     const on    = prefs.cats.includes(c);
     return `<button class="cat-row${on ? ' on' : ''}" data-c="${c}" aria-pressed="${on}">
@@ -1352,6 +1385,17 @@ function renderHomeOptions(){
   document.getElementById('chips-ftype').innerHTML = chipsHtml(FTYPES, prefs.ftype, 'Todas');
   document.getElementById('panel-verbs').hidden = !has(2);
   document.querySelectorAll('#vmode-toggle .tog-btn').forEach(b => b.classList.toggle('active', b.dataset.v === prefs.vmode));
+  document.getElementById('panel-lvlhome').hidden = !has(LVL_HOME_CAT);
+  const lh = prefs.lvlHome, num = n => n.toLocaleString('es-CO');
+  const allL = lh.levels.length === LEVEL_GROUPS.length, allK = lh.kinds.length === Object.keys(LVL_GK).length;
+  const kindsOf = g => lh.kinds.reduce((s, k) => s + (g.k[k] || 0), 0);
+  const selGroups = LEVEL_GROUPS.filter(g => lh.levels.includes(g.id));
+  document.getElementById('chips-lvlhome').innerHTML =
+    `<button class="chip${allL ? ' active' : ''}" data-lh="all">Todos</button>` +
+    LEVEL_GROUPS.map(g => `<button class="chip${!allL && lh.levels.includes(g.id) ? ' active' : ''}" data-lh="${g.id}">${g.icon} ${g.level} · ${num(kindsOf(g))}</button>`).join('');
+  document.getElementById('chips-lvlkind').innerHTML =
+    `<button class="chip${allK ? ' active' : ''}" data-lk="all">Todos</button>` +
+    Object.entries(LVL_GK).map(([k, name]) => `<button class="chip${!allK && lh.kinds.includes(k) ? ' active' : ''}" data-lk="${k}">${name} · ${num(selGroups.reduce((s, g) => s + (g.k[k] || 0), 0))}</button>`).join('');
   document.getElementById('panel-levels').hidden = !(has(5) || has(1));
   const allLv = prefs.levels.length === LEVEL_KEYS.length;
   document.getElementById('chips-levels').innerHTML =
@@ -1366,9 +1410,9 @@ function renderHomeOptions(){
 }
 
 function updateHomeStats(){
-  const failed   = getFailed().filter(id => !isProfCat(BY_ID.get(id).c));
+  const failed   = getFailed().filter(id => isHomeItem(BY_ID.get(id)));
   const sessions = getSessions();
-  const words = VOCAB.length;
+  const words = VOCAB.length + LVL_TOTAL;
   const exs = ITEMS.filter(it => it.kind === 'ex').length;
   renderProfEntry();
   renderLvlEntry();
@@ -1404,7 +1448,7 @@ const isProfMode = () => lastMode === 'prof' || lastMode === 'prof-retry';
 const isLvlMode = () => lastMode === 'lvl' || lastMode === 'lvl-retry';
 function startQuiz(mode, topic){
   if(mode === 'retry'){
-    const failed = getFailed().filter(id => !isProfCat(BY_ID.get(id).c));
+    const failed = getFailed().filter(id => isHomeItem(BY_ID.get(id)));
     if(failed.length < 4){ notify('Necesitas al menos 4 palabras falladas para repasar.'); return; }
     queue = shuffle(failed).slice(0, Math.min(failed.length, prefs.size)).map(id => BY_ID.get(id));
   } else if(mode === 'topic'){
@@ -1618,7 +1662,7 @@ function buildResultsScreen(){
   // En una profesión se muestran solo sus falladas; en el resto, las de las categorías generales
   const failed    = getFailed().map(id => BY_ID.get(id))
     .filter(it => isLvlMode() ? lastTopic && it.c === lastTopic.g.c
-      : isProfMode() ? lastTopic && it.c === lastTopic.c : !isProfCat(it.c));
+      : isProfMode() ? lastTopic && it.c === lastTopic.c : isHomeItem(it));
   document.getElementById('home-btn').textContent =
     isLvlMode() ? '← Volver a los temas' : isProfMode() ? '← Volver a tu profesión' : '← Inicio';
   const failedSec = document.getElementById('failed-section');
@@ -1859,7 +1903,7 @@ function dictRender(reset){
 function renderDictChips(){
   document.getElementById('dict-chips').innerHTML =
     `<button class="chip${dictCorr === 'all' ? ' active' : ''}" data-c="all">Todas</button>` +
-    [...CAT_ORDER, ...LEVEL_GROUPS.filter(g => LVL_LOADED[g.id]).map(g => g.c), ...PROF_FAMILIES.filter(f => PROF_LOADED[f.id]).map(f => f.c)]
+    [...CAT_ORDER.filter(c => c !== LVL_HOME_CAT), ...LEVEL_GROUPS.filter(g => LVL_LOADED[g.id]).map(g => g.c), ...PROF_FAMILIES.filter(f => PROF_LOADED[f.id]).map(f => f.c)]
       .map(c => `<button class="chip${dictCorr === String(c) ? ' active' : ''}" data-c="${c}">${catLabel(c)}</button>`).join('') +
     `<button class="chip${dictCorr === 'failed' ? ' active' : ''}" data-c="failed">❌ Falladas</button>`;
   const sub = subTypesFor(dictCorr);
@@ -1911,6 +1955,23 @@ document.getElementById('chips-levels').addEventListener('click', e => {
   if(prefs.levels.length === 0) prefs.levels = [...LEVEL_KEYS];
   savePrefs(); renderHomeOptions();
 });
+// «Todos» activo: tocar uno deja solo ese; después cada toque lo suma o lo quita
+function toggleMulti(list, all, v){
+  if(v === 'all') return [...all];
+  if(list.length === all.length) return [v];
+  const next = list.includes(v) ? list.filter(x => x !== v) : all.filter(x => x === v || list.includes(x));
+  return next.length ? next : [...all];
+}
+document.getElementById('chips-lvlhome').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if(!b) return;
+  prefs.lvlHome.levels = toggleMulti(prefs.lvlHome.levels, LEVEL_GROUPS.map(g => g.id), b.dataset.lh);
+  savePrefs(); renderHomeOptions();
+});
+document.getElementById('chips-lvlkind').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if(!b) return;
+  prefs.lvlHome.kinds = toggleMulti(prefs.lvlHome.kinds, Object.keys(LVL_GK), b.dataset.lk);
+  savePrefs(); renderHomeOptions();
+});
 document.getElementById('irr-chip').addEventListener('click', () => { prefs.irrOnly = !prefs.irrOnly; savePrefs(); renderHomeOptions(); });
 document.getElementById('type-chip').addEventListener('click', () => { prefs.typeForms = !prefs.typeForms; savePrefs(); renderHomeOptions(); });
 document.getElementById('dir-toggle').addEventListener('click', e => {
@@ -1926,7 +1987,17 @@ document.getElementById('size-grid').addEventListener('click', e => {
   prefs.size = parseInt(b.dataset.size); savePrefs(); renderHomeOptions();
 });
 
-document.getElementById('start-btn').addEventListener('click', () => startQuiz('normal'));
+document.getElementById('start-btn').addEventListener('click', async () => {
+  const need = prefs.cats.includes(LVL_HOME_CAT) ? prefs.lvlHome.levels.filter(id => !LVL_LOADED[id]) : [];
+  if(need.length){
+    const btn = document.getElementById('start-btn'), label = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Cargando vocabulario…';
+    const oks = await Promise.all(need.map(loadLevel));
+    btn.disabled = false; btn.textContent = label;
+    if(oks.some(ok => !ok)) await notify('No se pudo cargar parte del vocabulario por nivel. Revisa tu conexión; el turno sigue sin esos niveles.');
+  }
+  startQuiz('normal');
+});
 document.getElementById('retry-btn').addEventListener('click', () => startQuiz('retry'));
 document.getElementById('dict-btn').addEventListener('click', () => openDict());
 document.getElementById('guide-btn').addEventListener('click', openGuide);
